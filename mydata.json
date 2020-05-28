@@ -60,6 +60,20 @@
       "county": ["multnomah"],
     },
     {
+      "name": "The Living Room", 
+      "subheading": "A Safehaven For GLBTQQ Youth in Clackamas County",
+      "phone": "503-901-5971",
+      "text": "503-901-5971",
+      "email": "aryn@thelivingroomyouth.org",
+      "website": "https://www.thelivingroomyouth.org/",
+      "description": "At The Living Room, we believe that all youth deserve a safe place to be themselves, to be supported, and to be comfortable and accepted in their own skin.  We provide support to GLBTQQ youth in Clackamas County through Drop In Activities, Events, School Support, and Community Education.",
+      keywords: ["youth", "drop-in", "community center", "games", "activities", "community education", "school support", "activities", "events", "pride"],
+      "hasYouthProgram": true,
+      isYouthOnly: true,
+      "countiesServed": ["clackamas"],
+      "county": ["clackamas"]
+    },
+    {
       "name": "Agency Name",
       "phone": "503-722-1453",
       "email": "info@agencyname.org",
