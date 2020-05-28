@@ -67,22 +67,49 @@
       "email": "aryn@thelivingroomyouth.org",
       "website": "https://www.thelivingroomyouth.org/",
       "description": "At The Living Room, we believe that all youth deserve a safe place to be themselves, to be supported, and to be comfortable and accepted in their own skin.  We provide support to GLBTQQ youth in Clackamas County through Drop In Activities, Events, School Support, and Community Education.",
-      keywords: ["youth", "drop-in", "community center", "games", "activities", "community education", "school support", "activities", "events", "pride"],
+      keywords: ["youth", "drop-in", "community center", "games", "activities", "community education", "school support", "activities", "events", "pride", "school advocacy", "social groups"],
       "hasYouthProgram": true,
       isYouthOnly: true,
       "countiesServed": ["clackamas"],
       "county": ["clackamas"]
     },
     {
-      "name": "Agency Name",
+      "name": "Housing Agency 1",
       "phone": "503-722-1453",
       "email": "info@agencyname.org",
       "address": "8129 SE Malden St, Portland, OR 97206",
-      "counties": ["marion", "clackamas", "multnomah"],
-      "cities": ["portland", "milwaukie", "medford"],
-      "keywords": ["needle exchanges", "HIV/AIDS", "health care", "hormones", "support group", "trans women"],
+      "counties": ["washington", "clackamas", "multnomah"],
+      "cities": ["portland", "milwaukie", "beaverton"],
+      "keywords": ["housing", "health care", "hormones", "support group"],
       "notes": "Office closed due to COVID-19. Please call for a telephone intake instead.",
-      "description": "We strive to provide the best care for members of the LGBTQ community."
+      "description": "Affordable housing for members of the LGBTQ community who wish to live in the Portland metro area.",
+      hasYouthProgram: false,
+      isYouthOnly: false
+    },
+    {
+      "name": "Housing Agency 2",
+      "phone": "503-722-1453",
+      "email": "info@agencyname.org",
+      "address": "8129 SE Malden St, Portland, OR 97206",
+      "counties": ["clackamas"],
+      "cities": ["milwaukie", "oregon city", "happy valley",],
+      "keywords": ["housing", "health care", "hormones", "support group"],
+      "notes": "Office closed due to COVID-19. Please call for a telephone intake instead.",
+      "description": "Affordable housing for members of the LGBTQ community who wish to live in the Portland metro area.",
+      hasYouthProgram: false,
+      isYouthOnly: false
+    },
+    {
+      "name": "Homeless Youth Housing Agency",
+      "phone": "503-722-1453",
+      "email": "info@agencyname.org",
+      "address": "8129 SE Malden St, Portland, OR 97206",
+      "counties": ["washington", "clackamas", "multnomah"],
+      "keywords": ["housing", "advocacy", "youth", "HIV/AIDS", "transitional housing", "case management"],
+      "notes": "Office closed due to COVID-19. Please call for a telephone intake instead.",
+      "description": "A place for LGBTQ youth to find safe and stable housing through our three-tiered housing support system.",
+      hasYouthProgram: true,
+      isYouthOnly: true
     },
     {
       "name": "Agency Name",
@@ -144,11 +171,13 @@
       "phone": "503-722-1453",
       "email": "info@agencyname.org",
       "address": "8129 SE Malden St, Portland, OR 97206",
-      "counties": ["marion", "clackamas", "multnomah"],
-      "cities": ["portland", "milwaukie", "medford"],
-      "keywords": ["needle exchanges", "HIV/AIDS", "health care", "hormones", "support group", "trans women"],
+      "counties": ["washington", "multnomah"],
+      "cities": ["portland", "beaverton"],
+      "keywords": ["housing", "health care", "mental health", "counseling", "support groups", "trans youth"],
       "notes": "Office closed due to COVID-19. Please call for a telephone intake instead.",
-      "description": "We strive to provide the best care for members of the LGBTQ community."
+      "description": "We strive to provide the best care for the youth of the LGBTQ community.",
+      isYouthOnly: false,
+      hasYouthProgram: true
     },
     {
       "name": "Agency Name",
