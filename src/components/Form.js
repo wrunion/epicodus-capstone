@@ -13,7 +13,7 @@ class Form extends Component {
   handleInputChange = (e) => {
     e.target.checked
     ? this.setState({inputValues: [...this.state.inputValues, e.target.id]})
-    : this.setState({[e.target.id]: false})
+    : this.setState({inputValues: this.state.inputValues.filter(keyword => keyword !== e.target.id)})
   }
 
   handleFormSubmit = (e) => {
