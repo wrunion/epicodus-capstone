@@ -29,7 +29,7 @@ class App extends React.Component {
   // }
   //OR: 
   onSearchClick = async () => {
-    const response = await axios.get(`https://data.cityofnewyork.us/resource/pqg4-dm6b.json?bronx=Y&arts_culture=Y&housing=Y&${this.state.term}=Y&$$app_token=NDQ8EOLrXHft9YeGZ2axBbxzb`);
+    const response = await axios.get(`https://data.cityofnewyork.us/resource/pqg4-dm6b.json?bronx=Y&arts_culture=Y&${this.state.term}=Y&$$app_token=NDQ8EOLrXHft9YeGZ2axBbxzb`);
     this.setState({results: response.data})
   }
 
@@ -39,7 +39,10 @@ class App extends React.Component {
     })
   }
 
- 
+  showOrganzationNames = () => {
+    this.state.results.map(result => <div>{result.organizationname}</div>
+    )
+  }
 
   render(){
     return (
