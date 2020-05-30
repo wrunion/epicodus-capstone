@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import DisplayResultList from './DisplayResultList';
-// import Checkbox from './Checkbox';
+import Form from './Form';
 
 class App extends React.Component {
   constructor(props) {
@@ -58,16 +58,7 @@ class App extends React.Component {
     const results = this.state.results;
     return (
       <div className="App">
-        <form onSubmit={this.handleFormSubmit}>
-          <h2>I am looking for:</h2>
-          <label> 
-            Housing
-            <input type="checkbox"
-              name="housing"
-              id="housing"
-              onChange={this.handleInputChange} />
-          </label>
-        </form>
+        <Form />
         <DisplayResultList results={results}/>
       </div>
     );
