@@ -47,6 +47,7 @@ class App extends React.Component {
   
   render() {
     const results = this.state.results;
+    console.log(c.MENTAL_HEALTH);
     return (
       <div className="App">
         <Form />
