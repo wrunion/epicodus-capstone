@@ -1,6 +1,6 @@
 import React from 'react'
 
-function DisplayResultList(props) {
+function ResultDisplay(props) {
   const results = props.results;
   if (results.length > 0) {
   return (
@@ -14,4 +14,4 @@ function DisplayResultList(props) {
   }
 }
 
-export default DisplayResultList;
+export default ResultDisplay;

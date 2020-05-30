@@ -19,6 +19,7 @@ class Form extends Component {
   handleFormSubmit = (e) => {
     e.preventDefault();
     console.log(this.state);
+    console.log([...this.state.inputValues]);
   }
 
   render() {
