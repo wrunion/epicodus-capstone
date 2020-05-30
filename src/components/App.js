@@ -1,20 +1,31 @@
 import React from 'react';
 import axios from 'axios';
 import DisplayResultList from './DisplayResultList';
+// import Checkbox from './Checkbox';
 
 class App extends React.Component {
-  // constructor(props) {
-  //   super(props);
-  //   this.baseurl = "https://data.cityofnewyork.us/resource/pqg4-dm6b.json";
-  //   this.appToken = "NDQ8EOLrXHft9YeGZ2axBbxzb";
-  //   this.state = {
-  //     searchData: []
-  //   }
-  // }
-  state = {
-    term: '',
-    results: []
+  constructor(props) {
+    super(props);
+    //   this.baseurl = "https://data.cityofnewyork.us/resource/pqg4-dm6b.json";
+    //   this.appToken = "NDQ8EOLrXHft9YeGZ2axBbxzb";
+      this.state = {
+        term: 'housing',
+        checkedTerms: [],
+        results: [],
+      };
+    this.handleInputChange = this.handleInputChange.bind(this);
+    }
+  
+
+  addToArray = (term) => {
+    //run query for term and add result to output div
+    this.setState({checkedTerms: [...this.state.checkedTerms,term]});
   }
+
+  removeFromArray = (term) => {
+    this.setState({checkedTerms: this.state.checkedTerms.filter(e => e !== term)})
+  }
+
 
   // onSearch(term) {
   //   Axios.get(`${this.baseurl}?${term}=Y&$$app_token=${this.appToken}`)
@@ -31,19 +42,33 @@ class App extends React.Component {
     })
   }
 
-  render(){
+  handleFormSubmit = (e) => {
+    e.preventDefault();
+
+  }
+
+  
+  handleInputChange = (e) => {
+    e.target.checked
+    ? this.setState({[e.target.id]: true}) 
+    : this.setState({[e.target.id]:false});
+  }
+  
+  render() {
     const results = this.state.results;
     return (
       <div className="App">
-        <h2>Test Search</h2>
-        <input 
-          type="text" id="term" 
-          onChange={this.handleChange} />
-          <br/><br/>
-        <button 
-          type="button" 
-          onClick={this.onSearchClick}>Click me to test</button> <br /><br/>
-          <DisplayResultList results={results} /> 
+        <form onSubmit={this.handleFormSubmit}>
+          <h2>I am looking for:</h2>
+          <label> 
+            Housing
+            <input type="checkbox"
+              name="housing"
+              id="housing"
+              onChange={this.handleInputChange} />
+          </label>
+        </form>
+        <DisplayResultList results={results}/>
       </div>
     );
   }
