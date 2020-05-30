@@ -3,21 +3,22 @@ import React, { Component } from 'react'
 class Form extends Component {
   constructor(props) {
     super(props);
-    this.state = []
+    this.state = {
+      inputValues:[]
+    }
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
   }
 
   handleInputChange = (e) => {
     e.target.checked
-    ? this.setState({[e.target.id]: true})
+    ? this.setState({inputValues: [...this.state.inputValues, e.target.id]})
     : this.setState({[e.target.id]: false})
   }
 
   handleFormSubmit = (e) => {
     e.preventDefault();
-    const positiveResults = [...this.state];
-    console.log(positiveResults);
+    console.log(this.state);
   }
 
   render() {
