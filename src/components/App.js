@@ -11,6 +11,7 @@ class App extends React.Component {
   //   }
   // }
   state = {
+    term: '',
     results: []
   }
 
@@ -28,12 +29,14 @@ class App extends React.Component {
   // }
   //OR: 
   onSearchClick = async () => {
-    const response = await axios.get('https://data.cityofnewyork.us/resource/pqg4-dm6b.json?bronx=Y&arts_culture=Y&housing=Y&disabilities=Y&$$app_token=NDQ8EOLrXHft9YeGZ2axBbxzb');
+    const response = await axios.get(`https://data.cityofnewyork.us/resource/pqg4-dm6b.json?bronx=Y&arts_culture=Y&housing=Y&${this.state.term}=Y&$$app_token=NDQ8EOLrXHft9YeGZ2axBbxzb`);
     this.setState({results: response.data})
   }
 
-  logState = () => {
-    console.log(this.state);
+  handleChange = (e) => {
+    this.setState({
+      [e.target.id]: e.target.value
+    })
   }
 
  
@@ -42,8 +45,8 @@ class App extends React.Component {
     return (
       <div className="App">
         <h2>Test Search</h2>
-        <button type="button" onClick={this.onSearchClick}>Click me to test</button>
-        <button type="button" onClick={this.logState}>Click to log state</button>
+        <input type="text" id="term" onChange={this.handleChange} /> <br/><br/>
+        <button type="button" onClick={this.onSearchClick}>Click me to test</button> <br /><br/>
         <span>{this.state.results.length}</span>
       </div>
     );
