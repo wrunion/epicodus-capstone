@@ -16,21 +16,12 @@ class App extends React.Component {
     results: []
   }
 
-  // onSearchSubmit(term) {
-  //   Axios.get(this.baseurl, {
-  //     params: { 
-  //       query: term, 
-  //       $$app_token: this.appToken
-  //     }
-  //   });
-  // }
-
   // onSearch(term) {
   //   Axios.get(`${this.baseurl}?${term}=Y&$$app_token=${this.appToken}`)
   // }
   //OR: 
   onSearchClick = async () => {
-    const response = await axios.get(`https://data.cityofnewyork.us/resource/pqg4-dm6b.json?bronx=Y&arts_culture=Y&housing=Y&$$app_token=NDQ8EOLrXHft9YeGZ2axBbxzb`);
+    const response = await axios.get(`https://data.cityofnewyork.us/resource/pqg4-dm6b.json?bronx=Y&arts_culture=Y&${this.state.term}=Y&$$app_token=NDQ8EOLrXHft9YeGZ2axBbxzb`);
     this.setState({results: response.data})
   }
 
@@ -39,11 +30,6 @@ class App extends React.Component {
       [e.target.id]: e.target.value
     })
   }
-
-  // showOrganzationNames = () => {
-  //   this.state.results.map(result => <div>{result.organizationname}</div>
-  //   )
-  // }
 
   render(){
     const results = this.state.results;
@@ -57,9 +43,7 @@ class App extends React.Component {
         <button 
           type="button" 
           onClick={this.onSearchClick}>Click me to test</button> <br /><br/>
-        <span>{results? 
           <DisplayResultList results={results} /> 
-          : null}</span>
       </div>
     );
   }
