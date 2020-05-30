@@ -60,6 +60,7 @@ class App extends React.Component {
       <div className="App">
         <Form />
         <DisplayResultList results={results}/>
+        {/* <button onClick={this.onSearchClick}>click for sample results</button> */}
       </div>
     );
   }
