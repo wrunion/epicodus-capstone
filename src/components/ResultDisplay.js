@@ -8,7 +8,11 @@ function ResultDisplay(props) {
   return (
     <div className="ResultList">
       <h3>Search Results:</h3>
-      {results.map(e => <div>{e.organizationname}</div>)}
+      {results.map(e => 
+        <details><summary>{e.organizationname}</summary><br/>
+          {e.phone ? e.phone : null} {e.url ?  e.url : null}
+          {e.description ? e.description : null}
+        </details>)}
     </div>
   )
   } else if (results.length > 15) {
