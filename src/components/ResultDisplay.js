@@ -8,7 +8,7 @@ function ResultDisplay(props) {
   /* Filter to only results with urls or phone # */
   const resultsWithContactInfo = resultsWithDescriptions.filter(e => e.phone !== undefined || e.url !== undefined); 
 
-  if (results.length > 0) {
+  if (resultsWithContactInfo.length > 0) {
   return (
     <div className="ResultList">
       <h3>Search Results:</h3>

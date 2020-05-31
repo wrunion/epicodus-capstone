@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import ResultDisplay from './ResultDisplay';
 import SearchForm from './SearchForm';
-import DisplayFood from './TextSearch';
+// import DisplayFood from './TextSearch';
 import { c } from './../constants/CONSTANTS';
 
 class App extends React.Component {
@@ -22,11 +22,11 @@ class App extends React.Component {
   render() {
     const results = this.state.results;
     return (
-      <div className="App">
+      <div className="App ui container">
         <SearchForm />
         <ResultDisplay results={results}/>
         {/* <DisplayFood results={results} /> */}
-        <button onClick={this.onSearchClick}>Get all results</button>
+        <button className="ui button blue" onClick={this.onSearchClick}>Get all results</button>
       </div>
     );
   }
