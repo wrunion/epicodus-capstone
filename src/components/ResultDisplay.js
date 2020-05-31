@@ -4,6 +4,8 @@ import React from 'react'
 
 function ResultDisplay(props) {
   /* Filter Salvation Army out of results, since they are anti-trans */
+
+  const { term, location } = props;
   const results = props.results.filter(e => e.organizationname !== "The Salvation Army");
   /* Filter results with no description */
   const resultsWithDescriptions = results.filter(e => e.description);
@@ -11,7 +13,7 @@ function ResultDisplay(props) {
   const resultsWithContactInfo = resultsWithDescriptions.filter(e => e.phone !== undefined || e.url !== undefined); 
 
 
-    const resultsToDisplay = resultsWithContactInfo.filter(e => e.housing === "Y")
+  const resultsToDisplay = resultsWithContactInfo.filter(e => e.housing === "Y" && e.brooklyn === "Y");
   
 
   if (resultsToDisplay.length > 0) {
@@ -19,8 +21,8 @@ function ResultDisplay(props) {
   return (
     <div className="ResultList">
       <h3>Results:</h3>
-      <p>Your search returned {resultsWithContactInfo.length} results</p>
-      {resultsWithContactInfo.map(e => 
+      <p>There are {resultsToDisplay.length} results for "{term}" in "{location}"</p>
+      {resultsToDisplay.map(e => 
         <details><summary>{e.organizationname}</summary>
           {e.description ? 
             <div className="ResultListDescription">{e.description}</div> 

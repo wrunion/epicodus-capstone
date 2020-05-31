@@ -5,7 +5,8 @@ class SearchForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      term: 'housing', 
+      term: 'Housing', 
+      location: 'Brooklyn',
       inputValues:[],
       locationInputValues: [],
       formShowing: true
@@ -47,7 +48,8 @@ class SearchForm extends Component {
           <input type="checkbox"
             name="housing"
             id="housing"
-            onChange={this.handleInputChange} />
+            onChange={this.handleInputChange}
+            checked />
           <label>Housing</label>
           </div>
         </div>
@@ -56,7 +58,8 @@ class SearchForm extends Component {
           <input type="checkbox"
             name="manhattan"
             id="childCare"
-            onChange={this.handleInputChange} />
+            onChange={this.handleInputChange}
+            disabled />
             <label>Child Care</label>
           </div>
         </div>
@@ -65,6 +68,7 @@ class SearchForm extends Component {
           <input type="checkbox"
             name="food"
             id="food"
+            disabled 
             onChange={this.handleInputChange} />
             <label>Food</label>
           </div>
@@ -74,6 +78,7 @@ class SearchForm extends Component {
           <input type="checkbox"
             name="health"
             id="health"
+            disabled 
             onChange={this.handleInputChange} />
             <label>Health Care</label>
           </div>
@@ -83,6 +88,7 @@ class SearchForm extends Component {
           <input type="checkbox"
             name="mental_health"
             id="mental_health"
+            disabled 
             onChange={this.handleInputChange} />
             <label>Mental Health Care</label>
           </div>
@@ -96,6 +102,7 @@ class SearchForm extends Component {
           <input type="checkbox"
             name="brooklyn"
             id="brooklyn"
+            checked
             onChange={this.handleLocationInputChange} />
           <label>Brooklyn</label>
           </div>
@@ -105,6 +112,7 @@ class SearchForm extends Component {
           <input type="checkbox"
             name="manhattan"
             id="manhattan"
+            disabled 
             onChange={this.handleLocationInputChange} />
             <label>Manhattan</label>
           </div>
@@ -114,6 +122,7 @@ class SearchForm extends Component {
           <input type="checkbox"
             name="bronx"
             id="bronx"
+            disabled 
             onChange={this.handleLocationInputChange} />
             <label>Bronx</label>
           </div>
@@ -123,6 +132,7 @@ class SearchForm extends Component {
           <input type="checkbox"
             name="staten_island"
             id="staten_island"
+            disabled 
             onChange={this.handleLocationInputChange} />
             <label>Staten Island</label>
           </div>
@@ -132,6 +142,7 @@ class SearchForm extends Component {
           <input type="checkbox"
             name="queens"
             id="queens"
+            disabled 
             onChange={this.handleLocationInputChange} />
             <label>Queens</label>
           </div>
@@ -145,7 +156,8 @@ class SearchForm extends Component {
       return (
       <ResultDisplay 
         term={this.state.term}
-        results={this.props.results} />
+        results={this.props.results}
+        location={this.state.location} />
       );
     }
   }
