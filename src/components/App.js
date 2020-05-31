@@ -26,8 +26,9 @@ class App extends React.Component {
         <h1>Welcome to the NYC Women's Services Database</h1>
         <SearchForm />
         <ResultDisplay results={results}/>
-        {/* <DisplayFood results={results} /> */}
-        <button className="ui button blue huge" id="TestSearchButton" onClick={this.onSearchClick}>Get all results</button>
+        {results.length === 0 ? 
+           <button className="ui button blue" id="TestSearchButton" onClick={this.onSearchClick}>Get all results</button> 
+          : null}
       </div>
     );
   }
