@@ -9,13 +9,15 @@ function ResultDisplay(props) {
   const resultsWithContactInfo = resultsWithDescriptions.filter(e => e.phone !== undefined || e.url !== undefined); 
 
   if (resultsWithContactInfo.length > 0) {
+    console.log(resultsWithContactInfo);
   return (
     <div className="ResultList">
-      <h3>Search Results:</h3>
+      <h3>Results:</h3>
+      <p>Your search returned {resultsWithContactInfo.length} results</p>
       {resultsWithContactInfo.map(e => 
         <details><summary>{e.organizationname}</summary>
           {e.description ? 
-            <div className="description">{e.description}</div> 
+            <div className="ResultListDescription">{e.description}</div> 
             : null}
           {e.phone ? 
             <div className="phone">{e.phone}</div> : null} 
