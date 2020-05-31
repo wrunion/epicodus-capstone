@@ -9,18 +9,14 @@ class App extends React.Component {
   constructor(props) {
     super(props);
       this.state = {
-        term: 'housing',
-        checkedTerms: [],
         results: [],
       };
     }
   
   onSearchClick = async () => {
-    const response = await axios.get(`${c.BASE_URL}?${this.state.term}=Y&brooklyn=Y&${c.APP_TOKEN}`);
-
+    const response = await axios.get(`${c.BASE_URL}`);
     this.setState({results: response.data});
-    
-    console.log(response.data);
+    console.log(this.state.results);
   }
 
   render() {
@@ -30,7 +26,7 @@ class App extends React.Component {
         <SearchForm />
         <ResultDisplay results={results}/>
         {/* <DisplayFood results={results} /> */}
-        <button onClick={this.onSearchClick}>test search</button> (Note: this is currently hard coded to search for "housing" in Brooklyn)
+        <button onClick={this.onSearchClick}>Get all results</button>
       </div>
     );
   }
