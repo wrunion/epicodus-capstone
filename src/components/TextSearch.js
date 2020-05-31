@@ -1,14 +1,14 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-class TextSearch extends Component {
-  const { results, input } = props;
+function TextInputSearch(props) {
+  const { results, searchTerm } = props;
   if (results.length === 0) {
     return null;
   } else {
   /* filter out results w/out descriptions */
   const filteredResults = results.filter(e => e.description);
   /* then search through the descriptions to find any mention of "food" */
-  const foodResults = filteredResults.filter(e => e.description.includes("food"));
+  const foodResults = filteredResults.filter(e => e.description.includes(`${searchTerm}`));
 
   if (foodResults.length > 0) {
   return (
@@ -23,7 +23,7 @@ class TextSearch extends Component {
   }
 }
 
-export default TextSearch;
+export default TextInputSearch;
 
 /* 
 More specialized search options: 
