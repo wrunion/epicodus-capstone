@@ -4,14 +4,17 @@ function ResultDisplay(props) {
   /* Filter Salvation Army out of results, since they are anti-trans */
   const results = props.results.filter(e => e.organizationname !== "The Salvation Army");
 
+
   if (results.length > 0) {
   return (
     <div className="ResultList">
       <h3>Search Results:</h3>
       {results.map(e => 
-        <details><summary>{e.organizationname}</summary><br/>
-          {e.phone ? e.phone : null} {e.url ?  e.url : null}
-          {e.description ? e.description : null}
+        <details><summary>{e.organizationname}</summary>
+          {e.description ? 
+            <div>{e.description}</div> : null}
+          {e.phone ? <div>{e.phone}</div> : null} {e.url ?  <div>{e.url}</div> : null}
+          {e.address1 ? <div>{e.address1}</div> : null}
         </details>)}
     </div>
   )
