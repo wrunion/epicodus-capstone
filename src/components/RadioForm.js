@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-class SearchForm extends Component {
+class RadioForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -29,29 +29,29 @@ class SearchForm extends Component {
         <h2>I am looking for:</h2>
         <label> 
           Housing
-        <input type="checkbox"
-          name="housing"
+        <input type="radio"
+          name="input1"
           id="housing"
           onChange={this.handleInputChange} />
         </label><br />
         <label> 
           Child Care
-        <input type="checkbox"
-          name="childCare"
+        <input type="radio"
+          name="input1"
           id="childCare"
           onChange={this.handleInputChange} />
         </label><br />
         <label> 
           Food
-        <input type="checkbox"
-          name="food"
+        <input type="radio"
+          name="input1"
           id="food"
           onChange={this.handleInputChange} />
         </label><br />
         <label> 
           Health Care
-        <input type="checkbox"
-          name="healthCare"
+        <input type="radio"
+          name="input1"
           id="healthCare"
           onChange={this.handleInputChange} />
         </label><br />
@@ -62,4 +62,4 @@ class SearchForm extends Component {
   }
 }
 
-export default SearchForm;
+export default RadioForm;

@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { Component } from 'react'
 
-function DisplayFood(props) {
-  const results = props.results;
+class TextSearch extends Component {
+  const { results, input } = props;
   if (results.length === 0) {
     return null;
   } else {
@@ -23,7 +23,7 @@ function DisplayFood(props) {
   }
 }
 
-export default DisplayFood;
+export default TextSearch;
 
 /* 
 More specialized search options: 
