@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/wrunion/epicodus-capstone.git/static/css/main.c459e1f7.chunk.css",
+    "main.js": "/wrunion/epicodus-capstone.git/static/js/main.1816078a.chunk.js",
+    "main.js.map": "/wrunion/epicodus-capstone.git/static/js/main.1816078a.chunk.js.map",
+    "runtime-main.js": "/wrunion/epicodus-capstone.git/static/js/runtime-main.1073fe19.js",
+    "runtime-main.js.map": "/wrunion/epicodus-capstone.git/static/js/runtime-main.1073fe19.js.map",
+    "static/js/2.c31d9c50.chunk.js": "/wrunion/epicodus-capstone.git/static/js/2.c31d9c50.chunk.js",
+    "static/js/2.c31d9c50.chunk.js.map": "/wrunion/epicodus-capstone.git/static/js/2.c31d9c50.chunk.js.map",
+    "index.html": "/wrunion/epicodus-capstone.git/index.html",
+    "precache-manifest.a9a9087ec596045612184a572200c5df.js": "/wrunion/epicodus-capstone.git/precache-manifest.a9a9087ec596045612184a572200c5df.js",
+    "service-worker.js": "/wrunion/epicodus-capstone.git/service-worker.js",
+    "static/css/main.c459e1f7.chunk.css.map": "/wrunion/epicodus-capstone.git/static/css/main.c459e1f7.chunk.css.map",
+    "static/js/2.c31d9c50.chunk.js.LICENSE.txt": "/wrunion/epicodus-capstone.git/static/js/2.c31d9c50.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.1073fe19.js",
+    "static/js/2.c31d9c50.chunk.js",
+    "static/css/main.c459e1f7.chunk.css",
+    "static/js/main.1816078a.chunk.js"
+  ]
+}
