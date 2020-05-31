@@ -1,5 +1,7 @@
 import React from 'react'
 
+//var housingResults = temp1.filter(e => e.housing === "Y")
+
 function ResultDisplay(props) {
   /* Filter Salvation Army out of results, since they are anti-trans */
   const results = props.results.filter(e => e.organizationname !== "The Salvation Army");
@@ -8,8 +10,12 @@ function ResultDisplay(props) {
   /* Filter to only results with urls or phone # */
   const resultsWithContactInfo = resultsWithDescriptions.filter(e => e.phone !== undefined || e.url !== undefined); 
 
-  if (resultsWithContactInfo.length > 0) {
-    console.log(resultsWithContactInfo);
+
+    const resultsToDisplay = resultsWithContactInfo.filter(e => e.housing === "Y")
+  
+
+  if (resultsToDisplay.length > 0) {
+    console.log(resultsToDisplay);
   return (
     <div className="ResultList">
       <h3>Results:</h3>

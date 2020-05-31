@@ -1,13 +1,17 @@
 import React, { Component } from 'react'
+import ResultDisplay from './ResultDisplay';
 
 class SearchForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      term: 'housing', 
       inputValues:[],
-      locationInputValues: []
+      locationInputValues: [],
+      formShowing: true
     }
     this.handleInputChange = this.handleInputChange.bind(this);
+    this.handleLocationInputChange = this.handleLocationInputChange.bind(this);
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
   }
 
@@ -27,9 +31,11 @@ class SearchForm extends Component {
     e.preventDefault();
     console.log(this.state);
     console.log([...this.state.inputValues]);
+    this.setState({formShowing: false});
   }
 
   render() {
+    if (this.state.formShowing === true) {
     return (
       <div className="Form">
       <form onSubmit={this.handleFormSubmit} className="ui form">
@@ -131,10 +137,15 @@ class SearchForm extends Component {
           </div>
         </div>
       </div>
-        <button type="submit" className="ui button green mini disabled">Search</button>        
+        <button type="submit" className="ui button green mini">Search</button>        
         </form>
       </div>
     )
+    } else {
+      return (
+      <ResultDisplay term={this.state.term} />
+      );
+    }
   }
 }
 // staten_island
