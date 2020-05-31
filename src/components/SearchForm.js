@@ -67,15 +67,15 @@ class SearchForm extends Component {
         <div className="field">
           <div className="ui checkbox">
           <input type="checkbox"
-            name="health"
-            id="health"
+            name="mental_health"
+            id="mental_health"
             onChange={this.handleInputChange} />
-            <label>Health Care</label>
+            <label>Mental Health Care</label>
           </div>
         </div>
         </div> {/* Fields container */}
 
-        <button type="submit" className="ui button green mini">Search</button>        
+        <button type="submit" className="ui button green mini disabled">Search</button>        
         </form>
       </div>
     )
