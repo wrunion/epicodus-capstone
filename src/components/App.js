@@ -9,7 +9,6 @@ class App extends React.Component {
   constructor(props) {
     super(props);
       this.state = {
-        term: '',
         results: []
       };
     }
@@ -20,18 +19,13 @@ class App extends React.Component {
     console.log(this.state.results);
   }
 
-  formSubmitCallback = (props) => {
-    this.setState({term: props.term});
-  }
-
   render() {
-    // const results = this.state.results;
-    // const term = this.state.term;
-
+    const results = this.state.results;
+    
     return (
       <div className="App ui container">
         <h1>Welcome to the NYC Women's Services Database</h1>
-        <SearchForm />
+        <SearchForm results={results} />
 
         {/* {term ?
           <ResultDisplay results={results} term={term} />

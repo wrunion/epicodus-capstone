@@ -143,10 +143,12 @@ class SearchForm extends Component {
     )
     } else {
       return (
-      <ResultDisplay term={this.state.term} />
+      <ResultDisplay 
+        term={this.state.term}
+        results={this.props.results} />
       );
     }
   }
 }
-// staten_island
+
 export default SearchForm;
