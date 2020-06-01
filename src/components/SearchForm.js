@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
 import ResultDisplay from './ResultDisplay';
+import { c } from './../constants/CONSTANTS';
 
 class SearchForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      term: 'Housing', 
-      location: 'Brooklyn',
+      term: 'housing', 
+      location: 'brooklyn',
       inputValues:[],
       locationInputValues: [],
       formShowing: true,
@@ -77,7 +78,7 @@ class SearchForm extends Component {
           <div className="ui checkbox">
           <input type="checkbox"
             name="manhattan"
-            id="childCare"
+            id={c.CHILD_CARE}
             onChange={this.handleInputChange}
              />
             <label>Child Care</label>

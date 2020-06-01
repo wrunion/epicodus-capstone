@@ -1,9 +1,7 @@
 import React from 'react';
 import axios from 'axios';
-// import ResultDisplay from './ResultDisplay';
 import SearchForm from './SearchForm';
 import './App.css';
-// import { c } from './../constants/CONSTANTS';
 
 class App extends React.Component {
   constructor(props) {

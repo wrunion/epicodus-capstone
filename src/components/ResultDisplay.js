@@ -4,21 +4,14 @@ function ResultDisplay(props) {
 
   const { term, location, results } = props;
 
-  /* Filter out results that have no description or contact info */
-  // const results = props.results.filter(e => e.organizationname !== "The Salvation Army").filter(e => e.description).filter(e => e.phone !== undefined || e.url !== undefined);
- 
   /* Search through the filtered results using search term and location props  */
-  const resultsToDisplay = results.filter(e => e.housing === "Y" && e.brooklyn === "Y");
+  const resultsToDisplay = results.filter(e => e[term] === "Y" && e[location] === "Y");
   
+  /* Filter in progress */
   // const filteredResults = (keyword, location, arr) => {     
   //   return arr.filter(e =>     
   //                     e[location] === "Y" &&    
   //                     e[keyword] === "Y") }
-
-  // const filterForKeyword = (keyword) => {
-  //   return keyword === "Y";
-  // }
-  // var resultsToDisplay = results.filter(filterForKeyword.bind(null, term));
 
   if (resultsToDisplay.length > 0) {
   return (
