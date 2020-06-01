@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/epicodus-capstone.git/static/css/main.c459e1f7.chunk.css",
-    "main.js": "/epicodus-capstone.git/static/js/main.1816078a.chunk.js",
-    "main.js.map": "/epicodus-capstone.git/static/js/main.1816078a.chunk.js.map",
-    "runtime-main.js": "/epicodus-capstone.git/static/js/runtime-main.4fcad860.js",
-    "runtime-main.js.map": "/epicodus-capstone.git/static/js/runtime-main.4fcad860.js.map",
-    "static/js/2.c31d9c50.chunk.js": "/epicodus-capstone.git/static/js/2.c31d9c50.chunk.js",
-    "static/js/2.c31d9c50.chunk.js.map": "/epicodus-capstone.git/static/js/2.c31d9c50.chunk.js.map",
-    "index.html": "/epicodus-capstone.git/index.html",
-    "precache-manifest.b25e3f628b0cb3e1acaf93115da605d3.js": "/epicodus-capstone.git/precache-manifest.b25e3f628b0cb3e1acaf93115da605d3.js",
-    "service-worker.js": "/epicodus-capstone.git/service-worker.js",
-    "static/css/main.c459e1f7.chunk.css.map": "/epicodus-capstone.git/static/css/main.c459e1f7.chunk.css.map",
-    "static/js/2.c31d9c50.chunk.js.LICENSE.txt": "/epicodus-capstone.git/static/js/2.c31d9c50.chunk.js.LICENSE.txt"
+    "main.css": "/epicodus-capstone/static/css/main.c459e1f7.chunk.css",
+    "main.js": "/epicodus-capstone/static/js/main.1816078a.chunk.js",
+    "main.js.map": "/epicodus-capstone/static/js/main.1816078a.chunk.js.map",
+    "runtime-main.js": "/epicodus-capstone/static/js/runtime-main.15f11de6.js",
+    "runtime-main.js.map": "/epicodus-capstone/static/js/runtime-main.15f11de6.js.map",
+    "static/js/2.c31d9c50.chunk.js": "/epicodus-capstone/static/js/2.c31d9c50.chunk.js",
+    "static/js/2.c31d9c50.chunk.js.map": "/epicodus-capstone/static/js/2.c31d9c50.chunk.js.map",
+    "index.html": "/epicodus-capstone/index.html",
+    "precache-manifest.2f49d51a5100217979324a3b1bc03204.js": "/epicodus-capstone/precache-manifest.2f49d51a5100217979324a3b1bc03204.js",
+    "service-worker.js": "/epicodus-capstone/service-worker.js",
+    "static/css/main.c459e1f7.chunk.css.map": "/epicodus-capstone/static/css/main.c459e1f7.chunk.css.map",
+    "static/js/2.c31d9c50.chunk.js.LICENSE.txt": "/epicodus-capstone/static/js/2.c31d9c50.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.4fcad860.js",
+    "static/js/runtime-main.15f11de6.js",
     "static/js/2.c31d9c50.chunk.js",
     "static/css/main.c459e1f7.chunk.css",
     "static/js/main.1816078a.chunk.js"
