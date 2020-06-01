@@ -27,15 +27,25 @@ class SearchForm extends Component {
   }
 
   handleInputChange = (e) => {
-    e.target.checked
-    ? this.setState({inputValues: [...this.state.inputValues, e.target.id]})
-    : this.setState({inputValues: this.state.inputValues.filter(keyword => keyword !== e.target.id)})
+    // e.target.checked
+    // ? this.setState({inputValues: [...this.state.inputValues, e.target.id]})
+    // : this.setState({inputValues: this.state.inputValues.filter(keyword => keyword !== e.target.id)})
+    if (e.target.checked) {
+      this.setState({term: e.target.id});
+    } else {
+      this.setState({term: ''})
+    }
   }
 
   handleLocationInputChange = (e) => {
-    e.target.checked
-    ? this.setState({locationInputValues: [...this.state.locationInputValues, e.target.id]})
-    : this.setState({locationInputValues: this.state.locationInputValues.filter(keyword => keyword !== e.target.id)})
+    // e.target.checked
+    // ? this.setState({locationInputValues: [...this.state.locationInputValues, e.target.id]})
+    // : this.setState({locationInputValues: this.state.locationInputValues.filter(keyword => keyword !== e.target.id)})
+    if (e.target.checked) {
+      this.setState({location: e.target.id});
+    } else {
+      this.setState({location: ''})
+    }
   }
 
   handleFormSubmit = (e) => {
@@ -69,7 +79,7 @@ class SearchForm extends Component {
             name="manhattan"
             id="childCare"
             onChange={this.handleInputChange}
-            disabled />
+             />
             <label>Child Care</label>
           </div>
         </div>
@@ -78,7 +88,7 @@ class SearchForm extends Component {
           <input type="checkbox"
             name="food"
             id="food"
-            disabled 
+             
             onChange={this.handleInputChange} />
             <label>Food</label>
           </div>
@@ -88,7 +98,7 @@ class SearchForm extends Component {
           <input type="checkbox"
             name="health"
             id="health"
-            disabled 
+             
             onChange={this.handleInputChange} />
             <label>Health Care</label>
           </div>
@@ -98,7 +108,7 @@ class SearchForm extends Component {
           <input type="checkbox"
             name="mental_health"
             id="mental_health"
-            disabled 
+             
             onChange={this.handleInputChange} />
             <label>Mental Health Care</label>
           </div>
@@ -122,7 +132,7 @@ class SearchForm extends Component {
           <input type="checkbox"
             name="manhattan"
             id="manhattan"
-            disabled 
+             
             onChange={this.handleLocationInputChange} />
             <label>Manhattan</label>
           </div>
@@ -132,7 +142,7 @@ class SearchForm extends Component {
           <input type="checkbox"
             name="bronx"
             id="bronx"
-            disabled 
+             
             onChange={this.handleLocationInputChange} />
             <label>Bronx</label>
           </div>
@@ -142,7 +152,7 @@ class SearchForm extends Component {
           <input type="checkbox"
             name="staten_island"
             id="staten_island"
-            disabled 
+             
             onChange={this.handleLocationInputChange} />
             <label>Staten Island</label>
           </div>
@@ -152,7 +162,7 @@ class SearchForm extends Component {
           <input type="checkbox"
             name="queens"
             id="queens"
-            disabled 
+             
             onChange={this.handleLocationInputChange} />
             <label>Queens</label>
           </div>
