@@ -33,8 +33,6 @@ class SearchForm extends Component {
     // : this.setState({inputValues: this.state.inputValues.filter(keyword => keyword !== e.target.id)})
     if (e.target.checked) {
       this.setState({term: e.target.id});
-    } else {
-      this.setState({term: ''})
     }
   }
 
@@ -44,9 +42,7 @@ class SearchForm extends Component {
     // : this.setState({locationInputValues: this.state.locationInputValues.filter(keyword => keyword !== e.target.id)})
     if (e.target.checked) {
       this.setState({location: e.target.id});
-    } else {
-      this.setState({location: ''})
-    }
+    } 
   }
 
   handleFormSubmit = (e) => {
@@ -69,8 +65,7 @@ class SearchForm extends Component {
           <input type="checkbox"
             name="housing"
             id="housing"
-            onChange={this.handleInputChange}
-            checked />
+            onChange={this.handleInputChange} />
           <label>Housing</label>
           </div>
         </div>
@@ -123,7 +118,6 @@ class SearchForm extends Component {
           <input type="checkbox"
             name="brooklyn"
             id="brooklyn"
-            checked
             onChange={this.handleLocationInputChange} />
           <label>Brooklyn</label>
           </div>
