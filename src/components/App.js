@@ -14,14 +14,31 @@ class App extends React.Component {
     }
   
   componentDidMount = async () => {
-    const response = await axios.get(`${c.BASE_URL}`);
+    // const response = await axios.get(`${c.BASE_URL}`);
+    const response = await axios({
+      method: 'get',
+      url: 'https://data.cityofnewyork.us/resource/pqg4-dm6b.json',
+      // headers: {
+
+      // },
+      // params: {
+        
+      // }, 
+      options: {
+        transformRequest: [
+          (data, headers) => {
+            return data;
+          }
+        ]
+      }
+    })
     this.setState({results: response.data});
     console.log(this.state.results);
   }
 
   render() {
     const results = this.state.results;
-    
+
     return (
       <div className="App ui container">
         <h1>Welcome to the NYC Women's Services Database</h1>

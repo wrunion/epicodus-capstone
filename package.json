@@ -2,7 +2,7 @@
   "name": "capstone",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/wrunion/epicodus-capstone.git",
+  "homepage": "http://wrunion.github.io/epicodus-capstone",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
