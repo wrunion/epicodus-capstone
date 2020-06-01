@@ -9,8 +9,8 @@ class SearchForm extends Component {
       term: 'housing', 
       location: 'brooklyn',
       inputValues:[],
-      locationInputValues: [],
       formShowing: true,
+      formSubmitted: false,
       resultsShowing: false
     }
     this.handleInputChange = this.handleInputChange.bind(this);
@@ -37,9 +37,6 @@ class SearchForm extends Component {
   }
 
   handleLocationInputChange = (e) => {
-    // e.target.checked
-    // ? this.setState({locationInputValues: [...this.state.locationInputValues, e.target.id]})
-    // : this.setState({locationInputValues: this.state.locationInputValues.filter(keyword => keyword !== e.target.id)})
     if (e.target.checked) {
       this.setState({location: e.target.id});
     } 
@@ -48,12 +45,12 @@ class SearchForm extends Component {
   handleFormSubmit = (e) => {
     e.preventDefault();
     this.filterResultsFromProps();
-    this.setState({resultsShowing: true, formShowing: false});
+    this.setState({resultsShowing: true, formSubmitted: true});
     // this.setState({formShowing: false});
   }
 
   render() {
-    if (this.state.formShowing === true) {
+    if (this.state.formSubmitted === false) {
     return (
       <div className="Form">
       <form onSubmit={this.handleFormSubmit} className="ui form">
@@ -163,7 +160,7 @@ class SearchForm extends Component {
         </form>
       </div>
     )
-    } else if (this.state.resultsShowing === true && this.state.formShowing === false) {
+    } else if (this.state.resultsShowing === true && this.state.formSubmitted === true) {
       return (
       <ResultDisplay 
         term={this.state.term}
