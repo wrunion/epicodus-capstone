@@ -1,23 +1,21 @@
 import React from 'react'
 
-//var housingResults = temp1.filter(e => e.housing === "Y")
-
 function ResultDisplay(props) {
-  /* Filter Salvation Army out of results, since they are anti-trans */
 
   const { term, location } = props;
-  const results = props.results.filter(e => e.organizationname !== "The Salvation Army");
-  /* Filter results with no description */
-  const resultsWithDescriptions = results.filter(e => e.description);
-  /* Filter to only results with urls or phone # */
-  const resultsWithContactInfo = resultsWithDescriptions.filter(e => e.phone !== undefined || e.url !== undefined); 
 
-
-  const resultsToDisplay = resultsWithContactInfo.filter(e => e.housing === "Y" && e.brooklyn === "Y");
+  /* Filter out results that have no description or contact info */
+  const results = props.results.filter(e => e.organizationname !== "The Salvation Army").filter(e => e.description).filter(e => e.phone !== undefined || e.url !== undefined);
+ 
+  /* Search through the filtered results using search term and location props  */
+  const resultsToDisplay = results.filter(e => e.housing === "Y" && e.brooklyn === "Y");
   
+  // const filterForKeyword = (keyword) => {
+  //   return keyword === "Y";
+  // }
+  // var resultsToDisplay = results.filter(filterForKeyword.bind(null, term));
 
   if (resultsToDisplay.length > 0) {
-    console.log(resultsToDisplay);
   return (
     <div className="ResultList">
       <h3>Results:</h3>
@@ -38,10 +36,10 @@ function ResultDisplay(props) {
         </details>)}
     </div>
   )
-  } else if (results.length > 15) {
+  } else if (resultsToDisplay.length > 15) {
     return (
       <div className="ResultList">
-        Your search returned {results.length} results. 
+        Your search returned {resultsToDisplay.length} results. 
         Would you like to answer a few questions about yourself, to help us find the results that are the best match? 
         <button>Yes, help me filter the results</button><button>No, show me all results</button>
       </div>

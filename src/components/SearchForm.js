@@ -30,8 +30,6 @@ class SearchForm extends Component {
 
   handleFormSubmit = (e) => {
     e.preventDefault();
-    console.log(this.state);
-    console.log([...this.state.inputValues]);
     this.setState({formShowing: false});
   }
 

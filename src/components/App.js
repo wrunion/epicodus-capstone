@@ -14,23 +14,20 @@ class App extends React.Component {
     }
   
   componentDidMount = async () => {
-    // const response = await axios.get(`${c.BASE_URL}`);
     const response = await axios({
       method: 'get',
       url: 'https://data.cityofnewyork.us/resource/pqg4-dm6b.json',
-      // headers: {
-
-      // },
-      // params: {
-        
-      // }, 
-      options: {
-        transformRequest: [
-          (data, headers) => {
-            return data;
-          }
-        ]
-      }
+      // options: {
+      //   transformRequest: [
+      //     (data, headers) => {
+      //       data = data.filter(e =>
+      //         e.organizationname !== "The Salvation Army").filter(e => 
+      //           e.description !== undefined).filter(e => e.phone !== undefined ||
+      //         e.url !== undefined);
+      //       return data;
+      //     }
+      //   ]
+      // }
     })
     this.setState({results: response.data});
     console.log(this.state.results);
