@@ -156,8 +156,9 @@ class SearchForm extends Component {
         </div>
       </div>
       {this.state.formSubmitted ?       
-        <button type="submit" className="ui button green mini">Search Again</button>
-        : <button type="submit" className="ui button green mini">Search Again</button>}
+          // <button type="submit" className="ui button green mini">Search Again</button>
+          <div className="ui message">To search again, change your selections above</div>
+        : <button type="submit" className="ui button green mini">Search</button>}
         </form>
       {this.state.formSubmitted ?       
         <ResultDisplay 
@@ -166,15 +167,7 @@ class SearchForm extends Component {
           location={this.state.location} />
           : null}
       </div>
-    )
-    // } else if (this.state.resultsShowing === true && this.state.formSubmitted === true) {
-    //   return (
-    //   <ResultDisplay 
-    //     term={this.state.term}
-    //     results={this.state.results}
-    //     location={this.state.location} />
-    //   );
-    // }
+    );
   }
 }
 
