@@ -60,7 +60,8 @@ class SearchForm extends Component {
           <div className="ui radio checkbox">
           <input type="radio"
             name="term"
-            id={c.HOUSING}
+            id="housing"
+            required
             onChange={this.handleInputChange} />
           <label>Housing</label>
           </div>
@@ -112,6 +113,7 @@ class SearchForm extends Component {
           <div className="ui radio checkbox grid-item">
           <input type="radio"
             name="location"
+            required
             id="brooklyn"
             onChange={this.handleLocationInputChange} />
           <label>Brooklyn</label>
