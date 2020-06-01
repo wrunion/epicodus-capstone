@@ -9,7 +9,8 @@ class SearchForm extends Component {
       location: 'Brooklyn',
       inputValues:[],
       locationInputValues: [],
-      formShowing: true
+      formShowing: true,
+      resultsShowing: false
     }
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleLocationInputChange = this.handleLocationInputChange.bind(this);
@@ -40,6 +41,7 @@ class SearchForm extends Component {
   handleFormSubmit = (e) => {
     e.preventDefault();
     this.filterResultsFromProps();
+    this.setState({resultsShowing: true, formShowing: false});
     // this.setState({formShowing: false});
   }
 
@@ -160,11 +162,11 @@ class SearchForm extends Component {
         </form>
       </div>
     )
-    } else {
+    } else if (this.state.resultsShowing === true && this.state.formShowing === false) {
       return (
       <ResultDisplay 
         term={this.state.term}
-        results={this.props.results}
+        results={this.state.results}
         location={this.state.location} />
       );
     }
