@@ -84,7 +84,6 @@ class SearchForm extends Component {
           <input type="checkbox"
             name="food"
             id="food"
-             
             onChange={this.handleInputChange} />
             <label>Food</label>
           </div>
