@@ -29,6 +29,7 @@ class App extends React.Component {
       //   ]
       // }
     })
+
     this.setState({results: response.data});
     console.log(this.state.results);
   }

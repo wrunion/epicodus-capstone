@@ -30,6 +30,7 @@ class SearchForm extends Component {
 
   handleFormSubmit = (e) => {
     e.preventDefault();
+    const results = this.props.results.filter(e => e.organizationname !== "The Salvation Army").filter(e => e.description).filter(e => e.phone !== undefined || e.url !== undefined);
     this.setState({formShowing: false});
   }
 

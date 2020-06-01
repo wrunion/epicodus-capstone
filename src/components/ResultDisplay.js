@@ -2,14 +2,19 @@ import React from 'react'
 
 function ResultDisplay(props) {
 
-  const { term, location } = props;
+  const { term, location, results } = props;
 
   /* Filter out results that have no description or contact info */
-  const results = props.results.filter(e => e.organizationname !== "The Salvation Army").filter(e => e.description).filter(e => e.phone !== undefined || e.url !== undefined);
+  // const results = props.results.filter(e => e.organizationname !== "The Salvation Army").filter(e => e.description).filter(e => e.phone !== undefined || e.url !== undefined);
  
   /* Search through the filtered results using search term and location props  */
   const resultsToDisplay = results.filter(e => e.housing === "Y" && e.brooklyn === "Y");
   
+  // const filteredResults = (keyword, location, arr) => {     
+  //   return arr.filter(e =>     
+  //                     e[location] === "Y" &&    
+  //                     e[keyword] === "Y") }
+
   // const filterForKeyword = (keyword) => {
   //   return keyword === "Y";
   // }
