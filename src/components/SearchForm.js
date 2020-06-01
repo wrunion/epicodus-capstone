@@ -72,7 +72,7 @@ class SearchForm extends Component {
         <div className="field">
           <div className="ui checkbox">
           <input type="checkbox"
-            name="manhattan"
+            name={c.CHILD_CARE}
             id={c.CHILD_CARE}
             onChange={this.handleInputChange}
              />
@@ -109,54 +109,51 @@ class SearchForm extends Component {
           </div>
         </div>
         </div> {/* END Service Type container */}
+
         {/* START Location container  */}
         <div className="inline fields">
           <label>Located in:</label>
         <div className="field">
-          <div className="ui checkbox grid-item">
-          <input type="checkbox"
-            name="brooklyn"
+          <div className="ui radio checkbox grid-item">
+          <input type="radio"
+            name="location"
             id="brooklyn"
             onChange={this.handleLocationInputChange} />
           <label>Brooklyn</label>
           </div>
         </div>
         <div className="field">
-          <div className="ui checkbox">
-          <input type="checkbox"
-            name="manhattan"
-            id="manhattan"
-             
+          <div className="ui radio checkbox">
+          <input type="radio"
+            name="location"
+            id="manhattan"            
             onChange={this.handleLocationInputChange} />
             <label>Manhattan</label>
           </div>
         </div>
         <div className="field">
-          <div className="ui checkbox">
-          <input type="checkbox"
-            name="bronx"
-            id="bronx"
-             
+          <div className="ui radio checkbox">
+          <input type="radio"
+            name="location"
+            id="bronx"           
             onChange={this.handleLocationInputChange} />
             <label>Bronx</label>
           </div>
         </div>
         <div className="field">
-          <div className="ui checkbox">
-          <input type="checkbox"
-            name="staten_island"
-            id="staten_island"
-             
+          <div className="ui radio checkbox">
+          <input type="radio"
+            name="location"
+            id="staten_island"            
             onChange={this.handleLocationInputChange} />
             <label>Staten Island</label>
           </div>
         </div>
         <div className="field">
-          <div className="ui checkbox">
-          <input type="checkbox"
-            name="queens"
-            id="queens"
-             
+          <div className="ui radio checkbox">
+          <input type="radio"
+            name="location"
+            id="queens"             
             onChange={this.handleLocationInputChange} />
             <label>Queens</label>
           </div>
