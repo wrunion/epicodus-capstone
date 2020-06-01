@@ -16,8 +16,10 @@ function ResultDisplay(props) {
   if (resultsToDisplay.length > 0) {
   return (
     <div className="ResultList">
-      <h3>Results:</h3>
-      <p>There are {resultsToDisplay.length} results for "{term}" in "{location}"</p>
+      <div className="ui green message">
+        <h5>Your search returned {resultsToDisplay.length} results:</h5>
+      </div>
+      {/* <p className="grey-text"><em>To search again, change your selections above</em></p> */}
       {resultsToDisplay.map(e => 
         <details><summary>{e.organizationname}</summary>
           {e.description ? 
