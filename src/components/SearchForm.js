@@ -16,6 +16,15 @@ class SearchForm extends Component {
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
   }
 
+  filterResultsFromProps = () => {
+    /* Get results info from props */
+    const { results } = this.props;
+    /* Filter out results that have no description or contact info */
+    const filteredResults = results.filter(e => e.organizationname !== "The Salvation Army").filter(e => e.description).filter(e => e.phone !== undefined || e.url !== undefined);
+    /* Add that to state, to pass down to ResultDisplay */
+    this.setState({results: filteredResults});
+  }
+
   handleInputChange = (e) => {
     e.target.checked
     ? this.setState({inputValues: [...this.state.inputValues, e.target.id]})
@@ -30,8 +39,8 @@ class SearchForm extends Component {
 
   handleFormSubmit = (e) => {
     e.preventDefault();
-    const results = this.props.results.filter(e => e.organizationname !== "The Salvation Army").filter(e => e.description).filter(e => e.phone !== undefined || e.url !== undefined);
-    this.setState({formShowing: false});
+    this.filterResultsFromProps();
+    // this.setState({formShowing: false});
   }
 
   render() {
