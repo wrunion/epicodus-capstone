@@ -6,9 +6,9 @@ class SearchForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      term: 'housing', 
-      location: 'brooklyn',
-      inputValues:[],
+      term: '', 
+      location: '',
+      // inputValues:[],
       formShowing: true,
       formSubmitted: false,
       resultsShowing: false
@@ -46,7 +46,6 @@ class SearchForm extends Component {
     e.preventDefault();
     this.filterResultsFromProps();
     this.setState({resultsShowing: true, formSubmitted: true});
-    // this.setState({formShowing: false});
   }
 
   render() {
@@ -58,18 +57,18 @@ class SearchForm extends Component {
         <div className="inline fields">
           <label>I am looking for:</label>
         <div className="field">
-          <div className="ui checkbox grid-item">
-          <input type="checkbox"
-            name="housing"
-            id="housing"
+          <div className="ui radio checkbox">
+          <input type="radio"
+            name="term"
+            id={c.HOUSING}
             onChange={this.handleInputChange} />
           <label>Housing</label>
           </div>
         </div>
         <div className="field">
-          <div className="ui checkbox">
-          <input type="checkbox"
-            name={c.CHILD_CARE}
+          <div className="ui radio checkbox">
+          <input type="radio"
+            name="term"
             id={c.CHILD_CARE}
             onChange={this.handleInputChange}
              />
@@ -77,30 +76,29 @@ class SearchForm extends Component {
           </div>
         </div>
         <div className="field">
-          <div className="ui checkbox">
-          <input type="checkbox"
-            name="food"
-            id="food"
+          <div className="ui radio checkbox">
+          <input type="radio"
+            name="term"
+            id={c.YOUTH_SERVICES}
+            // displayName="Youth Programs"
             onChange={this.handleInputChange} />
-            <label>Food</label>
+            <label>Youth Programs</label>
           </div>
         </div>
         <div className="field">
-          <div className="ui checkbox">
-          <input type="checkbox"
-            name="health"
-            id="health"
-             
+          <div className="ui radio checkbox">
+          <input type="radio"
+            name="term"
+            id="health"             
             onChange={this.handleInputChange} />
             <label>Health Care</label>
           </div>
         </div>
         <div className="field">
-          <div className="ui checkbox">
-          <input type="checkbox"
-            name="mental_health"
-            id="mental_health"
-             
+          <div className="ui radio checkbox">
+          <input type="radio"
+            name="term"
+            id={c.MENTAL_HEALTH}             
             onChange={this.handleInputChange} />
             <label>Mental Health Care</label>
           </div>
