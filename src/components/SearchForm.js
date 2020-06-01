@@ -49,7 +49,6 @@ class SearchForm extends Component {
   }
 
   render() {
-    if (this.state.formSubmitted === false) {
     return (
       <div className="Form">
       <form onSubmit={this.handleFormSubmit} className="ui form">
@@ -156,18 +155,26 @@ class SearchForm extends Component {
           </div>
         </div>
       </div>
-        <button type="submit" className="ui button green mini">Search</button>        
+      {this.state.formSubmitted ?       
+        <button type="submit" className="ui button green mini">Search Again</button>
+        : <button type="submit" className="ui button green mini">Search Again</button>}
         </form>
+      {this.state.formSubmitted ?       
+        <ResultDisplay 
+          term={this.state.term}
+          results={this.state.results}
+          location={this.state.location} />
+          : null}
       </div>
     )
-    } else if (this.state.resultsShowing === true && this.state.formSubmitted === true) {
-      return (
-      <ResultDisplay 
-        term={this.state.term}
-        results={this.state.results}
-        location={this.state.location} />
-      );
-    }
+    // } else if (this.state.resultsShowing === true && this.state.formSubmitted === true) {
+    //   return (
+    //   <ResultDisplay 
+    //     term={this.state.term}
+    //     results={this.state.results}
+    //     location={this.state.location} />
+    //   );
+    // }
   }
 }
 
