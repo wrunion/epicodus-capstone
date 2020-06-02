@@ -6,9 +6,8 @@ class SearchForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      term: '', 
       location: '',
-      // inputValues:[],
+      keywords:[],
       formShowing: true,
       formSubmitted: false,
       resultsShowing: false
@@ -28,12 +27,9 @@ class SearchForm extends Component {
   }
 
   handleInputChange = (e) => {
-    // e.target.checked
-    // ? this.setState({inputValues: [...this.state.inputValues, e.target.id]})
-    // : this.setState({inputValues: this.state.inputValues.filter(keyword => keyword !== e.target.id)})
-    if (e.target.checked) {
-      this.setState({term: e.target.id});
-    }
+    e.target.checked
+    ? this.setState({keywords: [...this.state.keywords, e.target.id]})
+    : this.setState({keywords: this.state.keywords.filter(keyword => keyword !== e.target.id)})
   }
 
   handleLocationInputChange = (e) => {
@@ -56,18 +52,17 @@ class SearchForm extends Component {
         <div className="inline fields">
           <label>I am looking for:</label>
         <div className="field">
-          <div className="ui radio checkbox">
-          <input type="radio"
+          <div className="ui checkbox">
+          <input type="checkbox"
             name="term"
             id="housing"
-            required
             onChange={this.handleInputChange} />
           <label>Housing</label>
           </div>
         </div>
         <div className="field">
-          <div className="ui radio checkbox">
-          <input type="radio"
+          <div className="ui checkbox">
+          <input type="checkbox"
             name="term"
             id={c.CHILD_CARE}
             onChange={this.handleInputChange}
@@ -76,8 +71,8 @@ class SearchForm extends Component {
           </div>
         </div>
         <div className="field">
-          <div className="ui radio checkbox">
-          <input type="radio"
+          <div className="ui checkbox">
+          <input type="checkbox"
             name="term"
             id={c.YOUTH_SERVICES}
             // displayName="Youth Programs"
@@ -86,8 +81,8 @@ class SearchForm extends Component {
           </div>
         </div>
         <div className="field">
-          <div className="ui radio checkbox">
-          <input type="radio"
+          <div className="ui checkbox">
+          <input type="checkbox"
             name="term"
             id="health"             
             onChange={this.handleInputChange} />
@@ -95,8 +90,8 @@ class SearchForm extends Component {
           </div>
         </div>
         <div className="field">
-          <div className="ui radio checkbox">
-          <input type="radio"
+          <div className="ui checkbox">
+          <input type="checkbox"
             name="term"
             id={c.MENTAL_HEALTH}             
             onChange={this.handleInputChange} />
@@ -162,7 +157,7 @@ class SearchForm extends Component {
         </form>
       {this.state.formSubmitted ?       
         <ResultDisplay 
-          term={this.state.term}
+          keywords={this.state.keywords}
           results={this.state.results}
           location={this.state.location} />
           : null}

@@ -1,12 +1,42 @@
 import React from 'react'
 
 function ResultDisplay(props) {
+  /* If someone submits incomplete parameters, or unchecks all boxes after searching */
+  if (props.keywords.length === 0) {
+    return (
+      <div className="ResultsNoResults ui message yellow">
+        Please check at least one keyword box to see your results.
+      </div>
+    )
+  }
 
-  const { term, location, results } = props;
+  if (props) {
+  const { keywords, location, results } = props;
 
-  /* Search through the filtered results using search term and location props  */
-  const resultsToDisplay = results.filter(e => e[term] === "Y" && e[location] === "Y");
+  let resultsToDisplay;
   
+  if (keywords.length === 1) {
+    resultsToDisplay = results.filter(e => e[keywords[0]] === "Y" && e[location] === "Y");
+  } else if (keywords.length === 2) {
+    resultsToDisplay = results.filter(e => e[location] === "Y").filter(e => e[keywords[0]] === "Y" && e[keywords[1]] === "Y");
+  } else if (keywords.length === 3) {
+    resultsToDisplay = results.filter(e => e[location] === "Y").filter(e => e[keywords[0]] === "Y" && e[keywords[1]] === "Y" && e[keywords[2]] === "Y") 
+  } else if (keywords.length === 4) {
+    resultsToDisplay = results.filter(e => e[location] === "Y").filter(e => e[keywords[0]] === "Y" && e[keywords[1]] === "Y" && e[keywords[2]] === "Y" && e[keywords[3]] === "Y");
+  } else if (keywords.length === 5) {
+    resultsToDisplay = results.filter(e => e[location] === "Y").filter(e => e[keywords[0]] === "Y" && e[keywords[1]] === "Y" && e[keywords[2]] === "Y" && e[keywords[3]] === "Y" && e[keywords[4]] === "Y");
+  } else {
+      return (
+    //  <p><em>Please choose only three keywords to see customized results.</em></p>
+    <p><em>Tecnical error; please try again.</em></p>
+      );  
+    }
+
+
+ 
+  
+  /* Search through the filtered results using search term and location props  */
+
   /* Filter in progress */
   // const filteredResults = (keyword, location, arr) => {     
   //   return arr.filter(e =>     
@@ -49,6 +79,7 @@ function ResultDisplay(props) {
       );
     } else {
       return null;
+    }
   }
 }
 
