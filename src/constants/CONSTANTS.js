@@ -36,3 +36,16 @@ export const c = {
   ADDRESS: 'address1',
 
 }
+
+export const DISPLAY = {
+  'bronx': "Bronx",
+  'brooklyn': "Brooklyn",
+  'manhattan': "Manhattan",
+  'queens': "Queens",
+  'staten_island': "Staten Island",
+  'child_care_parent_information': "Child Care",
+  'counseling_support_groups': "Mental Health",
+  'health': "Health",
+  'housing': "Housing",
+  'lesbian_gay_bisexual_and_or_transgender': "LGBTQ"
+}

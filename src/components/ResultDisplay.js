@@ -1,4 +1,5 @@
 import React from 'react'
+import { DISPLAY } from './../constants/CONSTANTS';
 
 function ResultDisplay(props) {
   /* If someone submits incomplete parameters, or unchecks all boxes after searching */
@@ -33,6 +34,8 @@ function ResultDisplay(props) {
       );  
     }
 
+  const formattedKeywords = keywords.map(e => DISPLAY[e]);
+
   /* TO DO: figure out how to display the keywords by converting them into display-worthy versions */
   
   /* OLD filter - use pattern to REFACTOR lines 18-30 */
@@ -45,7 +48,7 @@ function ResultDisplay(props) {
   return (
     <div className="ResultList">
       <div className="ui message">
-        <h5>Your search returned {resultsToDisplay.length} {resultsToDisplay.length === 1? "result" : "results"}</h5>
+        <h5>Your search returned {resultsToDisplay.length} {resultsToDisplay.length === 1 ? "result" : "results"}</h5>
       </div>
       {/* <p className="grey-text"><em>To search again, change your selections above</em></p> */}
        {/* <div className="ui message">To search again, change your selections above</div> */}
@@ -53,7 +56,7 @@ function ResultDisplay(props) {
         <details><summary>{e.organizationname}</summary>
         <div className="ResultListDetails">
           <div className="categories">
-            {keywords.map(e => 
+            {formattedKeywords.map(e => 
               <span>✓ {e} </span>
             )}
           </div>
