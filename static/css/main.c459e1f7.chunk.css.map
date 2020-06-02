@@ -1,1 +1,0 @@
-{"version":3,"sources":["App.css"],"names":[],"mappings":"AAAA,uBACE,UACF,CAGA,kBACE,gBAAiB,CACjB,iBACF","file":"main.c459e1f7.chunk.css","sourcesContent":[".ResultListDescription {\n  color: grey;\n}\n\n\n#TestSearchButton {\n  margin-top: 1.5em;\n  text-align: center;\n}"]}
