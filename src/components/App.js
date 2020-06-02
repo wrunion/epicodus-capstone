@@ -39,14 +39,6 @@ class App extends React.Component {
       <div className="App ui container">
         <h1>Welcome to the NYC Women's Services Database</h1>
         <SearchForm results={results} />
-
-        {/* {term ?
-          <ResultDisplay results={results} term={term} />
-          : null}
-
-        {results.length === 0 ? 
-           <button className="ui button blue" id="TestSearchButton" onClick={this.onSearchClick}>Get all results</button> 
-          : null} */}
       </div>
     );
   }
