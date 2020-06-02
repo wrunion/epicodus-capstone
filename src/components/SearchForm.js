@@ -46,11 +46,11 @@ class SearchForm extends Component {
 
   render() {
     return (
-      <div className="Form">
+      <div className="Form ui segment raised">
       <form onSubmit={this.handleFormSubmit} className="ui form">
         {/* START Service type container */}
+        <h3>{this.state.formSubmitted ? "Showing results for: " : "I am looking for: "}</h3>
         <div className="inline fields">
-          <label>I am looking for:</label>
         <div className="field">
           <div className="ui checkbox">
           <input type="checkbox"
@@ -101,8 +101,9 @@ class SearchForm extends Component {
         </div> {/* END Service Type container */}
 
         {/* START Location container  */}
+        <h4>Located In: </h4>
         <div className="inline fields">
-          <label>Located in:</label>
+          {/* <label>Located in:</label> */}
         <div className="field">
           <div className="ui radio checkbox grid-item">
           <input type="radio"

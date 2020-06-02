@@ -16,7 +16,8 @@ function ResultDisplay(props) {
   let resultsToDisplay;
   
   if (keywords.length === 1) {
-    resultsToDisplay = results.filter(e => e[keywords[0]] === "Y" && e[location] === "Y");
+    const term1 = keywords[0];
+    resultsToDisplay = results.filter(e => e[term1] === "Y" && e[location] === "Y");
   } else if (keywords.length === 2) {
     resultsToDisplay = results.filter(e => e[location] === "Y").filter(e => e[keywords[0]] === "Y" && e[keywords[1]] === "Y");
   } else if (keywords.length === 3) {
@@ -32,12 +33,9 @@ function ResultDisplay(props) {
       );  
     }
 
-
- 
+  /* TO DO: figure out how to display the keywords by converting them into display-worthy versions */
   
-  /* Search through the filtered results using search term and location props  */
-
-  /* Filter in progress */
+  /* OLD filter - use pattern to REFACTOR lines 18-30 */
   // const filteredResults = (keyword, location, arr) => {     
   //   return arr.filter(e =>     
   //                     e[location] === "Y" &&    
@@ -55,7 +53,9 @@ function ResultDisplay(props) {
         <details><summary>{e.organizationname}</summary>
         <div className="ResultListDetails">
           <div className="categories">
-          ✓Child Care ✓Youth ✓Health
+            {keywords.map(e => 
+              <span>✓ {e} </span>
+            )}
           </div>
           {e.description ? 
             <div className="ResultListDescription">{e.description}</div> 
