@@ -47,13 +47,16 @@ function ResultDisplay(props) {
   return (
     <div className="ResultList">
       <div className="ui message">
-        <h5>Your search returned {resultsToDisplay.length} results:</h5>
+        <h5>Your search returned {resultsToDisplay.length} {resultsToDisplay.length === 1? "result" : "results"}</h5>
       </div>
       {/* <p className="grey-text"><em>To search again, change your selections above</em></p> */}
        {/* <div className="ui message">To search again, change your selections above</div> */}
       {resultsToDisplay.map(e => 
         <details><summary>{e.organizationname}</summary>
         <div className="ResultListDetails">
+          <div className="categories">
+          ✓Child Care ✓Youth ✓Health
+          </div>
           {e.description ? 
             <div className="ResultListDescription">{e.description}</div> 
             : null}
