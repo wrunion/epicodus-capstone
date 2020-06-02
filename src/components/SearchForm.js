@@ -157,7 +157,7 @@ class SearchForm extends Component {
       </div>
       {this.state.formSubmitted ?       
           // <button type="submit" className="ui button green mini">Search Again</button>
-          <div className="ui message">To search again, change your selections above</div>
+          <div className="ui green message">To search again, change your selections above</div>
         : <button type="submit" className="ui button green mini">Search</button>}
         </form>
       {this.state.formSubmitted ?       
