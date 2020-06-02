@@ -47,5 +47,6 @@ export const DISPLAY = {
   'counseling_support_groups': "Mental Health",
   'health': "Health",
   'housing': "Housing",
+  'youth_services': "Youth Services",
   'lesbian_gay_bisexual_and_or_transgender': "LGBTQ"
 }
