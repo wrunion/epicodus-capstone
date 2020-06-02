@@ -1,11 +1,15 @@
 import React from 'react'
 
 function SearchWithinResults(props) {
-  // const { results, searchTerm } = props;
+  const { results, searchTerm } = props;
 
-  // const searchResults = results.filter(e => e.description.includes(`${searchTerm}` || e.organzationname.includes([searchTerm])));
+  // const filteredResults = results.filter(e => e.description.includes(`${searchTerm}` || e.organzationname.includes([searchTerm])));
 //   const re = new RegExp(`${searchTerm}`,)
 // .test(description)
+
+
+const keywordResults = (term, arr) => arr.filter(e => e.description.includes([term]) || e.organzationname.includes([term]));
+
 
 return (
     <div className="TextSearchBox">
