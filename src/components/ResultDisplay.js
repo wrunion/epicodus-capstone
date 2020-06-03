@@ -35,6 +35,7 @@ function ResultDisplay(props) {
     }
 
   const formattedKeywords = keywords.map(e => DISPLAY[e]);
+  const formattedLocation = DISPLAY[location];
 
   /* TO DO: figure out how to display the keywords by converting them into display-worthy versions */
   
@@ -47,6 +48,9 @@ function ResultDisplay(props) {
   if (resultsToDisplay.length > 0) {
   return (
     <div className="ResultList">
+      <h3>Showing Results for: {formattedKeywords.map(e => 
+              <span class-name="grey-text"><em>{e} </em></span>
+            )} in <span class-name="grey-text">{formattedLocation} </span></h3>
       <div className="ui message">
         <h5>Your search returned {resultsToDisplay.length} {resultsToDisplay.length === 1 ? "result" : "results"}</h5>
       </div>

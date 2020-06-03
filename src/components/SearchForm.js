@@ -49,7 +49,7 @@ class SearchForm extends Component {
       <div className="Form ui segment raised">
       <form onSubmit={this.handleFormSubmit} className="ui form">
         {/* START Service type container */}
-        <h3>{this.state.formSubmitted ? "Showing results for: " : "I am looking for: "}</h3>
+        <h4>I'm looking for: </h4>
         <div className="inline fields">
         <div className="field">
           <div className="ui checkbox">
@@ -151,10 +151,11 @@ class SearchForm extends Component {
           </div>
         </div>
       </div>
-      {this.state.formSubmitted ?       
+      {/* {this.state.formSubmitted ?       
           // <button type="submit" className="ui button green mini">Search Again</button>
           <div className="ui green message">To search again, change your selections above</div>
-        : <button type="submit" className="ui button green mini">Search</button>}
+        : <button type="submit" className="ui button green mini">Search</button>} */}
+        <button type="submit" className="ui button green mini">{this.state.formSubmitted ? "Search Again" : "Search"} </button>
         </form>
       {this.state.formSubmitted ?       
         <ResultDisplay 
