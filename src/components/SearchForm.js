@@ -103,7 +103,6 @@ class SearchForm extends Component {
         {/* START Location container  */}
         <h4>Located In: </h4>
         <div className="inline fields">
-          {/* <label>Located in:</label> */}
         <div className="field">
           <div className="ui radio checkbox grid-item">
           <input type="radio"
@@ -151,11 +150,12 @@ class SearchForm extends Component {
           </div>
         </div>
       </div>
-      {/* {this.state.formSubmitted ?       
-          // <button type="submit" className="ui button green mini">Search Again</button>
-          <div className="ui green message">To search again, change your selections above</div>
-        : <button type="submit" className="ui button green mini">Search</button>} */}
-        <button type="submit" className="ui button green mini">{this.state.formSubmitted ? "Search Again" : "Search"} </button>
+        <div className="FormSubmitButtons">
+          <button type="submit" className="SubmitFormButton ui button mini green">{this.state.formSubmitted ? "Search Again" : "Search"} </button>
+          {this.state.formSubmitted ? 
+          <button type="submit" className="SubmitFormButton ui button basic mini green">Advanced Search</button>
+          : null}
+        </div>
         </form>
       {this.state.formSubmitted ?       
         <ResultDisplay 

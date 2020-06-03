@@ -48,14 +48,17 @@ function ResultDisplay(props) {
   if (resultsToDisplay.length > 0) {
   return (
     <div className="ResultList">
-      <h3>Showing Results for: {formattedKeywords.map(e => 
-              <span class-name="grey-text"><em>{e} </em></span>
-            )} in <span class-name="grey-text">{formattedLocation} </span></h3>
       <div className="ui message">
-        <h5>Your search returned {resultsToDisplay.length} {resultsToDisplay.length === 1 ? "result" : "results"}</h5>
+        <h4 className="SearchMessage">Your search returned {resultsToDisplay.length} {resultsToDisplay.length === 1 ? "result" : "results"} </h4>
+        <h4>Showing Results for: {formattedKeywords.map(e => 
+                <span><em> {e} | </em></span>
+              )} <span className="grey-text">{formattedLocation} </span></h4>
       </div>
-      {/* <p className="grey-text"><em>To search again, change your selections above</em></p> */}
-       {/* <div className="ui message">To search again, change your selections above</div> */}
+      {/* <div className="ui message">
+        <h4>Showing Results for: {formattedKeywords.map(e => 
+                <span className="grey-text"><em> {e} | </em></span>
+              )} in <span className="grey-text">{formattedLocation} </span></h4>
+      </div> */}
       {resultsToDisplay.map(e => 
         <details><summary>{e.organizationname}</summary>
         <div className="ResultListDetails">
