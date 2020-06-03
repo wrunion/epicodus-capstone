@@ -34,3 +34,7 @@
 .categories {
   font-weight: bold;
 }
+
+details {
+  margin-top: .5em;
+}
