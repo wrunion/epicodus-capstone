@@ -49,8 +49,7 @@ function ResultDisplay(props) {
   return (
     <div className="ResultList">
       <div className="ui message">
-        <h4 className="SearchMessage">Your search returned {resultsToDisplay.length} {resultsToDisplay.length === 1 ? "result" : "results"} </h4>
-        <h4>Showing Results for: {formattedKeywords.map(e => 
+        <h4>Showing {resultsToDisplay.length} Results for: {formattedKeywords.map(e => 
                 <span><em> {e} | </em></span>
               )} <span className="grey-text">{formattedLocation} </span></h4>
       </div>
