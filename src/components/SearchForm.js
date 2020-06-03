@@ -10,7 +10,8 @@ class SearchForm extends Component {
       keywords:[],
       formShowing: true,
       formSubmitted: false,
-      resultsShowing: false
+      resultsShowing: false,
+      advancedSearch: false
     }
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleLocationInputChange = this.handleLocationInputChange.bind(this);
@@ -21,7 +22,8 @@ class SearchForm extends Component {
     /* Get results info from props */
     const { results } = this.props;
     /* Filter out results that have no description or contact info */
-    const filteredResults = results.filter(e => e.organizationname !== "The Salvation Army").filter(e => e.description).filter(e => e.phone !== undefined || e.url !== undefined);
+    /* Also, fix some obvious display errors */
+    const filteredResults = results.filter(e => e.organizationname !== "The Salvation Army").filter(e => e.description).filter(e => e.phone !== undefined || e.url !== undefined).map(e => e.organizationname === "The ARab American Family Support Center" ? "The Arab American Family Support Center" : e);
     /* Add that to state, to pass down to ResultDisplay */
     this.setState({results: filteredResults});
   }
@@ -42,6 +44,11 @@ class SearchForm extends Component {
     e.preventDefault();
     this.filterResultsFromProps();
     this.setState({resultsShowing: true, formSubmitted: true});
+  }
+
+  renderAdvancedSearch = (e) => {
+    e.preventDefault();
+    this.setState({advancedSearch: true})
   }
 
   render() {
@@ -152,8 +159,14 @@ class SearchForm extends Component {
         <div id="FormSubmitButtons">
           <button type="submit" className="SubmitFormButton ui button mini green">{this.state.formSubmitted ? "Search Again" : "Search"} </button>
           {this.state.formSubmitted ? 
-          <button type="submit" className="SubmitFormButton ui button basic mini green">Advanced Search</button>
+          <button type="submit" className="SubmitFormButton ui button basic mini green" onClick={this.renderAdvancedSearch}>Advanced Search</button>
           : null}
+          {/* Advanced search  */}
+          {/* {this.state.advancedSearch ? 
+          <div className="AdvancedSearch">
+            Advance Search Test
+          </div>
+          : null} */}
         </div>
         </form>
       {this.state.formSubmitted ?       
