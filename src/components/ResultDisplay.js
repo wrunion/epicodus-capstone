@@ -53,13 +53,8 @@ function ResultDisplay(props) {
                 <span><em> {e} | </em></span>
               )} <span className="grey-text">{formattedLocation} </span></h4>
       </div>
-      {/* <div className="ui message">
-        <h4>Showing Results for: {formattedKeywords.map(e => 
-                <span className="grey-text"><em> {e} | </em></span>
-              )} in <span className="grey-text">{formattedLocation} </span></h4>
-      </div> */}
       {resultsToDisplay.map(e => 
-        <details><summary>{e.organizationname}</summary>
+        <details><summary><span className="Summary">{e.organizationname}</span></summary>
         <div className="ResultListDetails">
           <div className="categories">
             {formattedKeywords.map(e => 

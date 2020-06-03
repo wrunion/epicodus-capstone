@@ -75,7 +75,6 @@ class SearchForm extends Component {
           <input type="checkbox"
             name="term"
             id={c.YOUTH_SERVICES}
-            // displayName="Youth Programs"
             onChange={this.handleInputChange} />
             <label>Youth Programs</label>
           </div>
@@ -150,7 +149,7 @@ class SearchForm extends Component {
           </div>
         </div>
       </div>
-        <div className="FormSubmitButtons">
+        <div id="FormSubmitButtons">
           <button type="submit" className="SubmitFormButton ui button mini green">{this.state.formSubmitted ? "Search Again" : "Search"} </button>
           {this.state.formSubmitted ? 
           <button type="submit" className="SubmitFormButton ui button basic mini green">Advanced Search</button>

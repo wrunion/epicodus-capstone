@@ -23,6 +23,14 @@
   margin-bottom: -.4em;
 }
 
-/* .SubmitFormButton {
-  margin-bottom: 1.5em;
-} */
+#FormSubmitButtons {
+  margin-bottom: .5em;
+}
+
+.Summary {
+  font-weight: bold;
+}
+
+.categories {
+  font-weight: bold;
+}
