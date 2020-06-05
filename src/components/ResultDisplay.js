@@ -38,16 +38,15 @@ function ResultDisplay(props) {
   const formattedLocation = DISPLAY[location];
 
   /* START HERE */
-  // const formattedDisplay = (str) => {
-  //   const arr = str.split(" ");
-  //   const partialDescription = arr
-  //   const fullDescription = arr.join(" ");
-  //   if (arr.length <  150) {
-  //     return arr.join(" ");
-  //   } else {
-  //     return ``
-  //   }
-  // }
+  const formattedDisplay = (str) => {
+    const arr = str.split(" ");
+    const partialDescription = arr.map(e => e.index < 150 ? e : null)
+    if (arr.length <  150) {
+      return arr.join(" ");
+    } else {
+      return `${partialDescription} ...`
+    }
+  }
   /* TO DO: figure out how to display the keywords by converting them into display-worthy versions */
   
   /* OLD filter - use pattern to REFACTOR lines 18-30 */
