@@ -12,7 +12,8 @@ class SearchForm extends Component {
       formShowing: true,
       formSubmitted: false,
       resultsShowing: false,
-      advancedSearch: false
+      showingMoreOptions: false
+      // advancedSearch: false
     }
     this.handleCategoryChange = this.handleCategoryChange.bind(this);
     this.handleLocationChange = this.handleLocationChange.bind(this);
@@ -43,8 +44,12 @@ class SearchForm extends Component {
     } 
   }
   
-  handleOtherClick = (e) => {
+  handleMoreClick = (e) => {
+    this.setState({showingMoreOptions: true});
+  }
 
+  handleLessClick = (e) => {
+    this.setState({showingMoreOptions: false});
   }
 
   handleFormSubmit = (e) => {
@@ -117,11 +122,137 @@ class SearchForm extends Component {
           <input type="radio"
             name="term"
             id="other"             
-            onChange={this.handleOtherClick} />
+            onChange={this.handleMoreClick} />
             <label>More</label>
           </div>
         </div>
-        </div> {/* END Service Type container */}
+        {/* MORE service options  */}
+        {this.state.showingMoreOptions ? 
+        <div className="inline fields">
+        <div className="field">
+          <div className="ui radio checkbox">
+          <input type="radio"
+            name="term"
+            id={c.AGING}
+            required
+            onChange={this.handleCategoryChange} />
+          <label>Aging</label>
+          </div>
+        </div>
+        <div className="field">
+          <div className="ui radio checkbox">
+          <input type="radio"
+            name="term"
+            id={c.DISABILITIES}
+            required
+            onChange={this.handleCategoryChange} />
+          <label>Disability</label>
+          </div>
+        </div>
+        <div className="field">
+          <div className="ui radio checkbox">
+          <input type="radio"
+            name="term"
+            id={c.DOMESTIC_VIOLENCE}
+            required
+            onChange={this.handleCategoryChange} />
+          <label>Domestic Violence Survivor Support</label>
+          </div>
+        </div>
+        <div className="field">
+          <div className="ui radio checkbox">
+          <input type="radio"
+            name="term"
+            id={c.EDUCATION}
+            required
+            onChange={this.handleCategoryChange} />
+          <label>Education</label>
+          </div>
+        </div>
+        <div className="field">
+          <div className="ui radio checkbox">
+          <input type="radio"
+            name="term"
+            id={c.EMPLOYMENT}
+            required
+            onChange={this.handleCategoryChange} />
+          <label>Employment and Job Training</label>
+          </div>
+        </div>
+        <div className="field">
+          <div className="ui radio checkbox">
+          <input type="radio"
+            name="term"
+            id={c.IMMIGRATION}
+            required
+            onChange={this.handleCategoryChange} />
+          <label>Immigration Services</label>
+          </div>
+        </div>
+        <div className="field">
+          <div className="ui radio checkbox">
+          <input type="radio"
+            name="term"
+            id={c.LEGAL_AID}
+            required
+            onChange={this.handleCategoryChange} />
+          <label>Legal Aid</label>
+          </div>
+        </div>
+        <div className="field">
+          <div className="ui radio checkbox">
+          <input type="radio"
+            name="term"
+            id={c.LGBTQ}
+            required
+            onChange={this.handleCategoryChange} />
+          <label>LGBTQ</label>
+          </div>
+        </div>
+        <div className="field">
+          <div className="ui radio checkbox">
+          <input type="radio"
+            name="term"
+            id={c.MENTAL_HEALTH}
+            required
+            onChange={this.handleCategoryChange} />
+          <label>Mental Health Care</label>
+          </div>
+        </div>
+        <div className="field">
+          <div className="ui radio checkbox">
+          <input type="radio"
+            name="term"
+            id={c.VETERAN_SERVICES}
+            required
+            onChange={this.handleCategoryChange} />
+          <label>Veteran Services</label>
+          </div>
+        </div>
+        <div className="field">
+          <div className="ui radio checkbox">
+          <input type="radio"
+            name="term"
+            id={c.YOUTH_SERVICES}
+            required
+            onChange={this.handleCategoryChange} />
+          <label>Youth Services</label>
+          </div>
+        </div>
+        <div className="field">
+          <div className="ui radio checkbox">
+          <input type="radio"
+            name="term"
+            id="less"
+            required
+            onChange={this.handleLessClick} />
+          <label>Less</label>
+          </div>
+        </div>
+      </div> 
+      : null}
+      {/* END second field container */}
+    </div> {/* END Service Type container */}
 
         {/* START Location container  */}
         <h4>Located In: </h4>
@@ -174,7 +305,7 @@ class SearchForm extends Component {
         </div>
       </div>
         <div id="FormSubmitButtons">
-          <button type="submit" className="SubmitFormButton ui button mini green">Search</button>
+          <button type="submit" className="SubmitFormButton ui button mini green">{this.state.formSubmitted ? "Search Again" : "Search"}</button>
         </div>
         </form>
       {this.state.formSubmitted ?       

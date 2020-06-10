@@ -49,7 +49,7 @@ export const DISPLAY = {
   'queens': "Queens",
   'staten_island': "Staten Island",
   'child_care_parent_information': "Child Care",
-  'counseling_support_groups': "Mental Health",
+  'counseling_support_groups': "Mental Health Care",
   'health': "Health Care",
   'housing': "Housing",
   'youth_services': "Youth Services",
