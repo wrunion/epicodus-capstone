@@ -107,9 +107,9 @@ class SearchForm extends Component {
           <div className="ui radio checkbox">
           <input type="radio"
             name="term"
-            id={c.MENTAL_HEALTH}             
+            id="food"         
             onChange={this.handleCategoryChange} />
-            <label>Mental Health Care</label>
+            <label>Food</label>
           </div>
         </div>
         <div className="field">
@@ -118,7 +118,7 @@ class SearchForm extends Component {
             name="term"
             id="other"             
             onChange={this.handleOtherClick} />
-            <label>Other</label>
+            <label>More</label>
           </div>
         </div>
         </div> {/* END Service Type container */}

@@ -28,7 +28,7 @@ function ResultDisplay(props) {
               )} <span className="grey-text">{formattedLocation} </span></h4>
       </div> */}
       <div className="ui message">
-        <h4>Showing {resultsToDisplay.length} results for {formattedTerm} in {formattedLocation}</h4>
+        <h4>Showing {resultsToDisplay.length} results for <em>{formattedTerm}</em> in <em>{formattedLocation}</em></h4>
       </div>
       {resultsToDisplay.map(e => 
         <details><summary><span className="Summary">{e.organizationname}</span></summary>
