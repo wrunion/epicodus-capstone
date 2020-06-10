@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import SearchForm from './SearchForm';
+import Footer from './Footer';
 import './App.css';
 
 class App extends React.Component {
@@ -39,6 +40,7 @@ class App extends React.Component {
       <div className="App ui container">
         <h1>Welcome to the NYC Women's Services Database</h1>
         <SearchForm results={results} />
+        <Footer />
       </div>
     );
   }
