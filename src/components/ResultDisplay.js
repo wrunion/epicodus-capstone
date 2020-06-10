@@ -11,12 +11,16 @@ function ResultDisplay(props) {
   const formattedTerm = DISPLAY[term];
   /* START HERE */
   /* TO DO: figure out how to display the keywords by converting them into display-worthy versions */
-  
+  // let resultsToDisplay
+  // if (term === "food") {
+  //   const foodResults = "x";
+
+  // } else {
   const filterResults = (term, location, arr) => {     
     return arr.filter(e =>     
                       e[location] === "Y" &&    
                       e[term] === "Y") }
-
+  
   const resultsToDisplay = filterResults(term, location, results);
 
   if (resultsToDisplay.length > 0) {

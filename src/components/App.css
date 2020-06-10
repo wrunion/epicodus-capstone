@@ -1,3 +1,7 @@
+.App h1 {
+  text-align: center;
+}
+
 .ResultListDescription {
   color: grey;
 }
@@ -43,3 +47,14 @@ details {
   color: darkgrey;
   text-align: center;
 }
+
+/* .search-grid-item {
+  border: 1px solid grey;
+  width: 45vw;
+} */
+
+/* #form-container {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+} */
