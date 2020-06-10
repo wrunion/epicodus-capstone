@@ -21,7 +21,7 @@ function ResultDisplay(props) {
                       e[location] === "Y" &&    
                       e[term] === "Y") }
   
-  const resultsToDisplay = filterResults(term, location, results);
+  const resultsToDisplay = filterResults(term, location, results).sort((a, b) => a.organizationname.localeCompare(b.organizationname));
 
   if (resultsToDisplay.length > 0) {
   return (
