@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/epicodus-capstone/static/css/main.c5ba4deb.chunk.css",
-    "main.js": "/epicodus-capstone/static/js/main.162c332b.chunk.js",
-    "main.js.map": "/epicodus-capstone/static/js/main.162c332b.chunk.js.map",
+    "main.css": "/epicodus-capstone/static/css/main.71519bb5.chunk.css",
+    "main.js": "/epicodus-capstone/static/js/main.7e2508d4.chunk.js",
+    "main.js.map": "/epicodus-capstone/static/js/main.7e2508d4.chunk.js.map",
     "runtime-main.js": "/epicodus-capstone/static/js/runtime-main.15f11de6.js",
     "runtime-main.js.map": "/epicodus-capstone/static/js/runtime-main.15f11de6.js.map",
-    "static/js/2.f790094f.chunk.js": "/epicodus-capstone/static/js/2.f790094f.chunk.js",
-    "static/js/2.f790094f.chunk.js.map": "/epicodus-capstone/static/js/2.f790094f.chunk.js.map",
+    "static/js/2.86ee61cd.chunk.js": "/epicodus-capstone/static/js/2.86ee61cd.chunk.js",
+    "static/js/2.86ee61cd.chunk.js.map": "/epicodus-capstone/static/js/2.86ee61cd.chunk.js.map",
     "index.html": "/epicodus-capstone/index.html",
-    "precache-manifest.65b93d8e654a9bafc5ada627955abb13.js": "/epicodus-capstone/precache-manifest.65b93d8e654a9bafc5ada627955abb13.js",
+    "precache-manifest.b2b8b584d55f7f6b73cd7f4a54a516a2.js": "/epicodus-capstone/precache-manifest.b2b8b584d55f7f6b73cd7f4a54a516a2.js",
     "service-worker.js": "/epicodus-capstone/service-worker.js",
-    "static/css/main.c5ba4deb.chunk.css.map": "/epicodus-capstone/static/css/main.c5ba4deb.chunk.css.map",
-    "static/js/2.f790094f.chunk.js.LICENSE.txt": "/epicodus-capstone/static/js/2.f790094f.chunk.js.LICENSE.txt"
+    "static/css/main.71519bb5.chunk.css.map": "/epicodus-capstone/static/css/main.71519bb5.chunk.css.map",
+    "static/js/2.86ee61cd.chunk.js.LICENSE.txt": "/epicodus-capstone/static/js/2.86ee61cd.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.15f11de6.js",
-    "static/js/2.f790094f.chunk.js",
-    "static/css/main.c5ba4deb.chunk.css",
-    "static/js/main.162c332b.chunk.js"
+    "static/js/2.86ee61cd.chunk.js",
+    "static/css/main.71519bb5.chunk.css",
+    "static/js/main.7e2508d4.chunk.js"
   ]
 }
