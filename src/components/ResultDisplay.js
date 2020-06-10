@@ -2,75 +2,42 @@ import React from 'react'
 import { DISPLAY } from './../constants/CONSTANTS';
 
 function ResultDisplay(props) {
-  /* If someone submits incomplete parameters, or unchecks all boxes after searching */
-  if (props.keywords.length === 0) {
-    return (
-      <div className="ResultsNoResults ui message yellow">
-        Please check at least one keyword box to see your results.
-      </div>
-    )
-  }
 
   if (props) {
-  const { keywords, location, results } = props;
+  const { term, location, results } = props;
 
-  let resultsToDisplay;
-  
-  if (keywords.length === 1) {
-    const term1 = keywords[0];
-    resultsToDisplay = results.filter(e => e[term1] === "Y" && e[location] === "Y");
-  } else if (keywords.length === 2) {
-    resultsToDisplay = results.filter(e => e[location] === "Y").filter(e => e[keywords[0]] === "Y" && e[keywords[1]] === "Y");
-  } else if (keywords.length === 3) {
-    resultsToDisplay = results.filter(e => e[location] === "Y").filter(e => e[keywords[0]] === "Y" && e[keywords[1]] === "Y" && e[keywords[2]] === "Y") 
-  } else if (keywords.length === 4) {
-    resultsToDisplay = results.filter(e => e[location] === "Y").filter(e => e[keywords[0]] === "Y" && e[keywords[1]] === "Y" && e[keywords[2]] === "Y" && e[keywords[3]] === "Y");
-  } else if (keywords.length === 5) {
-    resultsToDisplay = results.filter(e => e[location] === "Y").filter(e => e[keywords[0]] === "Y" && e[keywords[1]] === "Y" && e[keywords[2]] === "Y" && e[keywords[3]] === "Y" && e[keywords[4]] === "Y");
-  } else {
-      return (
-    //  <p><em>Please choose only three keywords to see customized results.</em></p>
-    <p><em>Tecnical error; please try again.</em></p>
-      );  
-    }
-
-  const formattedKeywords = keywords.map(e => DISPLAY[e]);
+  // const formattedKeywords = keywords.map(e => DISPLAY[e]);
   const formattedLocation = DISPLAY[location];
-
+  const formattedTerm = DISPLAY[term];
   /* START HERE */
-  const formattedDisplay = (str) => {
-    const arr = str.split(" ");
-    const partialDescription = arr.map(e => e.index < 150 ? e : null)
-    if (arr.length <  150) {
-      return arr.join(" ");
-    } else {
-      return `${partialDescription} ...`
-    }
-  }
   /* TO DO: figure out how to display the keywords by converting them into display-worthy versions */
   
-  /* OLD filter - use pattern to REFACTOR lines 18-30 */
-  // const filteredResults = (keyword, location, arr) => {     
-  //   return arr.filter(e =>     
-  //                     e[location] === "Y" &&    
-  //                     e[keyword] === "Y") }
+  const filterResults = (term, location, arr) => {     
+    return arr.filter(e =>     
+                      e[location] === "Y" &&    
+                      e[term] === "Y") }
+
+  const resultsToDisplay = filterResults(term, location, results);
 
   if (resultsToDisplay.length > 0) {
   return (
     <div className="ResultList">
-      <div className="ui message">
+      {/* <div className="ui message">
         <h4>Showing {resultsToDisplay.length} Results for: {formattedKeywords.map(e => 
                 <span><em> {e} | </em></span>
               )} <span className="grey-text">{formattedLocation} </span></h4>
+      </div> */}
+      <div className="ui message">
+        <h4>Showing {resultsToDisplay.length} results for {formattedTerm} in {formattedLocation}</h4>
       </div>
       {resultsToDisplay.map(e => 
         <details><summary><span className="Summary">{e.organizationname}</span></summary>
         <div className="ResultListDetails">
-          <div className="categories">
+          {/* <div className="categories">
             {formattedKeywords.map(e => 
               <span>✓ {e} </span>
             )}
-          </div>
+          </div> */}
           {e.description ? 
             <div className="ResultListDescription">{e.description}</div> 
             : null}

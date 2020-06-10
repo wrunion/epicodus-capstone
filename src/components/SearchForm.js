@@ -7,14 +7,15 @@ class SearchForm extends Component {
     super(props);
     this.state = {
       location: '',
-      keywords:[],
+      term: '',
+      // keywords:[],
       formShowing: true,
       formSubmitted: false,
       resultsShowing: false,
       advancedSearch: false
     }
-    this.handleInputChange = this.handleInputChange.bind(this);
-    this.handleLocationInputChange = this.handleLocationInputChange.bind(this);
+    this.handleCategoryChange = this.handleCategoryChange.bind(this);
+    this.handleLocationChange = this.handleLocationChange.bind(this);
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
   }
 
@@ -28,16 +29,22 @@ class SearchForm extends Component {
     this.setState({results: filteredResults});
   }
 
-  handleInputChange = (e) => {
-    e.target.checked
-    ? this.setState({keywords: [...this.state.keywords, e.target.id]})
-    : this.setState({keywords: this.state.keywords.filter(keyword => keyword !== e.target.id)})
+  handleCategoryChange = (e) => {
+    // e.target.checked
+    // ? this.setState({keywords: [...this.state.keywords, e.target.id]})
+    // : this.setState({keywords: this.state.keywords.filter(keyword => keyword !== e.target.id)})
+    const selectedTerm = e.target.id;
+    this.setState({term: selectedTerm});
   }
 
-  handleLocationInputChange = (e) => {
+  handleLocationChange = (e) => {
     if (e.target.checked) {
       this.setState({location: e.target.id});
     } 
+  }
+  
+  handleOtherClick = (e) => {
+
   }
 
   handleFormSubmit = (e) => {
@@ -59,49 +66,59 @@ class SearchForm extends Component {
         <h4>I'm looking for: </h4>
         <div className="inline fields">
         <div className="field">
-          <div className="ui checkbox">
-          <input type="checkbox"
+          <div className="ui radio checkbox">
+          <input type="radio"
             name="term"
             id="housing"
-            onChange={this.handleInputChange} />
+            required
+            onChange={this.handleCategoryChange} />
           <label>Housing</label>
           </div>
         </div>
         <div className="field">
-          <div className="ui checkbox">
-          <input type="checkbox"
+          <div className="ui radio checkbox">
+          <input type="radio"
             name="term"
             id={c.CHILD_CARE}
-            onChange={this.handleInputChange}
+            onChange={this.handleCategoryChange}
              />
             <label>Child Care</label>
           </div>
         </div>
-        <div className="field">
-          <div className="ui checkbox">
-          <input type="checkbox"
+        {/* <div className="field">
+          <div className="ui radio checkbox">
+          <input type="radio"
             name="term"
             id={c.YOUTH_SERVICES}
-            onChange={this.handleInputChange} />
+            onChange={this.handleCategoryChange} />
             <label>Youth Programs</label>
           </div>
-        </div>
+        </div> */}
         <div className="field">
-          <div className="ui checkbox">
-          <input type="checkbox"
+          <div className="ui radio checkbox">
+          <input type="radio"
             name="term"
             id="health"             
-            onChange={this.handleInputChange} />
+            onChange={this.handleCategoryChange} />
             <label>Health Care</label>
           </div>
         </div>
         <div className="field">
-          <div className="ui checkbox">
-          <input type="checkbox"
+          <div className="ui radio checkbox">
+          <input type="radio"
             name="term"
             id={c.MENTAL_HEALTH}             
-            onChange={this.handleInputChange} />
+            onChange={this.handleCategoryChange} />
             <label>Mental Health Care</label>
+          </div>
+        </div>
+        <div className="field">
+          <div className="ui radio checkbox">
+          <input type="radio"
+            name="term"
+            id="other"             
+            onChange={this.handleOtherClick} />
+            <label>Other</label>
           </div>
         </div>
         </div> {/* END Service Type container */}
@@ -115,7 +132,7 @@ class SearchForm extends Component {
             name="location"
             required
             id="brooklyn"
-            onChange={this.handleLocationInputChange} />
+            onChange={this.handleLocationChange} />
           <label>Brooklyn</label>
           </div>
         </div>
@@ -124,7 +141,7 @@ class SearchForm extends Component {
           <input type="radio"
             name="location"
             id="manhattan"            
-            onChange={this.handleLocationInputChange} />
+            onChange={this.handleLocationChange} />
             <label>Manhattan</label>
           </div>
         </div>
@@ -133,7 +150,7 @@ class SearchForm extends Component {
           <input type="radio"
             name="location"
             id="bronx"           
-            onChange={this.handleLocationInputChange} />
+            onChange={this.handleLocationChange} />
             <label>Bronx</label>
           </div>
         </div>
@@ -142,7 +159,7 @@ class SearchForm extends Component {
           <input type="radio"
             name="location"
             id="staten_island"            
-            onChange={this.handleLocationInputChange} />
+            onChange={this.handleLocationChange} />
             <label>Staten Island</label>
           </div>
         </div>
@@ -151,27 +168,18 @@ class SearchForm extends Component {
           <input type="radio"
             name="location"
             id="queens"             
-            onChange={this.handleLocationInputChange} />
+            onChange={this.handleLocationChange} />
             <label>Queens</label>
           </div>
         </div>
       </div>
         <div id="FormSubmitButtons">
-          <button type="submit" className="SubmitFormButton ui button mini green">{this.state.formSubmitted ? "Search Again" : "Search"} </button>
-          {this.state.formSubmitted ? 
-          <button type="submit" className="SubmitFormButton ui button basic mini green" onClick={this.renderAdvancedSearch}>Advanced Search</button>
-          : null}
-          {/* Advanced search  */}
-          {/* {this.state.advancedSearch ? 
-          <div className="AdvancedSearch">
-            Advance Search Test
-          </div>
-          : null} */}
+          <button type="submit" className="SubmitFormButton ui button mini green">Search</button>
         </div>
         </form>
       {this.state.formSubmitted ?       
         <ResultDisplay 
-          keywords={this.state.keywords}
+          term={this.state.term}
           results={this.state.results}
           location={this.state.location} />
           : null}
