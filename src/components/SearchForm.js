@@ -58,9 +58,13 @@ class SearchForm extends Component {
     this.setState({resultsShowing: true, formSubmitted: true});
   }
 
-  renderAdvancedSearch = (e) => {
-    e.preventDefault();
-    this.setState({advancedSearch: true})
+  renderResults = () => {
+    return (
+    <ResultDisplay 
+    term={this.state.term}
+    results={this.state.results}
+    location={this.state.location} />
+    )
   }
 
   render() {
@@ -308,6 +312,8 @@ class SearchForm extends Component {
           <button type="submit" className="SubmitFormButton ui button mini green">{this.state.formSubmitted ? "Search Again" : "Search"}</button>
         </div>
         </form>
+      {/* TO FIX!!    */}
+      {/* How do I fix this so it only updates on submit ? */}
       {this.state.formSubmitted ?       
         <ResultDisplay 
           term={this.state.term}
