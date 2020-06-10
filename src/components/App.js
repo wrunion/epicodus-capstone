@@ -38,7 +38,7 @@ class App extends React.Component {
 
     return (
       <div className="App ui container">
-        <h1>Welcome to the NYC Women's Services Database</h1>
+        <h1>Welcome to the NYC Women's Services Database*</h1>
         <SearchForm results={results} />
         <Footer />
       </div>
