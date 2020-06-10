@@ -42,9 +42,14 @@ function ResultDisplay(props) {
               <span>✓ {e} </span>
             )}
           </div> */}
-          {e.description ? 
-            <div className="ResultListDescription">{e.description}</div> 
-            : null}
+          <div className="ResultListDescription">
+            {e.description.split(" ").length < 100 ? 
+            `${e.description}`
+            : <details><summary><em>Click for full description</em></summary>
+              {e.description}
+            </details>
+          }</div> 
+            
           {e.phone ? 
             <div className="phone"><span className="bold-text">Phone:</span> {e.phone}</div> : null} 
           {e.url ?  
