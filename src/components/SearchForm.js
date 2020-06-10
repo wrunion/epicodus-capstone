@@ -48,10 +48,6 @@ class SearchForm extends Component {
     this.setState({showingMoreOptions: true});
   }
 
-  handleLessClick = (e) => {
-    this.setState({showingMoreOptions: false});
-  }
-
   handleFormSubmit = (e) => {
     e.preventDefault();
     this.filterResultsFromProps();
@@ -94,15 +90,6 @@ class SearchForm extends Component {
             <label>Child Care</label>
           </div>
         </div>
-        {/* <div className="field">
-          <div className="ui radio checkbox">
-          <input type="radio"
-            name="term"
-            id={c.YOUTH_SERVICES}
-            onChange={this.handleCategoryChange} />
-            <label>Youth Programs</label>
-          </div>
-        </div> */}
         <div className="field">
           <div className="ui radio checkbox">
           <input type="radio"
@@ -116,7 +103,8 @@ class SearchForm extends Component {
           <div className="ui radio checkbox">
           <input type="radio"
             name="term"
-            id="food"         
+            id="food" 
+            disabled        
             onChange={this.handleCategoryChange} />
             <label>Food</label>
           </div>
@@ -132,7 +120,7 @@ class SearchForm extends Component {
         </div>
         {/* MORE service options  */}
         {this.state.showingMoreOptions ? 
-        <div className="inline fields">
+        <div className="grouped fields">
         <div className="field">
           <div className="ui radio checkbox">
           <input type="radio"
@@ -243,16 +231,6 @@ class SearchForm extends Component {
           <label>Youth Services</label>
           </div>
         </div>
-        <div className="field">
-          <div className="ui radio checkbox">
-          <input type="radio"
-            name="term"
-            id="less"
-            required
-            onChange={this.handleLessClick} />
-          <label>Less</label>
-          </div>
-        </div>
       </div> 
       : null}
       {/* END second field container */}
@@ -314,7 +292,7 @@ class SearchForm extends Component {
         </form>
       {/* TO FIX!!    */}
       {/* How do I fix this so it only updates on submit ? */}
-      {this.state.formSubmitted ?       
+      {this.state.resultsShowing ?       
         <ResultDisplay 
           term={this.state.term}
           results={this.state.results}
