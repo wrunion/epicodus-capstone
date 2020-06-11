@@ -75,14 +75,6 @@ export const searchCategories = [
   // {key: 6, text: "LGBTQ", value: 'lesbian_gay_bisexual_and_or_transgender'}
 ]
 
-export const searchLocations2 = [
-  {key:1, label: "Bronx", value: 'bronx'},
-  {key: 2, label: "Brooklyn", value: 'brooklyn'},
-  {key: 3, label: "Manhattan", value: 'manhattan'},
-  {key: 4, label: "Queens", value: 'queens'},
-  {key: 5, label: "Staten Island", value:'staten_island'}
-]
-
 export const searchLocations = [
   {key:1, text: "Bronx", value: 'bronx'},
   {key: 2, text: "Brooklyn", value: 'brooklyn'},

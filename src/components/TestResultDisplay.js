@@ -3,22 +3,14 @@ import { DISPLAY } from './../constants/CONSTANTS';
 
 function TestResultDisplay(props) {
   /* If someone submits incomplete parameters, or unchecks all boxes after searching */
-  if (props.keywords.length === 0) {
-    return (
-      <div className="ResultsNoResults ui message yellow">
-        Please check at least one keyword box to see your results.
-      </div>
-    )
-  }
-
   if (props) {
   const { keywords, location, results } = props;
 
   let resultsToDisplay;
   
   if (keywords.length === 1) {
-    const term1 = keywords[0];
-    resultsToDisplay = results.filter(e => e[term1] === "Y" && e[location] === "Y");
+    const singleKeyword = keywords[0];
+    resultsToDisplay = results.filter(e => e[singleKeyword] === "Y" && e[location] === "Y");
   } else if (keywords.length === 2) {
     resultsToDisplay = results.filter(e => e[location] === "Y").filter(e => e[keywords[0]] === "Y" && e[keywords[1]] === "Y");
   } else if (keywords.length === 3) {
@@ -29,8 +21,7 @@ function TestResultDisplay(props) {
     resultsToDisplay = results.filter(e => e[location] === "Y").filter(e => e[keywords[0]] === "Y" && e[keywords[1]] === "Y" && e[keywords[2]] === "Y" && e[keywords[3]] === "Y" && e[keywords[4]] === "Y");
   } else {
       return (
-    //  <p><em>Please choose only three keywords to see customized results.</em></p>
-    <p><em>Tecnical error; please try again.</em></p>
+    <p><em>Techical error; please enter three keywords or less and try again.</em></p>
       );  
     }
 

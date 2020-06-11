@@ -27,7 +27,7 @@ class DropdownInput extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    this.props.onSubmitCallback(this.state.location, this.state.categories);
+    this.props.onSubmitCallback(this.state.categories, this.state.location);
   }
 
   render() {
