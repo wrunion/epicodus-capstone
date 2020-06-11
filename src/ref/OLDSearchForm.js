@@ -7,7 +7,7 @@ class SearchForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      term: '',
+      term: 'housing',
       formShowing: true,
       formSubmitted: false,
       results: [],
@@ -57,13 +57,14 @@ class SearchForm extends Component {
             required
             icon='search' 
             value={this.state.value}
+            defaultValue="housing"
             onChange={this.handleChange}
             placeholder='Search...' /> <br /><br />
           <Button type="submit" color="green basic">Submit</Button>
         </Form>
       {/* TO FIX!!    */}
       {/* How do I fix this so it only updates on submit ? */}
-      {this.state.resultsShowing ?       
+      {this.state.formSubmitted ?       
         <ResultDisplay 
           term={this.state.term}
           results={this.state.results} />

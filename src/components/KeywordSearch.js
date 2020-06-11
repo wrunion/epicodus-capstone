@@ -20,7 +20,7 @@ function KeywordSearch(props) {
             required
             icon='search' 
             placeholder='Search...' /> <br /><br />
-          <Button type="submit" color="green basic">Submit</Button>
+          <Button type="submit" className="green basic">Submit</Button>
         </Form>
         {/* Results div  */}
         <div id="results">
