@@ -4,7 +4,7 @@ import { Segment } from 'semantic-ui-react';
 /* SAVE THIS */
 // import DropdownSearch from './DropdownSearch';
 import KeywordSearch from './KeywordSearch';
-import Results from './Results';
+import RegexResults from './RegexResults';
 import Footer from './Footer';
 import './App.css';
 
@@ -65,7 +65,7 @@ class App extends React.Component {
           {/* <DropdownSearch onSubmitCallback={this.handleFormSubmit}/> */}
           <KeywordSearch 
             callbackSubmissionHandler={this.handleKeywordSubmit} />
-          <Results 
+          <RegexResults 
             term={this.state.searchTerm}
             results={this.state.results} />
         </Segment>

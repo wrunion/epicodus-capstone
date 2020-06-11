@@ -2,7 +2,7 @@ import React from 'react';
 import { Segment } from 'semantic-ui-react';
 // import { DISPLAY } from '../constants/CONSTANTS';
 
-function Results(props) {
+function RegexResults(props) {
   /* Term from the search form, passed in via App */
   const term = props.term;
   /* Results = an array of all social services in NYC, fetched and passed in via App. Filter for description, phone, and url properties */
@@ -11,25 +11,21 @@ function Results(props) {
   /* If there's data to work with */
   if (term && results.length > 0) {
 
-  const lowercaseResults = results.map(e => {
-    return {...e, organizationname: e.organizationname.toLowerCase(), description: e.description.toLowerCase()}
-  })
-  const lowercaseTerm = term.toLowerCase();     
-  // console.log(lowercaseTerm);
-  // console.log(lowercaseResults);
+  const regexTerm = new RegExp(`${term}*`, "gi");
 
   /* Search the names and descriptions of each organization to see if it includes the search term */
-  function filterResults(term, results) {
-    return results.filter(e => e.organizationname.includes([term]) || e.description.includes([term]));}
+  function filterRegexResults(regex, results) {
+    return results.filter(e => regex.test(e.organizationname) || regex.test(e.description));
+  }
 
-  const resultsToDisplay = filterResults(term, results).sort((a, b) => a.organizationname.localeCompare(b.organizationname));
+  const resultsToDisplay = filterRegexResults(regexTerm, results).sort((a, b) => a.organizationname.localeCompare(b.organizationname));
 
   console.log(resultsToDisplay);
 
   if (resultsToDisplay === 0) {
     return (
       <div className="NoResults">
-        There are 0 results for {term}
+        There are 0 results for {term} 
       </div>
     )
   }
@@ -118,4 +114,4 @@ function Results(props) {
 //   }
 // }
 
-export default Results;
+export default RegexResults;
