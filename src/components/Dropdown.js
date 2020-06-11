@@ -8,27 +8,13 @@ class DropdownInput extends React.Component {
     categories: []
   }
 
-//   const addressDefinitions = faker.definitions.address
-
-    // const dummyData = [
-    //   {name: "name1", description: "description1"},
-    //   {name: "name2", description: "description2"},
-    //   {name: "name3", description: "description3"},
-    //   {name: "name4", description: "description4"},
-    //   {name: "name5", description: "description5"}
-    // ];
-
-
-
     /* TO ADD */
-    // const renderLabel = (label) => ({
-    //   color: 'blue',
-    //   content: `Customized label - ${label.text}`,
-    //   icon: 'check',
-    // })
-    /* ADD TO DROPDOWN */
-    // renderLabel={renderLabel}
-
+  renderLabel = (label) => ({
+      color: 'blue',
+      content: label.text,
+      icon: 'check',
+    })
+  
   handleCategoryChange = (e, value) => {
     this.setState({categories: value.value})
   }
@@ -37,11 +23,16 @@ class DropdownInput extends React.Component {
     this.setState({locations: value.value})
   }
 
+  handleSubmit = () => {
+    const { locations, categories } = this.state;
+    this.props.onSubmitCallback(locations, categories);
+  }
+
   //searchQuery
   render() {
   return (
     <div className="Dropdown ui container raised segment">
-      <form>
+      <form onSubmit={this.handleSubmit}>
           <h3>I am looking for: </h3>
           {this.state.categories.length >= 4 ? 
           <div className="ui message yellow">
@@ -54,6 +45,7 @@ class DropdownInput extends React.Component {
             multiple
             search
             selection
+            renderLabel={this.renderLabel}
             onChange={this.handleCategoryChange}
             options={searchCategories}
           />
@@ -69,6 +61,7 @@ class DropdownInput extends React.Component {
             multiple
             search
             selection
+            renderLabel={this.renderLabel}
             onChange={this.handleLocationChange}
             options={searchLocations}
           /> <br /><br />
