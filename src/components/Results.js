@@ -5,9 +5,9 @@ import { Segment } from 'semantic-ui-react';
 function Results(props) {
   /* Term from the search form, passed in via App */
   const term = props.term;
-  /* Results = an array of all available social services in NYC, not sorted or filtered. Fetched and passed in via App. */
-  const results = props.results.filter(e => e.description);
- 
+  /* Results = an array of all social services in NYC, fetched and passed in via App. Filter for description, phone, and url properties */
+  const results = props.results.filter(e => e.description).filter(e => e.phone !== undefined || e.url !== undefined);
+
   /* If there's data to work with */
   if (term && results.length > 0) {
 
