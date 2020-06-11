@@ -15,16 +15,24 @@ function ResultDisplay(props) {
   if (term && results.length > 0) {
 
     const term = props.term.toLowerCase();
-    // const results = props.results.map(e => { if (e.organizationname && e.description) { return {...e, organizationname: e.organizationname.toLowerCase(), description: e.description.toLowerCase()}} else return e});
     const results = lowerCaseResults(props.results);
 
-    console.log(results[0].description);
+    //console.log(results[0].description);
  
-
-    // const { results, searchTerm } = props;
-
-    // const resultsWithDescriptions = results.filter(e => e.description);
+    function searchForTerm(term) { 
+      return results.filter(e => e.description.includes([term]) || e.organzationname.includes([term]));
+    }
   
+    const searchResults = searchForTerm(term);
+
+    return(
+      <div className="ResultDisplay">
+      <div>Showing {results.length} for {term}</div>
+      </div>
+    )
+  }
+
+ 
     // const searchResults = (term, arr) => arr.filter(e => e.description.includes([term]) || e.organzationname.includes([term]));
   
 
@@ -37,13 +45,6 @@ function ResultDisplay(props) {
 
   // const resultsToDisplay = filterResults(term, location, results).sort((a, b) => a.organizationname.localeCompare(b.organizationname));
 // console.log(lowercaseResults)
-
-    return(
-      <div className="ResultDisplay">
-      <div>Showing {results.length} for {term}</div>
-      </div>
-    )
-  }
 
   // // const formattedKeywords = keywords.map(e => DISPLAY[e]);
   // const formattedLocation = DISPLAY[location];

@@ -1,10 +1,13 @@
-import React from 'react'
-import { DISPLAY } from '../constants/CONSTANTS';
+import React from 'react';
+import { Segment } from 'semantic-ui-react';
+// import { DISPLAY } from '../constants/CONSTANTS';
 
 function Results(props) {
 
   return (
-    <div>Results</div>
+    <Segment>
+      Results
+    </Segment>
   )
 }
 //   if (props) {

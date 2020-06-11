@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import ResultDisplay from './ResultDisplay';
+import KeywordSearch from './../components/KeywordSearch';
 // import { c } from './../constants/CONSTANTS';
 import { Form, Input, Button } from 'semantic-ui-react';
 
@@ -23,7 +23,7 @@ class SearchForm extends Component {
     /* Filter out results that have no description or contact info */
     /* Also, fix some obvious display errors */
     const filteredResults = results.filter(e => e.organizationname !== "The Salvation Army").filter(e => e.description).filter(e => e.phone !== undefined || e.url !== undefined).map(e => e.organizationname === "The ARab American Family Support Center" ? "The Arab American Family Support Center" : e);
-    /* Add that to state, to pass down to ResultDisplay */
+    /* Add that to state, to pass down to KeywordSearch */
     this.setState({results: filteredResults});
   }
 
@@ -40,7 +40,7 @@ class SearchForm extends Component {
 
   // renderResults = () => {
   //   return (
-  //   <ResultDisplay 
+  //   <KeywordSearch 
   //   term={this.state.term}
   //   results={this.state.results}
   //   location={this.state.location} />
@@ -65,7 +65,7 @@ class SearchForm extends Component {
       {/* TO FIX!!    */}
       {/* How do I fix this so it only updates on submit ? */}
       {this.state.formSubmitted ?       
-        <ResultDisplay 
+        <KeywordSearch 
           term={this.state.term}
           results={this.state.results} />
           : null}

@@ -3,17 +3,24 @@ import { Input, Button, Form } from 'semantic-ui-react';
 import "./App.css";
 
 function KeywordSearch(props) {
-  const { results, searchTerm } = props;
+  // const { results, searchTerm } = props;
 
-  const resultsWithDescriptions = results.filter(e => e.description);
+  // const resultsWithDescriptions = results.filter(e => e.description);
+
+  // const lowercaseResults = results.map(e => {
+  //   return {...e, organizationname: e.organizationname.toLowerCase(), description: e.description.toLowerCase()}
+  // });
 
 
-  const searchResults = (term, arr) => arr.filter(e => e.description.includes([term]) || e.organzationname.includes([term]));
-
+  // const searchResults = (term, arr) => arr.filter(e => e.description.includes([term]) || e.organzationname.includes([term]));
+  function handleSubmit(e) {
+    e.preventDefault();
+    props.submitCallbackHandler(e.target.term.value)
+  }
 
   return (
-      <div className="KeywordSearch ui container segment">
-        <Form>
+      <div className="KeywordSearch ui segment">
+        <Form onSubmit={handleSubmit}>
           <h3>Keyword Search:</h3>
           <Input 
             id="term"
@@ -22,10 +29,6 @@ function KeywordSearch(props) {
             placeholder='Search...' /> <br /><br />
           <Button type="submit" className="green basic">Submit</Button>
         </Form>
-        {/* Results div  */}
-        <div id="results">
-          Results
-        </div>
       </div>
   );
 }
