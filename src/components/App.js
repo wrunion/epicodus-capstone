@@ -1,10 +1,10 @@
 import React from 'react';
 import axios from 'axios';
-// import SearchForm from './SearchForm';
-import DropdownInput from './Dropdown';
+// import DropdownSearch from './DropdownSearch';
+import KeywordSearch from './KeywordSearch';
 import Footer from './Footer';
 import './App.css';
-import TestResultDisplay from './TestResultDisplay';
+import OLDSearchForm from './../ref/OLDSearchForm';
 
 class App extends React.Component {
   constructor(props) {
@@ -45,19 +45,20 @@ class App extends React.Component {
   }
 
   render() {
-    // const results = this.state.results;
-    const keywords = this.state.searchCategories;
-    const location = this.state.location;
+    const results = this.state.results;
+    // const keywords = this.state.searchCategories;
+    // const location = this.state.location;
 
     return (
       <div className="App ui container">
         <h1>Welcome to NYC Social Service Finder*</h1>
-        {/* <SearchForm results={results} /> */}
-        <DropdownInput onSubmitCallback={this.handleFormSubmit}/>
-        <TestResultDisplay
+        {/* <DropdownSearch onSubmitCallback={this.handleFormSubmit}/> */}
+        {/* <KeywordSearch results ={results} /> */}
+        <OLDSearchForm results={results} />
+        {/* <TestResultDisplay
             keywords={keywords}
             location={location}
-            results={this.state.results} />
+            results={this.state.results} /> */}
 
         <Footer />
       </div>

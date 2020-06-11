@@ -1,8 +1,8 @@
 import React from 'react';
 import { Dropdown } from 'semantic-ui-react';
-import { searchCategories, searchLocations } from './../constants/CONSTANTS';
+import { searchCategories, searchLocations } from '../constants/CONSTANTS';
 
-class DropdownInput extends React.Component {
+class DropdownSearch extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -68,4 +68,4 @@ class DropdownInput extends React.Component {
   }
 }
 
-export default DropdownInput;
+export default DropdownSearch;

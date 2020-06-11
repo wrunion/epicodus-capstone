@@ -48,13 +48,8 @@ details {
   text-align: center;
 }
 
-/* .search-grid-item {
-  border: 1px solid grey;
-  width: 45vw;
-} */
-
-/* #form-container {
-  display: flex;
-  flex-direction: row;
+#results {
+  margin: .25em;
+  margin-top: 2em;
   text-align: center;
-} */
+}
