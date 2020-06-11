@@ -43,7 +43,7 @@ function ResultDisplay(props) {
             )}
           </div> */}
           <div className="ResultListDescription">
-            {e.description.split(" ").length < 100 ? 
+            {e.description.split(" ").length < 115 ? 
             `${e.description}`
             : <details><summary><em>Click for full description</em></summary>
               {e.description}
