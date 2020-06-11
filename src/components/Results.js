@@ -3,9 +3,29 @@ import { Segment } from 'semantic-ui-react';
 // import { DISPLAY } from '../constants/CONSTANTS';
 
 function Results(props) {
+  /* Term from the search form, passed in via App */
   const term = props.term;
+  /* Results = an array of all available social services in NYC, not sorted or filtered. Fetched and passed in via App. */
+  const results = props.results.filter(e => e.description);
+ 
+  /* If there's data to work with */
+  if (term && results.length > 0) {
 
-  if (term) {
+  // const lowercaseResults = results.map(e => { 
+  //     if (e.organizationname && e.description) {  
+  //       return {...e, organizationname: e.organizationname.toLowerCase(), description: e.description.toLowerCase()}
+  //     } else {
+  //         return e
+  //     }});
+
+  const lowercaseResults = results.map(e => {
+    return {...e, organizationname: e.organizationname.toLowerCase, description: e.description.toLowerCase()}
+  })
+  const lowercaseTerm = term.toLowerCase();     
+  console.log(lowercaseTerm);
+  console.log(lowercaseResults)
+
+
   return (
     <Segment>
       <h3>Results:</h3>

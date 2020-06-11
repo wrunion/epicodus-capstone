@@ -63,8 +63,11 @@ class App extends React.Component {
         <Segment>
           {/* SAVE THIS */}
           {/* <DropdownSearch onSubmitCallback={this.handleFormSubmit}/> */}
-          <KeywordSearch callbackSubmissionHandler={this.handleKeywordSubmit} />
-          <Results term={this.state.searchTerm} />
+          <KeywordSearch 
+            callbackSubmissionHandler={this.handleKeywordSubmit} />
+          <Results 
+            term={this.state.searchTerm}
+            results={this.state.results} />
         </Segment>
         <Footer />
       </div>
