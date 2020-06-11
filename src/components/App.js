@@ -39,7 +39,7 @@ class App extends React.Component {
 
     return (
       <div className="App ui container">
-        <h1>Welcome to the NYC Social Services Database*</h1>
+        <h1>Welcome to NYC Social Service Finder*</h1>
         {/* <SearchForm results={results} /> */}
         <DropdownInput />
         <Footer />

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Dropdown } from 'semantic-ui-react';
-import { dummyData } from './../constants/CONSTANTS';
+import { searchCategories, searchLocations } from './../constants/CONSTANTS';
 
 class DropdownInput extends React.Component {
   state = {
@@ -29,32 +29,49 @@ class DropdownInput extends React.Component {
     /* ADD TO DROPDOWN */
     // renderLabel={renderLabel}
 
-  handleChange = (e, value) => {
-    this.setState({value: value.value})
+  handleCategoryChange = (e, value) => {
+    this.setState({categories: value.value})
+  }
+
+  handleLocationChange = (e, value) => {
+    this.state.locations.length >= 3 
+    ?  this.setState({locations: value.value, locationWarning:true})
+    : this.setState({locations: value.value})
   }
 
   //searchQuery
   render() {
   return (
-    <div clasName="Form">
+    <div clasName="Dropdown ui container">
           <h3>I am looking for: </h3>
+          {this.state.categories.length >=3 ? 
+          <div className="ui message yellow">
+            Please choose <strong>3 or less</strong> options for best search results.
+          </div>
+          : null}
           <Dropdown
             placeholder='Category'
             fluid
             multiple
             search
             selection
-            onChange={this.handleChange}
-            options={dummyData}
+            onChange={this.handleCategoryChange}
+            options={searchCategories}
           />
           <h3>Located in: </h3>
+          {this.state.locations.length >=3 ? 
+          <div className="ui message yellow">
+            Please choose <strong>3 or less</strong> locations for best search results.
+          </div>
+          : null}
           <Dropdown
             placeholder='Category'
             fluid
             multiple
             search
             selection
-            options={dummyData}
+            onChange={this.handleLocationChange}
+            options={searchLocations}
           />  
     </div>
     )

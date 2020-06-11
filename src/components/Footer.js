@@ -3,7 +3,8 @@ import React from 'react'
 export default function Footer() {
   return (
     <div className="Footer ui container">
-      <em>Disclaimer: This is a student demo project, and should be treated as such. Please contact agencies directly for the most up-to-date information, or call the official New York resource hotline line at *211.</em>
+      <em>Disclaimer: This is a student project for demo purposes only. <br />
+      For up-to-date information, please call the New York resource hotline line at * 211.</em>
     </div>
   )
 }

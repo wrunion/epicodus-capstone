@@ -66,11 +66,19 @@ export const DISPLAY = {
   'food': "Food Finder"
 }
 
-export const dummyData = [
+export const searchCategories = [
   {key: 1, text: "Child Care", value: 'child_care_parent_information'},
-  {key: 2, text: "Mental Health Care", value: 'counseling_support_groups'},
   {key: 3, text: "Health Care", value: 'health'},
   {key: 4, text: "Housing", value: 'housing'},
+  {key: 2, text: "Mental Health Care", value: 'counseling_support_groups'},
   {key: 5, text: "Youth Services", value: 'youth_services'},
-  {key: 6, text: "LGBTQ", value: 'lesbian_gay_bisexual_and_or_transgender'}
+  // {key: 6, text: "LGBTQ", value: 'lesbian_gay_bisexual_and_or_transgender'}
+]
+
+export const searchLocations = [
+  {key:1, text: "Bronx", value: 'bronx'},
+  {key: 2, text: "Brooklyn", value: 'brooklyn'},
+  {key: 3, text: "Manhattan", value: 'manhattan'},
+  {key: 4, text: "Queens", value: 'queens'},
+  {key: 5, text: "Staten Island", value:'staten_island'}
 ]
