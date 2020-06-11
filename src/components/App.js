@@ -15,7 +15,8 @@ class App extends React.Component {
         results: [],
         resultsShowing: false,
         searchCategories: [],
-        searchLocation: ''
+        searchLocation: '',
+        searchTerm: ''
       };
     }
   
@@ -46,8 +47,9 @@ class App extends React.Component {
       searchLocation: location, resultsShowing: true})
   }
 
-  handleKeywordSubmit = (props) => {
-    console.log(props);
+  handleKeywordSubmit = (searchTerm) => {
+    console.log(searchTerm);
+    this.setState({searchTerm: searchTerm});
   }
 
   render() {
@@ -62,7 +64,7 @@ class App extends React.Component {
           {/* SAVE THIS */}
           {/* <DropdownSearch onSubmitCallback={this.handleFormSubmit}/> */}
           <KeywordSearch callbackSubmissionHandler={this.handleKeywordSubmit} />
-          <Results />
+          <Results term={this.state.searchTerm} />
         </Segment>
         <Footer />
       </div>

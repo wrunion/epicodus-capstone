@@ -15,7 +15,7 @@ function KeywordSearch(props) {
   // const searchResults = (term, arr) => arr.filter(e => e.description.includes([term]) || e.organzationname.includes([term]));
   function handleSubmit(e) {
     e.preventDefault();
-    props.submitCallbackHandler(e.target.term.value)
+    props.callbackSubmissionHandler(e.target.term.value)
   }
 
   return (

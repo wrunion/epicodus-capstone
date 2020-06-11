@@ -3,12 +3,20 @@ import { Segment } from 'semantic-ui-react';
 // import { DISPLAY } from '../constants/CONSTANTS';
 
 function Results(props) {
+  const term = props.term;
 
+  if (term) {
   return (
     <Segment>
-      Results
+      <h3>Results:</h3>
+      <div id="results">
+        You searched for {term}
+      </div>
     </Segment>
   )
+  } else {
+    return null;
+  }
 }
 //   if (props) {
 //   const { term, location, results } = props;
