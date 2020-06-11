@@ -34,17 +34,16 @@ class DropdownInput extends React.Component {
   }
 
   handleLocationChange = (e, value) => {
-    this.state.locations.length >= 3 
-    ?  this.setState({locations: value.value, locationWarning:true})
-    : this.setState({locations: value.value})
+    this.setState({locations: value.value})
   }
 
   //searchQuery
   render() {
   return (
-    <div clasName="Dropdown ui container">
+    <div className="Dropdown ui container raised segment">
+      <form>
           <h3>I am looking for: </h3>
-          {this.state.categories.length >=3 ? 
+          {this.state.categories.length >= 4 ? 
           <div className="ui message yellow">
             Please choose <strong>3 or less</strong> options for best search results.
           </div>
@@ -59,7 +58,7 @@ class DropdownInput extends React.Component {
             options={searchCategories}
           />
           <h3>Located in: </h3>
-          {this.state.locations.length >=3 ? 
+          {this.state.locations.length >= 4 ? 
           <div className="ui message yellow">
             Please choose <strong>3 or less</strong> locations for best search results.
           </div>
@@ -72,7 +71,9 @@ class DropdownInput extends React.Component {
             selection
             onChange={this.handleLocationChange}
             options={searchLocations}
-          />  
+          /> <br /><br />
+          <button type="submit" className="button ui fluid basic blue">Search</button>
+        </form> 
     </div>
     )
   }
