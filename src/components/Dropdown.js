@@ -1,7 +1,12 @@
 import React from 'react';
 import { Dropdown } from 'semantic-ui-react';
+import { dummyData } from './../constants/CONSTANTS';
 
-function DropdownInput() {
+class DropdownInput extends React.Component {
+  state = {
+    locations: [],
+    categories: []
+  }
 
 //   const addressDefinitions = faker.definitions.address
 
@@ -13,14 +18,7 @@ function DropdownInput() {
     //   {name: "name5", description: "description5"}
     // ];
 
-    const dummyData = [
-      {key: 1, text: "Child Care", value: 'child_care_parent_information'},
-      {key: 2, text: "Mental Health Care", value: 'counseling_support_groups'},
-      {key: 3, text: "Health Care", value: 'health'},
-      {key: 4, text: "Housing", value: 'housing'},
-      {key: 5, text: "Youth Services", value: 'youth_services'},
-      {key: 6, text: "LGBTQ", value: 'lesbian_gay_bisexual_and_or_transgender'}
-    ]
+
 
     /* TO ADD */
     // const renderLabel = (label) => ({
@@ -31,7 +29,12 @@ function DropdownInput() {
     /* ADD TO DROPDOWN */
     // renderLabel={renderLabel}
 
-    //searchQuery
+  handleChange = (e, value) => {
+    this.setState({value: value.value})
+  }
+
+  //searchQuery
+  render() {
   return (
     <div clasName="Form">
           <h3>I am looking for: </h3>
@@ -41,6 +44,7 @@ function DropdownInput() {
             multiple
             search
             selection
+            onChange={this.handleChange}
             options={dummyData}
           />
           <h3>Located in: </h3>
@@ -53,7 +57,8 @@ function DropdownInput() {
             options={dummyData}
           />  
     </div>
-  )
+    )
+  }
 }
 
 export default DropdownInput;
