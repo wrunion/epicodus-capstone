@@ -1,9 +1,10 @@
 import React from 'react';
-import axios from 'axios';
-import SearchForm from './SearchForm';
+// import axios from 'axios';
+// import SearchForm from './SearchForm';
 import DropdownInput from './Dropdown';
 import Footer from './Footer';
 import './App.css';
+// import TestResultDisplay from './TestResultDisplay';
 
 class App extends React.Component {
   constructor(props) {
@@ -34,6 +35,10 @@ class App extends React.Component {
   //   console.log(this.state.results);
   // }
 
+  handleFormSubmit = (categories, locations) => {
+    console.log(categories, locations);
+  }
+
   render() {
     // const results = this.state.results;
 
@@ -41,7 +46,8 @@ class App extends React.Component {
       <div className="App ui container">
         <h1>Welcome to NYC Social Service Finder*</h1>
         {/* <SearchForm results={results} /> */}
-        <DropdownInput />
+        <DropdownInput onSubmitCallback={this.handleFormSubmit}/>
+        {/* <TestResultDisplay /> */}
         <Footer />
       </div>
     );

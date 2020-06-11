@@ -3,12 +3,14 @@ import { Dropdown } from 'semantic-ui-react';
 import { searchCategories, searchLocations } from './../constants/CONSTANTS';
 
 class DropdownInput extends React.Component {
-  state = {
-    locations: [],
-    categories: []
+  constructor(props) {
+    super(props);
+    this.state = {
+    location: '',
+    categories: []    
+    }
   }
 
-    /* TO ADD */
   renderLabel = (label) => ({
       color: 'blue',
       content: label.text,
@@ -20,15 +22,14 @@ class DropdownInput extends React.Component {
   }
 
   handleLocationChange = (e, value) => {
-    this.setState({locations: value.value})
+    this.setState({location: value.value})
   }
 
-  handleSubmit = () => {
-    const { locations, categories } = this.state;
-    this.props.onSubmitCallback(locations, categories);
+  handleSubmit = (e) => {
+    e.preventDefault();
+    this.props.onSubmitCallback(this.state.location, this.state.categories);
   }
 
-  //searchQuery
   render() {
   return (
     <div className="Dropdown ui container raised segment">
@@ -49,16 +50,11 @@ class DropdownInput extends React.Component {
             onChange={this.handleCategoryChange}
             options={searchCategories}
           />
-          <h3>Located in: </h3>
-          {this.state.locations.length >= 4 ? 
-          <div className="ui message yellow">
-            Please choose <strong>3 or less</strong> locations for best search results.
-          </div>
-          : null}
+          <br />
+          <h3>Located in: </h3>      
           <Dropdown
-            placeholder='Category'
+            placeholder='Location'
             fluid
-            multiple
             search
             selection
             renderLabel={this.renderLabel}
