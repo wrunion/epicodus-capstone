@@ -22,18 +22,19 @@ function RegexResults(props) {
 
   console.log(resultsToDisplay);
 
-  if (resultsToDisplay === 0) {
+  if (resultsToDisplay.length === 0) {
     return (
-      <div className="NoResults">
-        There are 0 results for {term} 
-      </div>
+      <Segment>
+        There are 0 results for {term}.<br />
+        Please check your spelling and try again.
+      </Segment>
     )
-  }
+  } 
   return (
     <Segment>
       <h3>Showing {resultsToDisplay.length} results for "{term}":</h3>
       <div id="results">
-        You searched for "{term}"
+        (Results will go here)
       </div>
     </Segment>
   )
