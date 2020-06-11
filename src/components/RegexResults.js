@@ -11,7 +11,7 @@ function RegexResults(props) {
   /* If there's data to work with */
   if (term && results.length > 0) {
 
-  const regexTerm = new RegExp(`${term}*`, "gi");
+  const regexTerm = new RegExp(`${term}+`, "gi");
 
   /* Search the names and descriptions of each organization to see if it includes the search term */
   function filterRegexResults(regex, results) {
