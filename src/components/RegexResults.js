@@ -34,7 +34,7 @@ function RegexResults(props) {
     <Segment>
       <h3>Showing {resultsToDisplay.length} results for "{term}":</h3>
       <div id="results">
-        (Results will go here)
+        <em><span className="grey-text">(Results will go here)</span></em>
       </div>
     </Segment>
   )
