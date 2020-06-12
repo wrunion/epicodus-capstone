@@ -52,6 +52,8 @@ class App extends React.Component {
     this.setState({searchTerm: searchTerm});
   }
 
+
+  
   render() {
     // const results = this.state.results;
     // const keywords = this.state.searchCategories;

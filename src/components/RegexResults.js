@@ -11,7 +11,7 @@ function RegexResults(props) {
   /* If there's data to work with */
   if (term && results.length > 0) {
 
-  const regexTerm = new RegExp(`${term}+`, "gi");
+  const regexTerm = new RegExp(`${term}`, "gi");
 
   /* Search the names and descriptions of each organization to see if it includes the search term */
   function filterRegexResults(regex, results) {
@@ -19,8 +19,46 @@ function RegexResults(props) {
   }
 
   const resultsToDisplay = filterRegexResults(regexTerm, results).sort((a, b) => a.organizationname.localeCompare(b.organizationname));
+  //console.log(resultsToDisplay);
 
-  console.log(resultsToDisplay);
+  function addKeyword(array, keyword) {
+    return array.map(e => {
+      if ((e[keyword]) && (e[keyword] === "Y")) { 
+        if (e.keywords) {
+          return {...e, keywords: [...e.keywords, keyword]}
+        } else {
+          return {...e, keywords: [keyword]}
+        }
+      } else { return e}
+    })}
+          
+  /* CREATE AND POPULATE KEYWORD ARRAY. THESE WORK */
+  // const housingResults = addKeyword(results, "housing");
+  // // console.log(housingResults);  
+  // const dualResults = addKeyword(housingResults, "homelessness");
+  // // console.log(dualResults);
+  // const keywordResults = dualResults.filter(e => e.keywords);
+  // console.log(keywordResults);
+
+  /* REFACTOR THIS TO USE RECURSION */ 
+  function addLocation(array, location) {
+    return array.map(e => {
+      if ((e[location]) && (e[location] === "Y")) { 
+        if (e.locations) {
+          return {...e, locations: [...e.locations, location]}
+        } else {
+          return {...e, locations: [location]}
+        }
+      } else { return e}
+    })}
+  /* REFACTOR THIS TO USE RECURSION */ 
+  const queens = addLocation(results, "queens");
+  const queensBrooklyn = addLocation(queens, "brooklyn");
+  const queensBrooklynStatenIsland = addLocation(queensBrooklyn, "staten_island");
+  const queensBrooklynStatenIslandManhattan = addLocation(queensBrooklynStatenIsland, "manhattan");
+  const allLocations = addLocation(queensBrooklynStatenIslandManhattan, "bronx");
+
+  console.log(allLocations.filter(e => e.locations));
 
   if (resultsToDisplay.length === 0) {
     return (
