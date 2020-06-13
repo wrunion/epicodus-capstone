@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "5758c9e471378809d8b73dc862bb24a8",
+    "revision": "800dcb678f386b56ad90036e300a276a",
     "url": "/epicodus-capstone/index.html"
   },
   {
-    "revision": "8a8ddcad9689426dd706",
+    "revision": "12ef29e39c8e03789e76",
     "url": "/epicodus-capstone/static/css/main.c3a40f4f.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/epicodus-capstone/static/js/2.2967dbff.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "8a8ddcad9689426dd706",
-    "url": "/epicodus-capstone/static/js/main.dd70e1ae.chunk.js"
+    "revision": "12ef29e39c8e03789e76",
+    "url": "/epicodus-capstone/static/js/main.61e63523.chunk.js"
   },
   {
     "revision": "68283b602caa1187792c",

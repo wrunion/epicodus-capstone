@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/epicodus-capstone/precache-manifest.c4bcad8893ac498db6abf6850d8169a1.js"
+  "/epicodus-capstone/precache-manifest.f7140fe7dd98dfc263f9b38b0b07adb3.js"
 );
 
 self.addEventListener('message', (event) => {
