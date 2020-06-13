@@ -52,6 +52,8 @@ export const DISPLAY = {
   'counseling_support_groups': "Mental Health Care",
   'health': "Health Care",
   'housing': "Housing",
+  'homelessness': "Homelessness",
+  'faith_based_organization': "Faith Baised Organizations",
   'youth_services': "Youth Services",
   'lesbian_gay_bisexual_and_or_transgender': "LGBTQ Services",
   'legal_services': "Legal Services",
@@ -63,8 +65,17 @@ export const DISPLAY = {
   'education': "Education", 
   'employment_job_training': "Employment and Job Training",
   'veterans_military_families': "Veteran Services",
-  'food': "Food Finder"
+  'community_service_volunteerism': "Volunteer Opportunities"
 }
+
+/*------------------------------*/
+
+/* For tagging the data right after it's collected and before it's stored in state */
+export const KEYWORDS = ["health", "housing", "homelessness", "child_care_parent_information", "counseling_support_groups", "youth_services", "faith_based_organization", 'lesbian_gay_bisexual_and_or_transgender', 'legal_services', 'immigration', 'aging', 'disabilities', 'arts_culture', 'education', 'employment_job_training', 'community_service_volunteerism','veterans_military_families'];
+
+export const LOCATIONS = ["queens", "brooklyn", "staten_island", "bronx", "manhattan"];
+
+/*------------------------------*/
 
 export const searchCategories = [
   {key: 1, text: "Child Care", value: 'child_care_parent_information'},
@@ -72,7 +83,15 @@ export const searchCategories = [
   {key: 4, text: "Housing", value: 'housing'},
   {key: 2, text: "Mental Health Care", value: 'counseling_support_groups'},
   {key: 5, text: "Youth Services", value: 'youth_services'},
-  // {key: 6, text: "LGBTQ", value: 'lesbian_gay_bisexual_and_or_transgender'}
+  {key: 6, text: "Employment", value: 'employment_job_training'},
+  {key: 7, text: "Job Training", value: 'employment_job_training'},
+  {key: 8, text: "Personal Finance", value: "personal_finance_financial_education"},
+  {key: 9, text: "Financial Education", value: 'personal_finance_financial_education'},
+  {key: 10, text: "Victim Services", value: 'victim_services'},
+  {key: 11, text: "LGBTQ", value: 'lesbian_gay_bisexual_and_or_transgender'},
+  {key: 12, text: "Veteran Services", value: "veterans_military_families"},
+  {key: 12, text: "Counseling", value: 'counseling_support_groups'},
+  {key:13, text: "Support Groups", value: 'counseling_support_groups'}
 ]
 
 export const searchLocations = [

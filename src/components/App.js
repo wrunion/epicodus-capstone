@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import { Segment } from 'semantic-ui-react';
+import { KEYWORDS, LOCATIONS } from './../constants/CONSTANTS';
 /* SAVE THIS */
 // import DropdownSearch from './DropdownSearch';
 import KeywordSearch from './KeywordSearch';
@@ -23,21 +24,39 @@ class App extends React.Component {
   componentDidMount = async () => {
     const response = await axios({
       method: 'get',
-      url: 'https://data.cityofnewyork.us/resource/pqg4-dm6b.json',
-      // options: {
-      //   transformRequest: [
-      //     (data, headers) => {
-      //       data = data.filter(e =>
-      //         e.organizationname !== "The Salvation Army").filter(e => 
-      //           e.description !== undefined).filter(e => e.phone !== undefined ||
-      //         e.url !== undefined);
-      //       return data;
-      //     }
-      //   ]
-      // }
+      url: 'https://data.cityofnewyork.us/resource/pqg4-dm6b.json'
     })
+    
+    const results = response.data;
 
-    this.setState({results: response.data});
+    /* Add locations array to results */
+    const locations = LOCATIONS;
+
+    for (let i=0; i < results.length; i++) {
+      for (let j=0; j < locations.length; j++) {
+        if (results[i][locations[j]] === "Y") {
+          if (!results[i]["locations"]) {results[i]["locations"]=[];}
+          results[i]["locations"].push(locations[j]);
+        }
+      }
+    }
+
+    /* Add keyword array to results */
+    const keywords = KEYWORDS;
+
+    for (let i=0; i < results.length; i++) {
+      for (let j=0; j < keywords.length; j++) {
+        if (results[i][keywords[j]] === "Y") {
+          if (!results[i]["keywords"]) {results[i]["keywords"]=[];}
+          results[i]["keywords"].push(keywords[j]);
+        }
+      }
+    }
+
+    /* Filter results with no descriptions and contact info */
+    const filteredResults = results.filter(e => e.description).filter(e => e.phone !== undefined || e.url !== undefined);
+    
+    this.setState({results: filteredResults});
     console.log(this.state.results);
   }
 
@@ -53,7 +72,7 @@ class App extends React.Component {
   }
 
 
-  
+
   render() {
     // const results = this.state.results;
     // const keywords = this.state.searchCategories;
