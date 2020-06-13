@@ -20,16 +20,16 @@ function RegexResults(props) {
   console.log(resultsToDisplay);
 
   ///TODO BELOW (from kent): how to filter out duplicates in an array ///
-  let myArr = [{name: "a"}, {name: "a"}, {name: "b"}];
-  let output = [myArr[0]];
+  // let myArr = [{name: "a"}, {name: "a"}, {name: "b"}];
+  // let output = [myArr[0]];
 
-  for (let i = 0; i < myArr.length; i++) {
-    for (let j = 0; j < output.length; j++) {
-      if (output[j]['name'] !== myArr[i]['name']) { 
-        output.push(myArr[i]); break; }
-    }
-  }
-  console.log(output);
+  // for (let i = 0; i < myArr.length; i++) {
+  //   for (let j = 0; j < output.length; j++) {
+  //     if (output[j]['name'] !== myArr[i]['name']) { 
+  //       output.push(myArr[i]); break; }
+  //   }
+  // }
+  // console.log(output);
 
   /* ------------------------ */
             /* UI */
