@@ -13,7 +13,7 @@ function RegexResults(props) {
   
   /* search name, description of each obj for term */
   function filterRegexResults(regex, results) {
-    return results.filter(e => regex.test(e.organizationname) || regex.test(e.description));
+    return results.filter(e => regex.test(e.organizationname) || regex.test(e.description) || e[term] === "Y");
   }
   /* alphabetize output array */
   const resultsToDisplay = filterRegexResults(regexTerm, results).sort((a, b) => a.organizationname.localeCompare(b.organizationname));
