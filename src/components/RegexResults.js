@@ -3,23 +3,23 @@ import { Segment } from 'semantic-ui-react';
 // import { DISPLAY } from '../constants/CONSTANTS';
 
 function RegexResults(props) {
+  // data array and search term passed from App
   const { term, results } = props;
-  /* If there's data to work with */
-  if (term && results.length > 0) {
 
-  const regexTerm = new RegExp(`${term}`, "gi");
+  // if there's data...
+  if (term && results.length > 0) {
+  // turn the search term into a regular expression
+  const regexTerm = new RegExp(term, "gi");
   
-  /* Search name and description fields of each obj for the search term */
+  /* search name, description of each obj for term */
   function filterRegexResults(regex, results) {
     return results.filter(e => regex.test(e.organizationname) || regex.test(e.description));
   }
-
+  /* alphabetize output array */
   const resultsToDisplay = filterRegexResults(regexTerm, results).sort((a, b) => a.organizationname.localeCompare(b.organizationname));
 
-  const arr = [{name: "a"}, {name: "b"}, {name: "a"}]; //stuff in here
-  arr.sort((a, b) => a.name.localeCompare(b.name));
-  console.log(arr);
 
+  ///TODO BELOW (from kent): how to filter out duplicates in an array ///
   let myArr = [{name: "a"}, {name: "a"}, {name: "b"}];
   let output = [myArr[0]];
 
@@ -30,6 +30,7 @@ function RegexResults(props) {
     }
   }
   console.log(output);
+
   /* ------------------------ */
             /* UI */
   /* ------------------------ */
