@@ -1,6 +1,6 @@
 import React from 'react';
 import { Segment } from 'semantic-ui-react';
-// import { DISPLAY } from '../constants/CONSTANTS';
+import { DISPLAY } from '../constants/CONSTANTS';
 
 function RegexResults(props) {
   // data array and search term passed from App
@@ -17,7 +17,7 @@ function RegexResults(props) {
   }
   /* alphabetize output array */
   const resultsToDisplay = filterRegexResults(regexTerm, results).sort((a, b) => a.organizationname.localeCompare(b.organizationname));
-
+  console.log(resultsToDisplay);
 
   ///TODO BELOW (from kent): how to filter out duplicates in an array ///
   let myArr = [{name: "a"}, {name: "a"}, {name: "b"}];
@@ -50,11 +50,12 @@ function RegexResults(props) {
       {resultsToDisplay.map(e => 
         <details><summary><span className="Summary">{e.organizationname}</span></summary>
         <div className="ResultListDetails">
-          {/* <div className="categories">
-            {formattedKeywords.map(e => 
-              <span>✓ {e} </span>
+          {e.keywords && e.keywords.length > 0 ? 
+          <div className="categories">
+            {e.keywords.map(e => 
+              <span>✓ {DISPLAY[e]} </span>
             )}
-          </div> */}
+          </div>: null}
           <div className="ResultListDescription">
             {e.description.split(" ").length < 115 ? 
             `${e.description}`

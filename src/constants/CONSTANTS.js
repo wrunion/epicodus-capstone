@@ -58,7 +58,7 @@ export const DISPLAY = {
   'lesbian_gay_bisexual_and_or_transgender': "LGBTQ Services",
   'legal_services': "Legal Services",
   'immigration': "Immigration Services",
-  'domestic_violence': "Domestic Violence Survivor Support",
+  'domestic_violence': "DV Support",
   'aging': "Aging Resources", 
   'disabilities': "Disability Resources",
   'arts_culture': "Arts and Culture",
