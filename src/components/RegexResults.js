@@ -72,6 +72,13 @@ function RegexResults(props) {
           {e.address1 ? 
             <div className="address"><span className="bold-text">Address:</span> {e.address1}</div> 
             : null}
+          {e.locations && e.locations.length > 0 ? 
+          <div className="locations">
+            <span className="bold-text">Locations: </span>
+            {e.locations.map(e => 
+              <span>✓ {DISPLAY[e]} </span>
+            )}
+          </div>: null}  
           <hr /></div>
         </details>)}
     </div>

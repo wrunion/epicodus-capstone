@@ -26,7 +26,7 @@ class App extends React.Component {
       method: 'get',
       url: 'https://data.cityofnewyork.us/resource/pqg4-dm6b.json'
     })
-    
+
     const results = response.data;
 
     /* Add locations array to results */
@@ -54,7 +54,7 @@ class App extends React.Component {
     }
 
     /* Filter results with no descriptions and contact info */
-    const filteredResults = results.filter(e => e.description).filter(e => e.phone !== undefined || e.url !== undefined);
+    const filteredResults = results.filter(e => e.description).filter(e => e.phone !== undefined || e.url !== undefined).filter(e => e.organizationname !== "The Salvation Army");
     
     this.setState({results: filteredResults});
     console.log(this.state.results);
@@ -74,10 +74,6 @@ class App extends React.Component {
 
 
   render() {
-    // const results = this.state.results;
-    // const keywords = this.state.searchCategories;
-    // const location = this.state.location;
-
     return (
       <div className="App ui container">
         <h1>Welcome to NYC Social Service Finder*</h1>
