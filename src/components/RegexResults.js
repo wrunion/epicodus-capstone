@@ -49,21 +49,15 @@ function RegexResults(props) {
       <div>
         <h3>Showing {resultsToDisplay.length} results for "{term}":</h3> 
       {resultsToDisplay.map(e => 
-        <details><summary><span className="Summary">{e.organizationname}</span></summary>
+        <details key={e.organizationname}><summary><span className="Summary">{e.organizationname}</span></summary>
         <div className="ResultListDetails">
-          {e.keywords && e.keywords.length > 0 ? 
-          <div className="categories">
-            {e.keywords.map(e => 
-              <span>✓ {DISPLAY[e]} </span>
+        {e.locations && e.locations.length > 0 ? 
+          <div className="locations">
+            <span className="bold-text">Locations:  </span>
+            {e.locations.map(e => 
+              <span><i className="fa fa-map-marker"></i> {DISPLAY[e]} </span>
             )}
-          </div>: null}
-          {/* <div className="ResultListDescription">
-            {e.description.split(" ").length < 115 ? 
-            `${e.description}`
-            : <details><summary><em>Click for full description</em></summary>
-              {e.description}
-            </details>
-          }</div>  */}
+          </div>: null} 
           <div className="ResultListDescription">
             <ReadMoreReact text={e.description} 
               min={250}
@@ -72,6 +66,7 @@ function RegexResults(props) {
               readMoreText="(Read more)"
             />
           </div>  
+          {/* Contact Info  */}
           {e.phone ? 
             <div className="phone"><span className="bold-text">Phone:</span> {e.phone}</div> : null} 
           {e.url ?  
@@ -80,13 +75,14 @@ function RegexResults(props) {
           {e.address1 ? 
             <div className="address"><span className="bold-text">Address:</span> {e.address1}</div> 
             : null}
-          {e.locations && e.locations.length > 0 ? 
-          <div className="locations">
-            <span className="bold-text">Locations:  </span>
-            {e.locations.map(e => 
-              <span><i className="fa fa-map-marker"></i> {DISPLAY[e]} </span>
+          {/* Categories */}
+          {/* {e.keywords && e.keywords.length > 0 ? 
+          <div className="categories">
+            <span className="bold-text black-text">Categories: </span>
+            {e.keywords.map(e => 
+              <span>&#183; {DISPLAY[e]} </span>
             )}
-          </div>: null}  
+          </div>: null}   */}
           <hr /></div>
         </details>)}
     </div>
@@ -106,3 +102,4 @@ function RegexResults(props) {
 export default RegexResults;
 
 //unicode for map icon: &#xf041;
+//unicode for center dot: ✓

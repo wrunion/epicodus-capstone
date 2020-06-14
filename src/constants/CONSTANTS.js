@@ -71,7 +71,7 @@ export const DISPLAY = {
 /*------------------------------*/
 
 /* For tagging the data right after it's collected and before it's stored in state */
-export const KEYWORDS = ["health", "housing", "homelessness", "child_care_parent_information", "counseling_support_groups", "youth_services", "faith_based_organization", 'lesbian_gay_bisexual_and_or_transgender', 'legal_services', 'immigration', 'aging', 'disabilities', 'arts_culture', 'education', 'employment_job_training', 'community_service_volunteerism','veterans_military_families'];
+export const KEYWORDS = ['aging', 'arts_culture', "child_care_parent_information", 'disabilities', 'education', 'employment_job_training', "faith_based_organization", "health", "housing", "homelessness", 'lesbian_gay_bisexual_and_or_transgender', 'legal_services', 'immigration', "counseling_support_groups", 'veterans_military_families', 'community_service_volunteerism', "youth_services"];
 
 export const LOCATIONS = ["queens", "brooklyn", "staten_island", "bronx", "manhattan"];
 

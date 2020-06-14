@@ -15,7 +15,8 @@ class App extends React.Component {
       this.state = {
         results: [],
         resultsShowing: false,
-        searchCategories: [],
+        searchCategoryArray: [],
+        searchLocationArray: [],
         searchLocation: '',
         searchTerm: ''
       };
@@ -84,7 +85,7 @@ class App extends React.Component {
             callbackSubmissionHandler={this.handleKeywordSubmit} />
           <RegexResults 
             term={this.state.searchTerm}
-            results={this.state.results} />
+            results={this.state.results} /> 
         </Segment>
         <Footer />
       </div>
