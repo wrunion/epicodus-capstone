@@ -66,10 +66,10 @@ function RegexResults(props) {
           }</div>  */}
           <div className="ResultListDescription">
             <ReadMoreReact text={e.description} 
-              min={350}
-              ideal={450}
+              min={250}
+              ideal={300}
               max={500}
-              readMoreText=" (Read More) "
+              readMoreText="(Read more)"
             />
           </div>  
           {e.phone ? 
