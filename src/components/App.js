@@ -78,7 +78,7 @@ class App extends React.Component {
     return (
       <div className="App ui container">
         <h1>Welcome to NYC Social Service Finder*</h1>
-        <Segment>
+        {/* <Segment> */}
           {/* SAVE THIS */}
           {/* <DropdownSearch onSubmitCallback={this.handleFormSubmit}/> */}
           <KeywordSearch 
@@ -86,7 +86,7 @@ class App extends React.Component {
           <RegexResults 
             term={this.state.searchTerm}
             results={this.state.results} /> 
-        </Segment>
+        {/* </Segment> */}
         <Footer />
       </div>
     );
