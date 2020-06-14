@@ -11,7 +11,7 @@ function RegexResults(props) {
   // turn the search term into a regular expression
   const regexTerm = new RegExp(term, "gi");
   
-  /* search name, description of each obj for term */
+  /* function to search name, description of each obj for term */
   function filterRegexResults(regex, results) {
     return results.filter(e => regex.test(e.organizationname) || regex.test(e.description) || e[term] === "Y");
   }
@@ -74,9 +74,9 @@ function RegexResults(props) {
             : null}
           {e.locations && e.locations.length > 0 ? 
           <div className="locations">
-            <span className="bold-text">Locations: </span>
+            <span className="bold-text">Locations:  </span>
             {e.locations.map(e => 
-              <span>✓ {DISPLAY[e]} </span>
+              <span><i className="fa fa-map-marker"></i> {DISPLAY[e]} </span>
             )}
           </div>: null}  
           <hr /></div>
@@ -96,3 +96,5 @@ function RegexResults(props) {
 }
 
 export default RegexResults;
+
+//unicode for map icon: &#xf041;
