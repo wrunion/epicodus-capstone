@@ -16,6 +16,7 @@ function RegexResults(props) {
   function filterRegexResults(regex, results) {
     return results.filter(e => regex.test(e.organizationname) || regex.test(e.description) || e[term] === "Y");
   }
+
   /* alphabetize output array */
   const resultsToDisplay = filterRegexResults(regexTerm, results).sort((a, b) => a.organizationname.localeCompare(b.organizationname));
   console.log(resultsToDisplay);
@@ -86,12 +87,7 @@ function RegexResults(props) {
           <hr /></div>
         </details>)}
     </div>
-  {/* )
-      <h3>Showing {resultsToDisplay.length} results for "{term}":</h3>
-      <div id="results">
-        <em><span className="grey-text">(Results will go here)</span></em>
-      </div> */}
-      </div>
+    </div>
     </Segment>
   )
   } else {

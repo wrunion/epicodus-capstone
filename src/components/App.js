@@ -1,6 +1,5 @@
 import React from 'react';
 import axios from 'axios';
-import { Segment } from 'semantic-ui-react';
 import { KEYWORDS, LOCATIONS } from './../constants/CONSTANTS';
 /* SAVE THIS */
 // import DropdownSearch from './DropdownSearch';
@@ -78,7 +77,6 @@ class App extends React.Component {
     return (
       <div className="App ui container">
         <h1>Welcome to NYC Social Service Finder*</h1>
-        {/* <Segment> */}
           {/* SAVE THIS */}
           {/* <DropdownSearch onSubmitCallback={this.handleFormSubmit}/> */}
           <KeywordSearch 
@@ -86,7 +84,6 @@ class App extends React.Component {
           <RegexResults 
             term={this.state.searchTerm}
             results={this.state.results} /> 
-        {/* </Segment> */}
         <Footer />
       </div>
     );
