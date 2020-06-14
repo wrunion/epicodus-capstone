@@ -1,4 +1,5 @@
 import React from 'react';
+import ReadMoreReact from 'read-more-react';
 import { Segment } from 'semantic-ui-react';
 import { DISPLAY } from '../constants/CONSTANTS';
 
@@ -56,14 +57,21 @@ function RegexResults(props) {
               <span>✓ {DISPLAY[e]} </span>
             )}
           </div>: null}
-          <div className="ResultListDescription">
+          {/* <div className="ResultListDescription">
             {e.description.split(" ").length < 115 ? 
             `${e.description}`
             : <details><summary><em>Click for full description</em></summary>
               {e.description}
             </details>
-          }</div> 
-            
+          }</div>  */}
+          <div className="ResultListDescription">
+            <ReadMoreReact text={e.description} 
+              min={350}
+              ideal={450}
+              max={500}
+              readMoreText=" (Read More) "
+            />
+          </div>  
           {e.phone ? 
             <div className="phone"><span className="bold-text">Phone:</span> {e.phone}</div> : null} 
           {e.url ?  

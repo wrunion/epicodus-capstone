@@ -90,8 +90,8 @@ export const searchCategories = [
   {key: 10, text: "Victim Services", value: 'victim_services'},
   {key: 11, text: "LGBTQ", value: 'lesbian_gay_bisexual_and_or_transgender'},
   {key: 12, text: "Veteran Services", value: "veterans_military_families"},
-  {key: 12, text: "Counseling", value: 'counseling_support_groups'},
-  {key:13, text: "Support Groups", value: 'counseling_support_groups'}
+  {key: 13, text: "Counseling", value: 'counseling_support_groups'},
+  {key:14, text: "Support Groups", value: 'counseling_support_groups'}
 ]
 
 export const searchLocations = [
