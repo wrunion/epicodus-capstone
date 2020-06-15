@@ -18,7 +18,10 @@ class DropdownSearch extends React.Component {
     })
   
   handleCategoryChange = (e, value) => {
-    this.setState({categories: value.value})
+    // e.preventDefault();
+    if (value.value.length <= 2) {
+      this.setState({categories: value.value})
+    }
   }
 
   handleLocationChange = (e, value) => {
@@ -41,7 +44,7 @@ class DropdownSearch extends React.Component {
           </div>
           : null}
           <Dropdown
-            placeholder='Category'
+            placeholder='Service type'
             fluid
             multiple
             search
@@ -49,12 +52,14 @@ class DropdownSearch extends React.Component {
             renderLabel={this.renderLabel}
             onChange={this.handleCategoryChange}
             options={searchCategories}
+            value={this.state.categories}
           />
           <br />
           <h3>Located in: </h3>      
           <Dropdown
             placeholder='Location'
             fluid
+            multiple
             search
             selection
             renderLabel={this.renderLabel}

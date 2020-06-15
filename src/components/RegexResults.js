@@ -84,7 +84,7 @@ function RegexResults(props) {
           <div className="categories">
             <span className="bold-text black-text">Categories: </span>
             {e.keywords.map(e => 
-              <span>&#183; {DISPLAY[e]} </span>
+              <span className="bold-text">✓ {DISPLAY[e]} </span>
             )}
           </div>: null}   */}
           <hr /></div>

@@ -2,9 +2,9 @@ import React from 'react';
 import axios from 'axios';
 import { KEYWORDS, LOCATIONS } from './../constants/CONSTANTS';
 /* SAVE THIS */
-// import DropdownSearch from './DropdownSearch';
-import KeywordSearch from './KeywordSearch';
-import RegexResults from './RegexResults';
+import DropdownSearch from './DropdownSearch';
+// import KeywordSearch from './KeywordSearch';
+// import RegexResults from './RegexResults';
 import Footer from './Footer';
 import './App.css';
 
@@ -54,7 +54,7 @@ class App extends React.Component {
     }
 
     /* Filter results with no descriptions and contact info */
-    const filteredResults = results.filter(e => e.description).filter(e => e.phone !== undefined || e.url !== undefined).filter(e => e.organizationname !== "The Salvation Army");
+    const filteredResults = results.filter(e => e.description).filter(e => e.phone !== undefined || e.url !== undefined).filter(e => e.organizationname !== "The Salvation Army").filter(e => e.lesbian_gay_bisexual_and_or_transgender === "Y");
     
     this.setState({results: filteredResults});
     console.log(this.state.results);
@@ -78,12 +78,12 @@ class App extends React.Component {
       <div className="App ui container">
         <h1>Welcome to NYC Social Service Finder*</h1>
           {/* SAVE THIS */}
-          {/* <DropdownSearch onSubmitCallback={this.handleFormSubmit}/> */}
-          <KeywordSearch 
+          <DropdownSearch onSubmitCallback={this.handleFormSubmit}/>
+          {/* <KeywordSearch 
             callbackSubmissionHandler={this.handleKeywordSubmit} />
           <RegexResults 
             term={this.state.searchTerm}
-            results={this.state.results} /> 
+            results={this.state.results} />  */}
         <Footer />
       </div>
     );

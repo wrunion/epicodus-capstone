@@ -91,8 +91,20 @@ export const searchCategories = [
   {key: 11, text: "LGBTQ", value: 'lesbian_gay_bisexual_and_or_transgender'},
   {key: 12, text: "Veteran Services", value: "veterans_military_families"},
   {key: 13, text: "Counseling", value: 'counseling_support_groups'},
-  {key:14, text: "Support Groups", value: 'counseling_support_groups'}
+  {key:14, text: "Support Groups", value: 'counseling_support_groups'},
 ]
+
+export const customSearches = [
+  {text: "Trans Health Care", value: ['trans_health'] }
+]
+
+export const lgbtqSearch = {
+  "trans_health": ['health', 'lesbian_gay_bisexual_and_or_transgender'],
+  "trans_mental_health": ['lesbian_gay_bisexual_and_or_transgender', 'counseling_support_groups'],
+  "homeless_youth": ["homelessness", "youth_services"],
+
+}
+
 
 export const searchLocations = [
   {key:1, text: "Bronx", value: 'bronx'},

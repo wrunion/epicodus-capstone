@@ -5,11 +5,12 @@
 <label>Select Topics</label>
 
 <select name="skills" multiple="" class="label ui selection fluid dropdown">
-  <option value="">All</option>
-  <option value="1">Change Methodology</option>
-  <option value="2">Cognitive Computing & AI</option>
-  <option value="3">Connectivity & Collaboration</option>
-  </div>
+    <option value="">All</option>
+    <option value="1">Change Methodology</option>
+    <option value="2">Cognitive Computing & AI</option>
+    <option value="3">Connectivity & Collaboration</option>
+  </select>
+</div>
 
 
   Jquery: 
