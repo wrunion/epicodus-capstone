@@ -18,12 +18,12 @@ function KeywordSearch(props) {
             required
             icon='search' 
             placeholder='Search...' /> <br /><br />
-          <h3>Located in:</h3>
+          {/* <h3>Located in:</h3> */}
           {/* <Input  */}
-            id="term"
+            {/* id="term"
             required
             icon='search' 
-            placeholder='Search...' />
+            placeholder='Search...' /> */}
           <Button type="submit" className="green basic">Submit</Button>
         </Form>
       </div>

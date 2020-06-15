@@ -48,22 +48,25 @@ function RegexResults(props) {
   <Segment>
    <div className="ResultList">
       <div>
-        <h3>Showing {resultsToDisplay.length} results for "{term}":</h3> 
+        <h3>Showing 1-10 of {resultsToDisplay.length} results for "{term}":</h3> 
       {resultsToDisplay.map(e => 
-        <details key={e.organizationname}><summary><span className="Summary">{e.organizationname}</span></summary>
+        <details key={e.organizationname} open="open">
+          <summary><span className="Summary">{e.organizationname}</span></summary>
         <div className="ResultListDetails">
+        {/* Locations  */}
         {e.locations && e.locations.length > 0 ? 
           <div className="locations">
             <span className="bold-text">Locations:  </span>
             {e.locations.map(e => 
-              <span><i className="fa fa-map-marker"></i> {DISPLAY[e]} </span>
+              <span key={e.location}><i className="fa fa-map-marker"></i> {DISPLAY[e]} </span>
             )}
           </div>: null} 
+          {/* Descriptions  */}
           <div className="ResultListDescription">
             <ReadMoreReact text={e.description} 
-              min={250}
-              ideal={300}
-              max={500}
+              min={50}
+              ideal={100}
+              max={125}
               readMoreText="(Read more)"
             />
           </div>  
