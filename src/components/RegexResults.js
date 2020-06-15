@@ -68,8 +68,8 @@ function RegexResults(props) {
             />
           </div>  
           {/* Contact Info  */}
-          {e.phone ? 
-            <div className="phone"><span className="bold-text">Phone:</span> {e.phone}</div> : null} 
+          {e.phone && e.phone.length === 10 ? 
+            <div className="phone"><span className="bold-text">Phone:</span> {e.phone.replace(/\D+/g, '').replace(/(\d{3})(\d{3})(\d{4})/, '($1) $2-$3')}</div> : null} 
           {e.url ?  
             <div className="url"><span className="bold-text">Website:</span> {e.url}</div> 
             : null}

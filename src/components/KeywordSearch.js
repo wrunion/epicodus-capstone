@@ -19,7 +19,7 @@ function KeywordSearch(props) {
             icon='search' 
             placeholder='Search...' /> <br /><br />
           <h3>Located in:</h3>
-          <Input 
+          {/* <Input  */}
             id="term"
             required
             icon='search' 
