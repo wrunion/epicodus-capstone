@@ -46,7 +46,7 @@ class DropdownSearch extends React.Component {
 
   render() {
   return (
-    <div className="Dropdown ui container raised segment">
+    <div className="DropdownSearch ui container segment">
       <form onSubmit={this.handleSubmit}>
         <div className="ui stackable two column grid container">
           <div className="ui two column centered row">
