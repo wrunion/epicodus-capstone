@@ -61,7 +61,7 @@ class App extends React.Component {
   handleDropdownSubmit = (categories, locations) => {
     console.log(categories, locations);
     this.setState({searchCategories: categories,
-      searchLocation: locations})
+      searchLocations: locations})
   }
 
   /* Single search term */
@@ -77,9 +77,10 @@ class App extends React.Component {
           {/* SAVE THIS */}
           <DropdownSearch onSubmitCallback={this.handleDropdownSubmit}/>
           <DropdownResults 
+            results={this.state.results}
             categories={this.state.searchCategories}
             locations={this.state.searchLocations}
-            results={this.state.results} />
+             />
           {/* <KeywordSearch 
             callbackSubmissionHandler={this.handleKeywordSubmit} />
           <KeywordResults 
