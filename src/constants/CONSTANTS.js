@@ -91,7 +91,7 @@ export const searchCategories = [
   {key: 11, text: "LGBTQ Resources", value: 'lesbian_gay_bisexual_and_or_transgender'},
   {key: 17, text: "Immigration", value: "immigration"},
   // {key: 2, text: "Mental Health Care", value: 'counseling_support_groups'},
-  {key:14, text: "Support Groups", value: 'counseling_support_groups'},
+  {key:20, text: "Support Groups", value: 'counseling_support_groups'},
   {key: 12, text: "Veteran Services", value: "veterans_military_families"},
   {key: 10, text: "Victim Services", value: 'victim_services'},
   {key: 5, text: "Youth Services", value: 'youth_services'},

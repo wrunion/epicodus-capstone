@@ -7,11 +7,9 @@ html, body {
 }
 
 .App {
-  align-items: center;
   height: 100%;
   display: flex;
-  flex-direction: row;
-  align-content: center;
+  flex-direction: column;
 }
 
 .ResultListDescription {
@@ -66,4 +64,8 @@ details {
 
 Dropdown {
   margin-bottom: 30em;
+}
+
+.center-text {
+  text-align: center;
 }

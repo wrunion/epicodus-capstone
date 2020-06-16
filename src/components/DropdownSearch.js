@@ -1,5 +1,5 @@
 import React from 'react';
-import { Dropdown } from 'semantic-ui-react';
+import { Dropdown, Header } from 'semantic-ui-react';
 import { searchCategories, searchLocations } from '../constants/CONSTANTS';
 import './App.css';
 
@@ -8,7 +8,8 @@ class DropdownSearch extends React.Component {
     super(props);
     this.state = {
     locations: [],
-    categories: []    
+    categories: [],
+    errorMessage: false    
     }
   }
 
@@ -28,14 +29,19 @@ class DropdownSearch extends React.Component {
     if (value.value.includes("any")) {
       this.setState({locations: ["any"]});
     }
-    else if (value.value.length <= 2) {
+    else 
+    if (value.value.length <= 2) {
     this.setState({locations: value.value})
     }
   }
 
   handleSubmit = (e) => {
     e.preventDefault();
-    this.props.onSubmitCallback(this.state.categories, this.state.location);
+    const { categories, locations } = this.state;
+
+    categories.length > 0 && locations.length > 0 ?
+    this.props.onSubmitCallback(this.state.categories, this.state.locations)
+    : this.setState({errorMessage: true})
   }
 
   render() {
@@ -44,30 +50,35 @@ class DropdownSearch extends React.Component {
       <form onSubmit={this.handleSubmit}>
         <div className="ui stackable two column grid container">
           <div className="ui two column centered row">
-            <div className="column">
-              <h3>I am looking for: </h3>
+            <div className="column dropdownInputSingle">
+              <Header 
+                as="h3"
+                content="I am looking for: " />
               <Dropdown
                 placeholder='Service type'
                 fluid
                 multiple
                 search
                 selection
-                minWidth={250}
+                required
+                minwidth={250}
                 value={this.state.categories}
                 renderLabel={this.renderLabel}
                 onChange={this.handleCategoryChange}
                 options={searchCategories}
               />
             </div>
-            <div className="column">
-              <h3>Located in: </h3>      
+            <div className="column dropdownInputSingle">
+              <Header as="h3"
+                content="Located in: " />    
               <Dropdown
                 placeholder='Location'
                 fluid
                 multiple
                 search
                 selection
-                minWidth={250}
+                required
+                minwidth={250}
                 value={this.state.locations}
                 renderLabel={this.renderLabel}
                 onChange={this.handleLocationsChange}
@@ -76,8 +87,16 @@ class DropdownSearch extends React.Component {
             </div>
           </div>
           </div>
-          <br /><br />
-          <button type="submit" className="button ui fluid basic blue">Search</button>
+          <br />
+          <div className="ui centered row">
+            {this.state.errorMessage === true ? 
+            <div className="ui message green center-text bold-text">
+              Please select a location and a category
+            </div>
+            : null}
+            <br />
+            <button type="submit" className="button ui fluid basic blue">Search</button>
+          </div>
         </form> 
     </div>
     )

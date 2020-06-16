@@ -13,11 +13,9 @@ class App extends React.Component {
     super(props);
       this.state = {
         results: [],
-        resultsShowing: false,
-        searchCategoryArray: [],
-        searchLocationArray: [],
-        searchLocation: '',
-        searchTerm: ''
+        searchCategories: [],
+        searchLocation: [],
+        resultsShowing: false
       };
     }
   
@@ -40,7 +38,6 @@ class App extends React.Component {
         }
       }
     }
-
     /* Add keyword array to results */
     const keywords = KEYWORDS;
 
@@ -54,31 +51,31 @@ class App extends React.Component {
     }
 
     /* Filter results with no descriptions and contact info */
-    const filteredResults = results.filter(e => e.description).filter(e => e.phone !== undefined || e.url !== undefined).filter(e => e.organizationname !== "The Salvation Army").filter(e => e.lesbian_gay_bisexual_and_or_transgender === "Y");
+    const filteredResults = results.filter(e => e.description).filter(e => e.phone !== undefined || e.url !== undefined).filter(e => e.organizationname !== "The Salvation Army");
     
     this.setState({results: filteredResults});
     console.log(this.state.results);
   }
 
-  handleFormSubmit = (categories, location) => {
-    console.log(categories, location);
+  /* Dropdown search submit */
+  handleDropdownSubmit = (categories, locations) => {
+    console.log(categories, locations);
     this.setState({searchCategories: categories,
-      searchLocation: location, resultsShowing: true})
+      searchLocation: locations, resultsShowing: true})
   }
 
+  /* Single search term */
   handleKeywordSubmit = (searchTerm) => {
     console.log(searchTerm);
     this.setState({searchTerm: searchTerm});
   }
-
-
 
   render() {
     return (
       <div className="App ui container">
         <h1>Welcome to NYC Social Service Finder*</h1>
           {/* SAVE THIS */}
-          <DropdownSearch onSubmitCallback={this.handleFormSubmit}/>
+          <DropdownSearch onSubmitCallback={this.handleDropdownSubmit}/>
           {/* <KeywordSearch 
             callbackSubmissionHandler={this.handleKeywordSubmit} />
           <RegexResults 
