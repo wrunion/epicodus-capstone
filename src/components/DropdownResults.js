@@ -5,13 +5,13 @@ import { DISPLAY } from '../constants/CONSTANTS';
 
 function DropdownResults(props) {
   // data array and search term passed from App
-  const { categories, location, results } = props;
+  const { categories, locations, results } = props;
 
   const displayCategories = categories.map(e => DISPLAY[e]);
 
   // if there's data...
   let resultsToDisplay;
-  if ((categories.length > 0) && (location) && results.length > 0) {
+  if ((categories.length > 0) && (locations.length > 0) && results.length > 0) {
 
     if (categories.length === 3) {
       const term1 = categories[0];
@@ -25,7 +25,7 @@ function DropdownResults(props) {
         return arr.filter(e => regex1.test(e.organizationname) || regex1.test(e.description) || e[term1] === "Y").filter(e => regex2.test(e.organizationname) || regex2.test(e.description) || e[term2] === "Y").filter(e => regex3.test(e.organizationname) || regex3.test(e.description) || e[term3] === "Y");
       }
  
-      const matchThreeResults = matchThree(results).filter(e => e[location] === "Y");
+      const matchThreeResults = matchThree(results).filter(e => e[locations[0]] === "Y");
       resultsToDisplay = matchThreeResults;
       console.log(matchThreeResults);
     }
@@ -81,7 +81,7 @@ function DropdownResults(props) {
         {/* {categories.length === 3 
         ? <div>Showing {resultsToDisplay.length} results for {DISPLAY[categories[0]]}</div> 
         : null} */}
-        <h3>Results for {displayCategories.map(e => `${e}, `)} in {DISPLAY[location]}:</h3> 
+        <p><em>Results for {displayCategories.map(e => `${e}, `)} in {DISPLAY[locations[0]]}:</em></p> 
       {resultsToDisplay.map(e => 
         <details key={e.organizationname} open="open">
           <summary><span className="Summary">{e.organizationname}</span></summary>

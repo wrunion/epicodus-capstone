@@ -30,7 +30,7 @@ class DropdownSearch extends React.Component {
       this.setState({locations: ["any"]});
     }
     else 
-    if (value.value.length <= 2) {
+    if (value.value.length <= 1) {
     this.setState({locations: value.value})
     }
   }

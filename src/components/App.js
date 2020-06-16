@@ -15,7 +15,7 @@ class App extends React.Component {
       this.state = {
         results: [],
         searchCategories: [],
-        searchLocations: ''    
+        searchLocations: []    
       };
     }
   
@@ -58,10 +58,10 @@ class App extends React.Component {
   }
 
   /* Dropdown search submit */
-  handleDropdownSubmit = (categories, location) => {
-    console.log(categories, location);
+  handleDropdownSubmit = (categories, locations) => {
+    console.log(categories, locations);
     this.setState({searchCategories: categories,
-      searchLocation: location})
+      searchLocations: locations})
   }
 
   /* Single search term */
@@ -78,7 +78,7 @@ class App extends React.Component {
           <DropdownResults 
             results={this.state.results}
             categories={this.state.searchCategories}
-            location={this.state.searchLocation}
+            locations={this.state.searchLocations}
              />
           {/* <KeywordSearch 
             callbackSubmissionHandler={this.handleKeywordSubmit} />

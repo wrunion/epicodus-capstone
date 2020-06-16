@@ -65,7 +65,8 @@ export const DISPLAY = {
   'education': "Education", 
   'employment_job_training': "Employment and Job Training",
   'veterans_military_families': "Veteran Services",
-  'community_service_volunteerism': "Volunteer Opportunities"
+  'community_service_volunteerism': "Volunteer Opportunities",
+  "personal_finance_financial_education": "Financial Education"
 }
 
 /*------------------------------*/
