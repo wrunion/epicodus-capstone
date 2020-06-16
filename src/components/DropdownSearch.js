@@ -55,7 +55,7 @@ class DropdownSearch extends React.Component {
                 as="h3"
                 content="I am looking for: " />
               <Dropdown
-                placeholder='Search Category'
+                placeholder='Search Categories'
                 fluid
                 multiple
                 search

@@ -119,5 +119,5 @@ export const searchLocations = [
   {key: 3, text: "Manhattan", value: 'manhattan'},
   {key: 4, text: "Queens", value: 'queens'},
   {key: 5, text: "Staten Island", value:'staten_island'},
-  {key: 5, text: "All locations", value: "any"}
+  {key: 5, text: "All locations", value: "all"}
 ]
