@@ -26,10 +26,8 @@ function DropdownResults(props) {
 
       const location1 = locations[0];
       const matchThreeResults = matchThree(results).filter(e => e[location1] === "Y");
-
       resultsToDisplay = matchThreeResults;
       console.log(matchThreeResults);
-
     }
 
 
@@ -80,6 +78,9 @@ function DropdownResults(props) {
   <Segment>
    <div className="ResultList">
       <div>
+        {/* {categories.length === 3 
+        ? <div>Showing {resultsToDisplay.length} results for {DISPLAY[categories[0]]}</div> 
+        : null} */}
         {/* <h3>Showing 1-10 of {resultsToDisplay.length} results for "{term}":</h3>  */}
       {resultsToDisplay.map(e => 
         <details key={e.organizationname} open="open">

@@ -114,10 +114,10 @@ export const lgbtqSearch = {
 
 
 export const searchLocations = [
-  {key: 0, text: "All locations", value: "any"},
   {key:1, text: "Bronx", value: 'bronx'},
   {key: 2, text: "Brooklyn", value: 'brooklyn'},
   {key: 3, text: "Manhattan", value: 'manhattan'},
   {key: 4, text: "Queens", value: 'queens'},
-  {key: 5, text: "Staten Island", value:'staten_island'}
+  {key: 5, text: "Staten Island", value:'staten_island'},
+  {key: 5, text: "All locations", value: "any"}
 ]
