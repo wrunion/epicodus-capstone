@@ -25,8 +25,8 @@ class DropdownSearch extends React.Component {
   }
 
   handleLocationsChange = (e, value) => {
-    if (value.value === "any") {
-      this.setState({locations: [value.value]})
+    if (value.value.includes("any")) {
+      this.setState({locations: ["any"]});
     }
     else if (value.value.length <= 2) {
     this.setState({locations: value.value})
