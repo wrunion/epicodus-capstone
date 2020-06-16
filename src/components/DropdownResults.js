@@ -112,14 +112,6 @@ function DropdownResults(props) {
           {e.address1 ? 
             <div className="address"><span className="bold-text">Address:</span> {e.address1}</div> 
             : null}
-          {/* Categories */}
-          {/* {e.keywords && e.keywords.length > 0 ? 
-          <div className="categories">
-            <span className="bold-text black-text">Categories: </span>
-            {e.keywords.map(e => 
-              <span className="bold-text">✓ {DISPLAY[e]} </span>
-            )}
-          </div>: null}   */}
           <hr /></div>
         </details>)}
     </div>
