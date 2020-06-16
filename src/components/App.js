@@ -4,7 +4,8 @@ import { KEYWORDS, LOCATIONS } from './../constants/CONSTANTS';
 /* SAVE THIS */
 import DropdownSearch from './DropdownSearch';
 // import KeywordSearch from './KeywordSearch';
-// import RegexResults from './RegexResults';
+// import KeywordResults from './KeywordResults';
+import DropdownResults from './DropdownResults';
 import Footer from './Footer';
 import './App.css';
 
@@ -14,8 +15,7 @@ class App extends React.Component {
       this.state = {
         results: [],
         searchCategories: [],
-        searchLocation: [],
-        resultsShowing: false
+        searchLocations: []    
       };
     }
   
@@ -61,7 +61,7 @@ class App extends React.Component {
   handleDropdownSubmit = (categories, locations) => {
     console.log(categories, locations);
     this.setState({searchCategories: categories,
-      searchLocation: locations, resultsShowing: true})
+      searchLocation: locations})
   }
 
   /* Single search term */
@@ -76,9 +76,13 @@ class App extends React.Component {
         <h1>Welcome to NYC Social Service Finder*</h1>
           {/* SAVE THIS */}
           <DropdownSearch onSubmitCallback={this.handleDropdownSubmit}/>
+          <DropdownResults 
+            categories={this.state.searchCategories}
+            locations={this.state.searchLocations}
+            results={this.state.results} />
           {/* <KeywordSearch 
             callbackSubmissionHandler={this.handleKeywordSubmit} />
-          <RegexResults 
+          <KeywordResults 
             term={this.state.searchTerm}
             results={this.state.results} />  */}
         <Footer />

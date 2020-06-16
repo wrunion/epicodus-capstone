@@ -3,7 +3,7 @@ import ReadMoreReact from 'read-more-react';
 import { Segment } from 'semantic-ui-react';
 import { DISPLAY } from '../constants/CONSTANTS';
 
-function RegexResults(props) {
+function DropdownResults(props) {
   // data array and search term passed from App
   const { term, results } = props;
 
@@ -98,7 +98,7 @@ function RegexResults(props) {
   }
 }
 
-export default RegexResults;
+export default DropdownResults;
 
 //unicode for map icon: &#xf041;
 //unicode for center dot: ✓
