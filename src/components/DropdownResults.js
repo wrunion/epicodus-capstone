@@ -29,6 +29,20 @@ function DropdownResults(props) {
       resultsToDisplay = matchThreeResults;
       console.log(matchThreeResults);
     }
+    if (categories.length === 2) {
+      const term1 = categories[0];
+      const term2 = categories[1];
+
+      function matchThree(arr) {
+        const regex1 = new RegExp(term1, "gi");
+        const regex2 = new RegExp(term2, "gi");
+        return arr.filter(e => regex1.test(e.organizationname) || regex1.test(e.description) || e[term1] === "Y").filter(e => regex2.test(e.organizationname) || regex2.test(e.description) || e[term2] === "Y");
+      }
+ 
+      const matchThreeResults = matchThree(results).filter(e => e[locations[0]] === "Y");
+      resultsToDisplay = matchThreeResults;
+      console.log(matchThreeResults);
+    }
 
 
     ///counseling, education, employment, bronx --> 12 w/location filter on
@@ -81,7 +95,7 @@ function DropdownResults(props) {
         {/* {categories.length === 3 
         ? <div>Showing {resultsToDisplay.length} results for {DISPLAY[categories[0]]}</div> 
         : null} */}
-        <p><em>Results for {displayCategories.map(e => `${e}, `)} in {DISPLAY[locations[0]]}:</em></p> 
+        <p><em>Showing {resultsToDisplay.length} results for {displayCategories.map(e => `${e}, `)} in {DISPLAY[locations[0]]}:</em></p> 
       {resultsToDisplay.map(e => 
         <details key={e.organizationname} open="open">
           <summary><span className="Summary">{e.organizationname}</span></summary>
