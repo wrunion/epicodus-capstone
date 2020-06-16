@@ -27,7 +27,6 @@ function DropdownResults(props) {
  
       const matchThreeResults = matchThree(results).filter(e => e[locations[0]] === "Y");
       resultsToDisplay = matchThreeResults;
-      console.log(matchThreeResults);
     }
     if (categories.length === 2) {
       const term1 = categories[0];
@@ -41,7 +40,17 @@ function DropdownResults(props) {
  
       const matchThreeResults = matchThree(results).filter(e => e[locations[0]] === "Y");
       resultsToDisplay = matchThreeResults;
-      console.log(matchThreeResults);
+    }
+    if (categories.length === 1) {
+      const term1 = categories[0];
+
+      function matchThree(arr) {
+        const regex1 = new RegExp(term1, "gi");
+        return arr.filter(e => regex1.test(e.organizationname) || regex1.test(e.description) || e[term1] === "Y");
+      }
+ 
+      const matchThreeResults = matchThree(results).filter(e => e[locations[0]] === "Y");
+      resultsToDisplay = matchThreeResults;
     }
 
 
