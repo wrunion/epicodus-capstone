@@ -79,19 +79,26 @@ export const LOCATIONS = ["queens", "brooklyn", "staten_island", "bronx", "manha
 
 export const searchCategories = [
   {key: 1, text: "Child Care", value: 'child_care_parent_information'},
+  {key: 13, text: "Counseling", value: 'counseling_support_groups'},
+  // {key: 18, text: "Disability Services", value: "disabilities"},
+  {key: 14, text: "Education", value: "education"},
+  {key: 6, text: "Employment and Job Training", value: 'employment_job_training'},
+  {key: 9, text: "Financial Education", value: 'personal_finance_financial_education'},
   {key: 3, text: "Health Care", value: 'health'},
   {key: 4, text: "Housing", value: 'housing'},
-  {key: 2, text: "Mental Health Care", value: 'counseling_support_groups'},
-  {key: 5, text: "Youth Services", value: 'youth_services'},
-  {key: 6, text: "Employment", value: 'employment_job_training'},
-  {key: 7, text: "Job Training", value: 'employment_job_training'},
-  {key: 8, text: "Personal Finance", value: "personal_finance_financial_education"},
-  {key: 9, text: "Financial Education", value: 'personal_finance_financial_education'},
-  {key: 10, text: "Victim Services", value: 'victim_services'},
-  {key: 11, text: "LGBTQ", value: 'lesbian_gay_bisexual_and_or_transgender'},
-  {key: 12, text: "Veteran Services", value: "veterans_military_families"},
-  {key: 13, text: "Counseling", value: 'counseling_support_groups'},
+  // {key: 16, text: "Homeless Assistance", value: "homelessness"},
+  {key: 15, text: "Legal Services", value: "legal_services"},
+  {key: 11, text: "LGBTQ Resources", value: 'lesbian_gay_bisexual_and_or_transgender'},
+  {key: 17, text: "Immigration", value: "immigration"},
+  // {key: 2, text: "Mental Health Care", value: 'counseling_support_groups'},
   {key:14, text: "Support Groups", value: 'counseling_support_groups'},
+  {key: 12, text: "Veteran Services", value: "veterans_military_families"},
+  {key: 10, text: "Victim Services", value: 'victim_services'},
+  {key: 5, text: "Youth Services", value: 'youth_services'},
+]
+
+export const additionalSearchCategories = [
+  //latino, spanish, asian american, jewish, homelessness, disability, aging, arts, faith-based organizations
 ]
 
 export const customSearches = [
@@ -107,6 +114,7 @@ export const lgbtqSearch = {
 
 
 export const searchLocations = [
+  {key: 0, text: "All locations", value: "any"},
   {key:1, text: "Bronx", value: 'bronx'},
   {key: 2, text: "Brooklyn", value: 'brooklyn'},
   {key: 3, text: "Manhattan", value: 'manhattan'},

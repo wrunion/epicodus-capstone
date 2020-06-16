@@ -1,12 +1,13 @@
 import React from 'react';
 import { Dropdown } from 'semantic-ui-react';
 import { searchCategories, searchLocations } from '../constants/CONSTANTS';
+import './App.css';
 
 class DropdownSearch extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-    location: '',
+    locations: [],
     categories: []    
     }
   }
@@ -18,14 +19,18 @@ class DropdownSearch extends React.Component {
     })
   
   handleCategoryChange = (e, value) => {
-    // e.preventDefault();
-    if (value.value.length <= 2) {
+    if (value.value.length <= 3) {
       this.setState({categories: value.value})
     }
   }
 
-  handleLocationChange = (e, value) => {
-    this.setState({location: value.value})
+  handleLocationsChange = (e, value) => {
+    if (value.value === "any") {
+      this.setState({locations: [value.value]})
+    }
+    else if (value.value.length <= 2) {
+    this.setState({locations: value.value})
+    }
   }
 
   handleSubmit = (e) => {
@@ -37,35 +42,41 @@ class DropdownSearch extends React.Component {
   return (
     <div className="Dropdown ui container raised segment">
       <form onSubmit={this.handleSubmit}>
-          <h3>I am looking for: </h3>
-          {this.state.categories.length >= 4 ? 
-          <div className="ui message yellow">
-            Please choose <strong>3 or less</strong> options for best search results.
+        <div className="ui stackable two column grid container">
+          <div className="ui two column centered row">
+            <div className="column">
+              <h3>I am looking for: </h3>
+              <Dropdown
+                placeholder='Service type'
+                fluid
+                multiple
+                search
+                selection
+                minWidth={250}
+                value={this.state.categories}
+                renderLabel={this.renderLabel}
+                onChange={this.handleCategoryChange}
+                options={searchCategories}
+              />
+            </div>
+            <div className="column">
+              <h3>Located in: </h3>      
+              <Dropdown
+                placeholder='Location'
+                fluid
+                multiple
+                search
+                selection
+                minWidth={250}
+                value={this.state.locations}
+                renderLabel={this.renderLabel}
+                onChange={this.handleLocationsChange}
+                options={searchLocations}
+              /> 
+            </div>
           </div>
-          : null}
-          <Dropdown
-            placeholder='Service type'
-            fluid
-            multiple
-            search
-            selection
-            renderLabel={this.renderLabel}
-            onChange={this.handleCategoryChange}
-            options={searchCategories}
-            value={this.state.categories}
-          />
-          <br />
-          <h3>Located in: </h3>      
-          <Dropdown
-            placeholder='Location'
-            fluid
-            multiple
-            search
-            selection
-            renderLabel={this.renderLabel}
-            onChange={this.handleLocationChange}
-            options={searchLocations}
-          /> <br /><br />
+          </div>
+          <br /><br />
           <button type="submit" className="button ui fluid basic blue">Search</button>
         </form> 
     </div>

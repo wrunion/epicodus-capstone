@@ -1,5 +1,17 @@
+html, body {
+  height: 100%;
+}
+
 .App h1 {
   text-align: center;
+}
+
+.App {
+  align-items: center;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
 }
 
 .ResultListDescription {
@@ -50,4 +62,8 @@ details {
 .Footer {
   color: darkgrey;
   text-align: center;
+}
+
+Dropdown {
+  margin-bottom: 30em;
 }
