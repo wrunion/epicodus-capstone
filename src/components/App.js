@@ -73,12 +73,17 @@ class App extends React.Component {
   render() {
     return (
       <div className="App ui container">
-        <h1>Welcome to NYC Social Service Finder*</h1>
-          <DropdownSearch onSubmitCallback={this.handleDropdownSubmit}/>
-          <DropdownResults 
+        <h1>NYC Social Service Search*</h1>
+          {/* <DropdownSearch onSubmitCallback={this.handleDropdownSubmit}/> */}
+          {/* <DropdownResults 
             results={this.state.results}
             categories={this.state.searchCategories}
             locations={this.state.searchLocations}
+             /> */}
+          <DropdownResults 
+            results={this.state.results}
+            categories={["health", "housing"]}
+            locations={["brooklyn"]}
              />
           {/* <KeywordSearch 
             callbackSubmissionHandler={this.handleKeywordSubmit} />

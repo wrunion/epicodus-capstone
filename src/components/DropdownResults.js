@@ -106,7 +106,14 @@ function DropdownResults(props) {
           {/* {categories.length === 3 
           ? <div>Showing {resultsToDisplay.length} results for {DISPLAY[categories[0]]}</div> 
           : null} */}
-          <p><em>Showing {resultsToDisplay.length} results for {displayCategories.map(e => `${e}, `)} in {DISPLAY[locations[0]]}:</em></p> 
+          <div className="ui message">
+            <p className="bold-text"><em>{resultsToDisplay.length} results for {displayCategories.map(e => { 
+              if (e === displayCategories[displayCategories.length-1]) {
+                return ` ${e} `;
+              } else { 
+                return `${e}, `}})} in {DISPLAY[locations[0]]}:</em></p> 
+                
+          </div>
         {resultsToDisplay.map(e => 
           <details key={e.organizationname} open="open">
             <summary><span className="Summary">{e.organizationname}</span></summary>
