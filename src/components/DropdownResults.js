@@ -2,9 +2,10 @@ import React from 'react';
 import ReadMoreReact from 'read-more-react';
 import { Segment } from 'semantic-ui-react';
 import { DISPLAY } from '../constants/CONSTANTS';
+import FilterResults from './FilterResults';
 
 function DropdownResults(props) {
-  // data array and search term passed from App
+  /* results from API call, search parameters, passed from App */
   const { categories, locations, results } = props;
 
   const displayCategories = categories.map(e => DISPLAY[e]);
@@ -24,33 +25,34 @@ function DropdownResults(props) {
         const regex3 = new RegExp(term3, "gi");
         return arr.filter(e => regex1.test(e.organizationname) || regex1.test(e.description) || e[term1] === "Y").filter(e => regex2.test(e.organizationname) || regex2.test(e.description) || e[term2] === "Y").filter(e => regex3.test(e.organizationname) || regex3.test(e.description) || e[term3] === "Y");
       }
- 
-      const matchThreeResults = matchThree(results).filter(e => e[locations[0]] === "Y");
+      /* Get results, sort in alphabetical order */
+      const matchThreeResults = matchThree(results).filter(e => e[locations[0]] === "Y").sort((a, b) => a.organizationname.localeCompare(b.organizationname));
+      
       resultsToDisplay = matchThreeResults;
     }
     if (categories.length === 2) {
       const term1 = categories[0];
       const term2 = categories[1];
 
-      function matchThree(arr) {
+      function matchTwo(arr) {
         const regex1 = new RegExp(term1, "gi");
         const regex2 = new RegExp(term2, "gi");
         return arr.filter(e => regex1.test(e.organizationname) || regex1.test(e.description) || e[term1] === "Y").filter(e => regex2.test(e.organizationname) || regex2.test(e.description) || e[term2] === "Y");
       }
  
-      const matchThreeResults = matchThree(results).filter(e => e[locations[0]] === "Y");
-      resultsToDisplay = matchThreeResults;
+      const matchTwoResults = matchTwo(results).filter(e => e[locations[0]] === "Y").sort((a, b) => a.organizationname.localeCompare(b.organizationname));
+      resultsToDisplay = matchTwoResults;
     }
     if (categories.length === 1) {
       const term1 = categories[0];
 
-      function matchThree(arr) {
+      function matchOne(arr) {
         const regex1 = new RegExp(term1, "gi");
         return arr.filter(e => regex1.test(e.organizationname) || regex1.test(e.description) || e[term1] === "Y");
       }
  
-      const matchThreeResults = matchThree(results).filter(e => e[locations[0]] === "Y");
-      resultsToDisplay = matchThreeResults;
+      const matchOneResults = matchOne(results).filter(e => e[locations[0]] === "Y").sort((a, b) => a.organizationname.localeCompare(b.organizationname));
+      resultsToDisplay = matchOneResults;
     }
 
 
@@ -78,7 +80,7 @@ function DropdownResults(props) {
   // let output = [myArr[0]];
 
   // for (let i = 0; i < myArr.length; i++) {
-  //   for (let j = 0; j < output.length; j++) {
+  //   for (let j = 0; j <div output.length; j++) {
   //     if (output[j]['name'] !== myArr[i]['name']) { 
   //       output.push(myArr[i]); break; }
   //   }
@@ -98,48 +100,49 @@ function DropdownResults(props) {
     )
   } 
   return (
-  <Segment>
-   <div className="ResultList">
-      <div>
-        {/* {categories.length === 3 
-        ? <div>Showing {resultsToDisplay.length} results for {DISPLAY[categories[0]]}</div> 
-        : null} */}
-        <p><em>Showing {resultsToDisplay.length} results for {displayCategories.map(e => `${e}, `)} in {DISPLAY[locations[0]]}:</em></p> 
-      {resultsToDisplay.map(e => 
-        <details key={e.organizationname} open="open">
-          <summary><span className="Summary">{e.organizationname}</span></summary>
-        <div className="ResultListDetails">
-        {/* Locations  */}
-        {e.locations && e.locations.length > 0 ? 
-          <div className="locations">
-            <span className="bold-text">Locations:  </span>
-            {e.locations.map(e => 
-              <span key={e.location}><i className="fa fa-map-marker"></i> {DISPLAY[e]} </span>
-            )}
-          </div>: null} 
-          {/* Descriptions  */}
-          <div className="ResultListDescription">
-            <ReadMoreReact text={e.description} 
-              min={50}
-              ideal={100}
-              max={125}
-              readMoreText="(Read more)"
-            />
-          </div>  
-          {/* Contact Info  */}
-          {e.phone && e.phone.length === 10 ? 
-            <div className="phone"><span className="bold-text">Phone:</span> {e.phone.replace(/\D+/g, '').replace(/(\d{3})(\d{3})(\d{4})/, '($1) $2-$3')}</div> : null} 
-          {e.url ?  
-            <div className="url"><span className="bold-text">Website:</span> {e.url}</div> 
-            : null}
-          {e.address1 ? 
-            <div className="address"><span className="bold-text">Address:</span> {e.address1}</div> 
-            : null}
-          <hr /></div>
-        </details>)}
-    </div>
-    </div>
-    </Segment>
+    <div className="ResultList">
+      <Segment>
+        <div>
+          {/* {categories.length === 3 
+          ? <div>Showing {resultsToDisplay.length} results for {DISPLAY[categories[0]]}</div> 
+          : null} */}
+          <p><em>Showing {resultsToDisplay.length} results for {displayCategories.map(e => `${e}, `)} in {DISPLAY[locations[0]]}:</em></p> 
+        {resultsToDisplay.map(e => 
+          <details key={e.organizationname} open="open">
+            <summary><span className="Summary">{e.organizationname}</span></summary>
+          <div className="ResultListDetails">
+          {/* Locations  */}
+          {e.locations && e.locations.length > 0 ? 
+            <div className="locations">
+              <span className="bold-text">Locations:  </span>
+              {e.locations.map(e => 
+                <span key={e.location}><i className="fa fa-map-marker"></i> {DISPLAY[e]} </span>
+              )}
+            </div>: null} 
+            {/* Descriptions  */}
+            <div className="ResultListDescription">
+              <ReadMoreReact text={e.description} 
+                min={50}
+                ideal={100}
+                max={125}
+                readMoreText="(Read more)"
+              />
+            </div>  
+            {/* Contact Info  */}
+            {e.phone && e.phone.length === 10 ? 
+              <div className="phone"><span className="bold-text">Phone:</span> {e.phone.replace(/\D+/g, '').replace(/(\d{3})(\d{3})(\d{4})/, '($1) $2-$3')}</div> : null} 
+            {e.url ?  
+              <div className="url"><span className="bold-text">Website:</span> {e.url}</div> 
+              : null}
+            {e.address1 ? 
+              <div className="address"><span className="bold-text">Address:</span> {e.address1}</div> 
+              : null}
+            <hr /></div>
+          </details>)}
+        </div>
+      </Segment>
+    <FilterResults results={resultsToDisplay} />
+  </div>
   )
   } else {
     return null;
