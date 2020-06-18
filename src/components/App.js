@@ -71,6 +71,7 @@ class App extends React.Component {
 
   render() {
     return (
+      <React.Fragment>
       <div className="App ui container">
         <div className="SiteTitle">
           <h1 className="ui header">NYC Social Service Search<span className="light-grey-text">*</span>
@@ -93,10 +94,12 @@ class App extends React.Component {
           <KeywordResults 
             term={this.state.searchTerm}
             results={this.state.results} />  */}
-        <div className="BottomBox">
-          
-        </div>
+        
       </div>
+      <div className="BottomBox">
+         filter search options here   
+      </div>
+    </React.Fragment>
     );
   }
 }
