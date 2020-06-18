@@ -48,14 +48,15 @@ class DropdownSearch extends React.Component {
   return (
     <Segment className="DropdownSearch">
       <form onSubmit={this.handleSubmit}>
-        <div className="ui stackable two column grid container">
+        {/* <div className="ui stackable two column grid container"> */}
           <div className="ui two column centered row">
             <div className="column dropdownInputSingle">
               <Header 
                 as="h3"
-                content="I am looking for: " />
+                content="I am looking for: " 
+                subheader="(Select 1-3 categories)"/>
               <Dropdown
-                placeholder='Search Categories'
+                placeholder='Search...'
                 fluid
                 multiple
                 search
@@ -68,9 +69,11 @@ class DropdownSearch extends React.Component {
                 options={searchCategories}
               />
             </div>
+            <br />
             <div className="column dropdownInputSingle">
               <Header as="h3"
-                content="Located in: " />    
+                content="Located in: "
+                subheader="(Select one)" />     
               <Dropdown
                 placeholder='Location'
                 fluid
@@ -86,7 +89,7 @@ class DropdownSearch extends React.Component {
               /> 
             </div>
           </div>
-          </div>
+          {/* </div> */}
           <br />
           <div className="ui row">
             {this.state.errorMessage === true ? 
