@@ -12,6 +12,10 @@ html, body {
   flex-direction: column;
 }
 
+/* .SiteTitle {
+  margin-top: 50px;
+} */
+
 .ResultListDescription {
   color: grey;
 }
@@ -27,6 +31,10 @@ html, body {
 
 .grey-text {
   color: #5b616b;
+}
+
+.light-grey-text {
+  color: lightgrey;
 }
 
 .black-text {
@@ -66,3 +74,10 @@ details {
   text-align: center;
 }
 
+.BottomBox {
+  position: absolute;
+  bottom: 0px;
+  width: 80vh;
+  height: 25px;
+  border: 1px solid pink;
+}

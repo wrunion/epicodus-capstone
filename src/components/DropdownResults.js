@@ -107,11 +107,11 @@ function DropdownResults(props) {
           ? <div>Showing {resultsToDisplay.length} results for {DISPLAY[categories[0]]}</div> 
           : null} */}
           <div className="ui message">
-            <p className="bold-text"><em>{resultsToDisplay.length} results for {displayCategories.map(e => { 
+            <h3 className="bold-text">{resultsToDisplay.length} results for {displayCategories.map(e => { 
               if (e === displayCategories[displayCategories.length-1]) {
                 return ` ${e} `;
               } else { 
-                return `${e}, `}})} in {DISPLAY[locations[0]]}:</em></p> 
+                return `${e}, `}})} in {DISPLAY[locations[0]]}:</h3> 
                 
           </div>
         {resultsToDisplay.map(e => 
@@ -144,11 +144,15 @@ function DropdownResults(props) {
             {e.address1 ? 
               <div className="address"><span className="bold-text">Address:</span> {e.address1}</div> 
               : null}
-            <hr /></div>
+            {/* Hrule on everything but the last result  */}
+            {e === resultsToDisplay[resultsToDisplay.length-1] 
+            ? null
+            : <hr />}
+            </div>
           </details>)}
         </div>
       </Segment>
-    <FilterResults results={resultsToDisplay} />
+    {/* <FilterResults results={resultsToDisplay} /> */}
   </div>
   )
   } else {

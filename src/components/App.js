@@ -6,7 +6,6 @@ import DropdownSearch from './DropdownSearch';
 // import KeywordSearch from './KeywordSearch';
 // import KeywordResults from './KeywordResults';
 import DropdownResults from './DropdownResults';
-import Footer from './Footer';
 import './App.css';
 
 class App extends React.Component {
@@ -51,7 +50,7 @@ class App extends React.Component {
     }
 
     /* Filter results with no descriptions and contact info */
-    const filteredResults = results.filter(e => e.description).filter(e => e.phone !== undefined || e.url !== undefined).filter(e => e.organizationname !== "The Salvation Army");
+    const filteredResults = results.filter(e => e.description).filter(e => e.phone !== undefined || e.url !== undefined).filter(e => e.organizationname !== "The Salvation Army").map(e => e.organizationname === "ACCESS NYC" ? {...e, url: "https://access.nyc.gov/"} : e );
     
     this.setState({results: filteredResults});
     console.log(this.state.results);
@@ -73,24 +72,30 @@ class App extends React.Component {
   render() {
     return (
       <div className="App ui container">
-        <h1>NYC Social Service Search*</h1>
-          {/* <DropdownSearch onSubmitCallback={this.handleDropdownSubmit}/> */}
-          {/* <DropdownResults 
+        <div className="SiteTitle">
+          <h1 className="ui header">NYC Social Service Search<span className="light-grey-text">*</span>
+            <div className="sub header">Find housing, education, health care, and more!</div>
+          </h1>
+        </div>
+          <DropdownSearch onSubmitCallback={this.handleDropdownSubmit}/>
+          <DropdownResults 
             results={this.state.results}
             categories={this.state.searchCategories}
             locations={this.state.searchLocations}
-             /> */}
-          <DropdownResults 
+             />
+          {/* <DropdownResults 
             results={this.state.results}
             categories={["health", "housing"]}
             locations={["brooklyn"]}
-             />
+             /> */}
           {/* <KeywordSearch 
             callbackSubmissionHandler={this.handleKeywordSubmit} />
           <KeywordResults 
             term={this.state.searchTerm}
             results={this.state.results} />  */}
-        <Footer />
+        <div className="BottomBox">
+          
+        </div>
       </div>
     );
   }

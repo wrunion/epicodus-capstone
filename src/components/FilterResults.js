@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 // import keywordPairs from './../constants/PAIRS';
+import './Sidebar.css';
 
 class FilterResults extends Component {
   constructor(props) {
@@ -29,8 +30,8 @@ class FilterResults extends Component {
     const results = this.props.results;
     if (results.length > 0) {
     return (
-      <div>
-        filter results box
+      <div className="FilterResults">
+        {results[0]["organizationname"]}
       </div>
     );
     } else {

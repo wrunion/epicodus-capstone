@@ -1,5 +1,5 @@
 import React from 'react';
-import { Dropdown, Header } from 'semantic-ui-react';
+import { Dropdown, Header, Segment } from 'semantic-ui-react';
 import { searchCategories, searchLocations } from '../constants/CONSTANTS';
 import './App.css';
 
@@ -46,7 +46,7 @@ class DropdownSearch extends React.Component {
 
   render() {
   return (
-    <div className="DropdownSearch ui container segment">
+    <Segment className="DropdownSearch">
       <form onSubmit={this.handleSubmit}>
         <div className="ui stackable two column grid container">
           <div className="ui two column centered row">
@@ -88,17 +88,16 @@ class DropdownSearch extends React.Component {
           </div>
           </div>
           <br />
-          <div className="ui centered row">
+          <div className="ui row">
             {this.state.errorMessage === true ? 
             <div className="ui message green center-text bold-text">
               Please select a location and a category
             </div>
             : null}
-            <br />
             <button type="submit" className="button ui fluid basic blue">Search</button>
           </div>
         </form> 
-    </div>
+    </Segment>
     )
   }
 }

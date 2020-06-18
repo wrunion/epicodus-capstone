@@ -46,7 +46,7 @@ VerticalSidebar.propTypes = {
   visible: PropTypes.bool
 };
 
-export default class Footer extends Component {
+export default class SidebarExampleTransitions extends Component {
   state = {
     animation: "overlay",
     direction: "left",
