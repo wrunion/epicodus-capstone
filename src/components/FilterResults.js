@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 // import keywordPairs from './../constants/PAIRS';
-import './Sidebar.css';
+// import './Sidebar.css';
 
 class FilterResults extends Component {
   constructor(props) {

@@ -1,10 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import { KEYWORDS, LOCATIONS } from './../constants/CONSTANTS';
-/* SAVE THIS */
 import DropdownSearch from './DropdownSearch';
-// import KeywordSearch from './KeywordSearch';
-// import KeywordResults from './KeywordResults';
 import DropdownResults from './DropdownResults';
 import './App.css';
 
@@ -71,24 +68,18 @@ class App extends React.Component {
 
   render() {
     return (
-      <React.Fragment>
+    <React.Fragment>
       <div className="App ui container">
         <div className="SiteTitle">
-          <h1 className="ui header">NYC Social Service Search<span className="light-grey-text">*</span>
+          <h1 className="ui header" id="start">NYC Social Service Search<span className="light-grey-text">*</span>
             <div className="sub header">Find housing, education, health care, and more!</div>
           </h1>
         </div>
-          <DropdownSearch onSubmitCallback={this.handleDropdownSubmit}/>
-          <DropdownResults 
-            results={this.state.results}
-            categories={this.state.searchCategories}
-            locations={this.state.searchLocations}
-             />
-          {/* <KeywordSearch 
-            callbackSubmissionHandler={this.handleKeywordSubmit} />
-          <KeywordResults 
-            term={this.state.searchTerm}
-            results={this.state.results} />  */}
+        <DropdownSearch onSubmitCallback={this.handleDropdownSubmit}/>
+        <DropdownResults 
+          results={this.state.results}
+          categories={this.state.searchCategories}
+          locations={this.state.searchLocations} />
       </div>
     </React.Fragment>
     );

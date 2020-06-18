@@ -103,9 +103,6 @@ function DropdownResults(props) {
     <div className="ResultList">
       <Segment>
         <div>
-          {/* {categories.length === 3 
-          ? <div>Showing {resultsToDisplay.length} results for {DISPLAY[categories[0]]}</div> 
-          : null} */}
           <div className="ui message">
             <h3 className="bold-text">{resultsToDisplay.length} results for {displayCategories.map(e => { 
               if (e === displayCategories[displayCategories.length-1]) {
@@ -150,6 +147,10 @@ function DropdownResults(props) {
             : <hr />}
             </div>
           </details>)}
+        </div>
+        <br />
+        <div className="ui container">
+          <a href="#start"><button className="ui button fluid basic">Back To Top</button></a>
         </div>
       </Segment>
     {/* <FilterResults results={resultsToDisplay} /> */}
