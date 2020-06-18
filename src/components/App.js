@@ -96,9 +96,9 @@ class App extends React.Component {
             results={this.state.results} />  */}
         
       </div>
-      <div className="BottomBox">
-         filter search options here   
-      </div>
+      {/* <div className="BottomBox">
+         test test   
+      </div> */}
     </React.Fragment>
     );
   }
