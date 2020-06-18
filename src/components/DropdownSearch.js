@@ -21,17 +21,22 @@ class DropdownSearch extends React.Component {
   
   handleCategoryChange = (e, value) => {
     if (value.value.length <= 3) {
-      this.setState({categories: value.value})
+      this.setState({categories: value.value}, this.handleErrorMessage);
     }
   }
 
   handleLocationsChange = (e, value) => {
-    if (value.value.includes("any")) {
-      this.setState({locations: ["any"]});
-    }
-    else 
     if (value.value.length <= 1) {
-    this.setState({locations: value.value})
+    this.setState({locations: value.value}, this.handleErrorMessage);
+    }
+  }
+
+  handleErrorMessage = () => {
+    const { locations, categories } = this.state;
+    if ((locations.length >=1 && categories.length >= 1)) {
+      this.setState({errorMessage: false});
+    } else {
+      this.setState({errorMessage: true});
     }
   }
 
@@ -48,7 +53,6 @@ class DropdownSearch extends React.Component {
   return (
     <Segment className="DropdownSearch">
       <form onSubmit={this.handleSubmit}>
-        {/* <div className="ui stackable two column grid container"> */}
           <div className="ui two column centered row">
             <div className="column dropdownInputSingle">
               <Header 
@@ -89,10 +93,9 @@ class DropdownSearch extends React.Component {
               /> 
             </div>
           </div>
-          {/* </div> */}
           <br />
           <div className="ui row">
-            {this.state.errorMessage === true ? 
+            {this.state.errorMessage ? 
             <div className="ui message green center-text bold-text">
               Please select a location and a category
             </div>

@@ -50,7 +50,7 @@ class App extends React.Component {
     }
 
     /* Filter results with no descriptions and contact info */
-    const filteredResults = results.filter(e => e.description).filter(e => e.phone !== undefined || e.url !== undefined).filter(e => e.organizationname !== "The Salvation Army").map(e => e.organizationname === "ACCESS NYC" ? {...e, url: "https://access.nyc.gov/"} : e );
+    const filteredResults = results.filter(e => e.description).filter(e => e.phone !== undefined || e.url !== undefined).filter(e => e.organizationname !== "The Salvation Army").map(e => e.organizationname === "ACCESS NYC" ? {...e, url: "https://access.nyc.gov/"} : e ).map(e => e.organizationname === "The ARab American Family Support Center" ? {...e, organizationname: "The Arab American Family Support Center"} : e);
     
     this.setState({results: filteredResults});
     console.log(this.state.results);
@@ -94,11 +94,7 @@ class App extends React.Component {
           <KeywordResults 
             term={this.state.searchTerm}
             results={this.state.results} />  */}
-        
       </div>
-      {/* <div className="BottomBox">
-         test test   
-      </div> */}
     </React.Fragment>
     );
   }
