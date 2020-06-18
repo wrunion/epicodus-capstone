@@ -84,11 +84,6 @@ class App extends React.Component {
             categories={this.state.searchCategories}
             locations={this.state.searchLocations}
              />
-          {/* <DropdownResults 
-            results={this.state.results}
-            categories={["health", "housing"]}
-            locations={["brooklyn"]}
-             /> */}
           {/* <KeywordSearch 
             callbackSubmissionHandler={this.handleKeywordSubmit} />
           <KeywordResults 

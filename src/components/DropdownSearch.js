@@ -33,20 +33,20 @@ class DropdownSearch extends React.Component {
 
   handleErrorMessage = () => {
     const { locations, categories } = this.state;
-    if ((locations.length >=1 && categories.length >= 1)) {
+    if ((locations.length >= 1) && (categories.length >= 1)) {
       this.setState({errorMessage: false});
-    } else {
-      this.setState({errorMessage: true});
-    }
+    } 
   }
 
   handleSubmit = (e) => {
     e.preventDefault();
     const { categories, locations } = this.state;
-
-    categories.length > 0 && locations.length > 0 ?
-    this.props.onSubmitCallback(this.state.categories, this.state.locations)
-    : this.setState({errorMessage: true})
+    if ((categories.length > 0 && locations.length > 0)) {
+      this.props.onSubmitCallback(this.state.categories, this.state.locations);
+      this.setState({ errorMessage: false });
+    } else {
+      this.setState({errorMessage: true})
+    }
   }
 
   render() {
