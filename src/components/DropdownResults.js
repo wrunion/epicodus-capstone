@@ -1,8 +1,8 @@
 import React from 'react';
 import ReadMoreReact from 'read-more-react';
+import PropTypes from 'prop-types';
 import { Segment } from 'semantic-ui-react';
 import { DISPLAY } from '../constants/CONSTANTS';
-import FilterResults from './FilterResults';
 
 function DropdownResults(props) {
   /* results from API call, search parameters, passed from App */
@@ -54,40 +54,7 @@ function DropdownResults(props) {
       const matchOneResults = matchOne(results).filter(e => e[locations[0]] === "Y").sort((a, b) => a.organizationname.localeCompare(b.organizationname));
       resultsToDisplay = matchOneResults;
     }
-
-
-    ///counseling, education, employment, bronx --> 12 w/location filter on
-
- /* ------------------------ */
-            /* SAVE */
-  /* ------------------------ */
-
-  /* function to search name, description of each obj for term */
-  // function filterRegexResults(regex, results) {
-  //   return results.filter(e => regex.test(e.organizationname) || regex.test(e.description) || e[term] === "Y");
-  // }
-
-  /* alphabetize output array */
-  // const resultsToDisplay = filterRegexResults(regexTerm, results).sort((a, b) => a.organizationname.localeCompare(b.organizationname));
-  // console.log(resultsToDisplay);
- /* ------------------------ */
-            /* SAVE */
-  /* ------------------------ */
-
-
-  ///TODO BELOW (from kent): how to filter out duplicates in an array ///
-  // let myArr = [{name: "a"}, {name: "a"}, {name: "b"}];
-  // let output = [myArr[0]];
-
-  // for (let i = 0; i < myArr.length; i++) {
-  //   for (let j = 0; j <div output.length; j++) {
-  //     if (output[j]['name'] !== myArr[i]['name']) { 
-  //       output.push(myArr[i]); break; }
-  //   }
-  // }
-  // console.log(output);
-
- 
+    
   /* ------------------------ */
             /* UI */
   /* ------------------------ */
@@ -120,7 +87,8 @@ function DropdownResults(props) {
             <div className="locations">
               <span className="bold-text">Locations:  </span>
               {e.locations.map(e => 
-                <span key={e.location}><i className="fa fa-map-marker"></i> {DISPLAY[e]} </span>
+                <span key={e.location}><i className="fa fa-map-marker"></i> {
+                  DISPLAY[e]} </span>
               )}
             </div>: null} 
             {/* Descriptions  */}
@@ -153,7 +121,6 @@ function DropdownResults(props) {
           <a href="#start"><button className="ui button fluid basic">Back To Top</button></a>
         </div>
       </Segment>
-    {/* <FilterResults results={resultsToDisplay} /> */}
   </div>
   )
   } else {
@@ -161,7 +128,10 @@ function DropdownResults(props) {
   }
 }
 
-export default DropdownResults;
+DropdownResults.propTypes = {
+  categories: PropTypes.array,
+  locations: PropTypes.array,
+  results: PropTypes.array
+}
 
-//unicode for map icon: &#xf041;
-//unicode for center dot: ✓
+export default DropdownResults;

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Dropdown, Header, Segment } from 'semantic-ui-react';
 import { searchCategories, searchLocations } from '../constants/CONSTANTS';
 import './App.css';
@@ -106,6 +107,10 @@ class DropdownSearch extends React.Component {
     </Segment>
     )
   }
+}
+
+DropdownSearch.propTypes = {
+  onSubmitCallback: PropTypes.func
 }
 
 export default DropdownSearch;

@@ -14,14 +14,13 @@ export const c = {
   LEGAL_AID: 'legal_services',
   EDUCATION: 'education',
   EMPLOYMENT: 'employment_job_training',
-  // LEGAL_AID_ARRAY: ['legal_services', 'victim_services', 'anti_discrimination_human_rights'],
   IMMIGRATION: 'immigration',
   MENTAL_HEALTH: 'counseling_support_groups',
   YOUTH_SERVICES: 'youth_services',
   DISABILITIES: 'disabilities',
   VETERAN_SERVICES: 'veterans_military_families',
-  // DOMESTIC_VIOLENTCE: ['victim_services', 'domestic_violence'],
   DOMESTIC_VIOLENCE: 'domestic_violence',
+
   /* other filter terms */
   GOVERNMENT_ORGANIZATION: ['other_government_organization', 'new_york_city_agency'],
   NONPROFIT: 'nonprofit',
@@ -32,6 +31,7 @@ export const c = {
   LOCATION_MANHATTAN: 'manhattan',
   LOCATION_QUEENS: 'queens',
   LOCATION_STATEN_ISLAND: 'staten_island',
+
   /* contact info */
   NAME: 'organizationname',
   NOURL: 'nourl',
@@ -66,7 +66,8 @@ export const DISPLAY = {
   'employment_job_training': "Employment and Job Training",
   'veterans_military_families': "Veteran Services",
   'community_service_volunteerism': "Volunteer Opportunities",
-  "personal_finance_financial_education": "Financial Education"
+  "personal_finance_financial_education": "Financial Education", 
+  "victim_services": "Victim Services"
 }
 
 /*------------------------------*/
@@ -80,22 +81,19 @@ export const LOCATIONS = ["queens", "brooklyn", "staten_island", "bronx", "manha
 
 export const searchCategories = [
   {key: 1, text: "Child Care", value: 'child_care_parent_information'},
-  {key: 13, text: "Counseling", value: 'counseling_support_groups'},
-  // {key: 18, text: "Disability Services", value: "disabilities"},
-  {key: 14, text: "Education", value: "education"},
-  {key: 6, text: "Employment and Job Training", value: 'employment_job_training'},
-  {key: 9, text: "Financial Education", value: 'personal_finance_financial_education'},
-  {key: 3, text: "Health Care", value: 'health'},
-  {key: 4, text: "Housing", value: 'housing'},
-  // {key: 16, text: "Homeless Assistance", value: "homelessness"},
-  {key: 15, text: "Legal Services", value: "legal_services"},
-  {key: 11, text: "LGBTQ Resources", value: 'lesbian_gay_bisexual_and_or_transgender'},
-  {key: 17, text: "Immigration", value: "immigration"},
-  // {key: 2, text: "Mental Health Care", value: 'counseling_support_groups'},
-  {key:20, text: "Support Groups", value: 'counseling_support_groups'},
+  {key: 2, text: "Counseling", value: 'counseling_support_groups'},
+  {key: 3, text: "Education", value: "education"},
+  {key: 4, text: "Employment and Job Training", value: 'employment_job_training'},
+  {key: 5, text: "Financial Education", value: 'personal_finance_financial_education'},
+  {key: 6, text: "Health Care", value: 'health'},
+  {key: 7, text: "Housing", value: 'housing'},
+  {key: 8, text: "Legal Services", value: "legal_services"},
+  {key: 9, text: "LGBTQ Resources", value: 'lesbian_gay_bisexual_and_or_transgender'},
+  {key: 10, text: "Immigration", value: "immigration"},
+  {key: 11, text: "Support Groups", value: 'counseling_support_groups'},
   {key: 12, text: "Veteran Services", value: "veterans_military_families"},
-  {key: 10, text: "Victim Services", value: 'victim_services'},
-  {key: 5, text: "Youth Services", value: 'youth_services'},
+  {key: 13, text: "Victim Services", value: 'victim_services'},
+  {key: 14, text: "Youth Services", value: 'youth_services'},
 ]
 
 export const additionalSearchCategories = [
@@ -105,14 +103,6 @@ export const additionalSearchCategories = [
 export const customSearches = [
   {text: "Trans Health Care", value: ['trans_health'] }
 ]
-
-export const lgbtqSearch = {
-  "trans_health": ['health', 'lesbian_gay_bisexual_and_or_transgender'],
-  "trans_mental_health": ['lesbian_gay_bisexual_and_or_transgender', 'counseling_support_groups'],
-  "homeless_youth": ["homelessness", "youth_services"],
-
-}
-
 
 export const searchLocations = [
   {key:1, text: "Bronx", value: 'bronx'},

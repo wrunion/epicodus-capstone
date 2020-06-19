@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import ReadMoreReact from 'read-more-react';
 import { Segment } from 'semantic-ui-react';
 import { DISPLAY } from '../constants/CONSTANTS';
@@ -20,18 +21,6 @@ function KeywordResults(props) {
   /* alphabetize output array */
   const resultsToDisplay = filterRegexResults(regexTerm, results).sort((a, b) => a.organizationname.localeCompare(b.organizationname));
   console.log(resultsToDisplay);
-
-  ///TODO BELOW (from kent): how to filter out duplicates in an array ///
-  // let myArr = [{name: "a"}, {name: "a"}, {name: "b"}];
-  // let output = [myArr[0]];
-
-  // for (let i = 0; i < myArr.length; i++) {
-  //   for (let j = 0; j < output.length; j++) {
-  //     if (output[j]['name'] !== myArr[i]['name']) { 
-  //       output.push(myArr[i]); break; }
-  //   }
-  // }
-  // console.log(output);
 
   /* ------------------------ */
             /* UI */
@@ -98,7 +87,9 @@ function KeywordResults(props) {
   }
 }
 
-export default KeywordResults;
+KeywordResults.propTypes = {
+  term: PropTypes.string,
+  results: PropTypes.array
+}
 
-//unicode for map icon: &#xf041;
-//unicode for center dot: ✓
+export default KeywordResults;
