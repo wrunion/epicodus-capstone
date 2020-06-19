@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "102c4c87473781ec2e57d7b161267030",
+    "revision": "13978ce20d14e6a37d2ef9cc567856b4",
     "url": "/epicodus-capstone/index.html"
   },
   {
