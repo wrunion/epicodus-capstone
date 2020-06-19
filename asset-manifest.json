@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/epicodus-capstone/static/css/main.71df0200.chunk.css",
-    "main.js": "/epicodus-capstone/static/js/main.5d636d13.chunk.js",
-    "main.js.map": "/epicodus-capstone/static/js/main.5d636d13.chunk.js.map",
+    "main.js": "/epicodus-capstone/static/js/main.118a3217.chunk.js",
+    "main.js.map": "/epicodus-capstone/static/js/main.118a3217.chunk.js.map",
     "runtime-main.js": "/epicodus-capstone/static/js/runtime-main.15f11de6.js",
     "runtime-main.js.map": "/epicodus-capstone/static/js/runtime-main.15f11de6.js.map",
-    "static/js/2.5e2e3e80.chunk.js": "/epicodus-capstone/static/js/2.5e2e3e80.chunk.js",
-    "static/js/2.5e2e3e80.chunk.js.map": "/epicodus-capstone/static/js/2.5e2e3e80.chunk.js.map",
+    "static/js/2.72b36f88.chunk.js": "/epicodus-capstone/static/js/2.72b36f88.chunk.js",
+    "static/js/2.72b36f88.chunk.js.map": "/epicodus-capstone/static/js/2.72b36f88.chunk.js.map",
     "index.html": "/epicodus-capstone/index.html",
-    "precache-manifest.d75cc1e5a4d18d80a26b4edfe294884b.js": "/epicodus-capstone/precache-manifest.d75cc1e5a4d18d80a26b4edfe294884b.js",
+    "precache-manifest.bb94d5a268a34353390e14465829a491.js": "/epicodus-capstone/precache-manifest.bb94d5a268a34353390e14465829a491.js",
     "service-worker.js": "/epicodus-capstone/service-worker.js",
     "static/css/main.71df0200.chunk.css.map": "/epicodus-capstone/static/css/main.71df0200.chunk.css.map",
-    "static/js/2.5e2e3e80.chunk.js.LICENSE.txt": "/epicodus-capstone/static/js/2.5e2e3e80.chunk.js.LICENSE.txt"
+    "static/js/2.72b36f88.chunk.js.LICENSE.txt": "/epicodus-capstone/static/js/2.72b36f88.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.15f11de6.js",
-    "static/js/2.5e2e3e80.chunk.js",
+    "static/js/2.72b36f88.chunk.js",
     "static/css/main.71df0200.chunk.css",
-    "static/js/main.5d636d13.chunk.js"
+    "static/js/main.118a3217.chunk.js"
   ]
 }
