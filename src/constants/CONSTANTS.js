@@ -1,15 +1,12 @@
 export const c = {
   /* query data */
-  APP_TOKEN: "$$app_token=NDQ8EOLrXHft9YeGZ2axBbxzb",
   BASE_URL: "https://data.cityofnewyork.us/resource/pqg4-dm6b.json",
-
   /* search phrases */
   AGING: 'aging',
   CHILD_CARE: 'child_care_parent_information',
   SUPPORT_GROUPS: 'counseling_support_groups',
   HEALTH: 'health',
   HOUSING: 'housing',
-  HOUSING_ARRAY: ['housing', 'homelessness'],
   LGBTQ: 'lesbian_gay_bisexual_and_or_transgender',
   LEGAL_AID: 'legal_services',
   EDUCATION: 'education',
@@ -20,27 +17,20 @@ export const c = {
   DISABILITIES: 'disabilities',
   VETERAN_SERVICES: 'veterans_military_families',
   DOMESTIC_VIOLENCE: 'domestic_violence',
-
-  /* other filter terms */
-  GOVERNMENT_ORGANIZATION: ['other_government_organization', 'new_york_city_agency'],
-  NONPROFIT: 'nonprofit',
-
   /* locations */
   LOCATION_BRONX: 'bronx',
   LOCATION_BROOKLYN: 'brooklyn',
   LOCATION_MANHATTAN: 'manhattan',
   LOCATION_QUEENS: 'queens',
   LOCATION_STATEN_ISLAND: 'staten_island',
-
   /* contact info */
   NAME: 'organizationname',
-  NOURL: 'nourl',
   PHONE: 'phone',
-  POSTCODE: 'postcode',
   URL: 'url',
   ADDRESS: 'address1',
-
 }
+
+/*------------------------------*/
 
 export const DISPLAY = {
   'bronx': "Bronx",
@@ -72,13 +62,13 @@ export const DISPLAY = {
 
 /*------------------------------*/
 
-/* For tagging the data right after it's collected and before it's stored in state */
 export const KEYWORDS = ['aging', 'arts_culture', "child_care_parent_information", 'disabilities', 'education', 'employment_job_training', "faith_based_organization", "health", "housing", "homelessness", 'lesbian_gay_bisexual_and_or_transgender', 'legal_services', 'immigration', "counseling_support_groups", 'veterans_military_families', 'community_service_volunteerism', "youth_services"];
 
 export const LOCATIONS = ["queens", "brooklyn", "staten_island", "bronx", "manhattan"];
 
 /*------------------------------*/
 
+/* DROPDOWN SEARCH OPTIONS */
 export const searchCategories = [
   {key: 1, text: "Child Care", value: 'child_care_parent_information'},
   {key: 2, text: "Counseling", value: 'counseling_support_groups'},
@@ -110,5 +100,4 @@ export const searchLocations = [
   {key: 3, text: "Manhattan", value: 'manhattan'},
   {key: 4, text: "Queens", value: 'queens'},
   {key: 5, text: "Staten Island", value:'staten_island'},
-  // {key: 5, text: "All locations", value: "all"}
 ]
