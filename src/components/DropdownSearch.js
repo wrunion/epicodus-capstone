@@ -28,7 +28,7 @@ class DropdownSearch extends React.Component {
 
   handleLocationsChange = (e, value) => {
     if (value.value.length <= 1) {
-    this.setState({locations: value.value}, this.handleErrorMessage);
+    this.setState({locations: value.value, isClosed: true}, this.handleErrorMessage);
     }
   }
 
