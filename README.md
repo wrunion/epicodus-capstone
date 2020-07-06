@@ -19,8 +19,6 @@ Use this app online at [wrunion.github.io/epicodus-capstone](https://wrunion.git
 </p>
 
 ### Instructions
-
-* Use the app [here](https://wrunion.github.io/epicodus-capstone/).
 * To modify the code for your own purposes, fork or clone this repo to your local machine.
 * Run ```npm install``` 
 * Open in your code editor of choice, and go to town!
