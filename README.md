@@ -1,11 +1,9 @@
-### NYC Social Service Search
-_React app for residents of New York City to search for social services they may be eligible for._
+## NYC Social Service Search / Epicodus React Capstone
+This project is the culimation of my studies in JavaScript/React front end web development at Epicodus.
+It's a mobile-friendly web app designed for residents of New York City to search for social services.
 
-**Epicodus React Capstone** 
 _Winter A. Runion, 6.21.2020_
-*****
-#### Background 
-This project is the culimation of my studies in JavaScript/React front end web development at Epicodus. It's an intuitive UI developed using UX best practices, and built with React. 
+***** 
 
 #### Description
 The Social Services Finder allows people to enter criteria and search for services they may be eligible for. 
@@ -14,7 +12,21 @@ While this is a student demo project, the ultimate goal would be to create a sit
 
 The data used is courtesy of New York City's open data initiative, and can be viewed [here](https://data.world/city-of-ny/pqg4-dm6b).
 
-### Instructions
+#### Demo
+Use this app online at [/wrunion.github.io/epicodus-capstone](https://wrunion.github.io/epicodus-capstone/).
+<p align="center">
+<img src="epicodus-capstone.gif" alt="demo of social service search website" />
+</p>
+
+#### Background 
+
+I've been involved in the social service industry for years, and I've witnessed the real harm that arises from lack of access to resources.
+
+My people lack basic necessities, and don't realize they qualify for assistance, because the information isn't freely available. If a database of resources exists at all, it's often in a format that's difficult or impossible for people to access.
+
+Since resourcing and case management is a long-term passion of mine, I wove that into this project and set out to create a Social Service Finder that would be intuitive and easy to use.
+
+#### Instructions
 
 * Use the app [here](https://wrunion.github.io/epicodus-capstone/).
 * To modify the code for your own purposes, fork or clone this repo to your local machine.
@@ -27,22 +39,9 @@ The data used is courtesy of New York City's open data initiative, and can be vi
 * AXIOS
 * [Semantic UI React](https://react.semantic-ui.com/)
 
-
-
-
-###### Background
-
-I've been involved in the social service industry for years, and I've witnessed the real harm that arises from lack of access to resources. 
-
-My people lack basic necessities, and don't realize they qualify for assistance, because the information isn't freely available. If a database of resources exists at all, it's often in a format that's difficult or impossible for people to access.
-
-Since resourcing and case management is a long-term passion of mine, I wove that into this project and set out to create a Social Service Finder that would be intuitive and easy to use. 
-
-The data is courtesy of New York City's open data initiative, and can be viewed and used at [data.world](https://data.world/city-of-ny/pqg4-dm6b). 
-
 #### Contact
 
-If you'd like to collaborate on a project like this in your area, feel free to reach out! winter@winterrunion.com
+If you'd like to collaborate on a project like this one in your area, feel free to reach out! winter@winterrunion.com
 
 #### License
 _This software is licensed under the MIT license._
